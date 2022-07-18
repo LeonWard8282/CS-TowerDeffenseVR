@@ -8,19 +8,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - 
   - Water
   - UI
-  - Player
-  - Grab
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlacementLayer
+  - PlacementGhosts
+  - Towers
+  - GroundEnemies
+  - FriendlyProjectiles
+  - EnemyProjectiles
+  - FlyingEnemies
+  - GroundEnemyTargettingProjectiles
   - 
   - 
   - 

@@ -27,6 +27,11 @@ public class Turret : MonoBehaviour
     [Header("Turret Pivot Point")]
     public Transform turretsPartToRotate;
 
+    [Header("Use Laser")]
+    public bool useLazer = false;
+    public LineRenderer lineRenderer;
+    public ParticleSystem impactEffect;
+    public Light impactLight;
 
      void Start()
     {
@@ -69,25 +74,74 @@ public class Turret : MonoBehaviour
      void Update()
     {
         // if dont have a target dont to a thing. 
-        if(target == null)
+        if (target == null)
         {
+            if(useLazer)
+            {
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    impactEffect.Stop();
+                    impactLight.enabled = false;
+
+                }
+                    
+
+            }
+
+
             return;
         }
 
+        LockOnTarget();
+
+        if(useLazer)
+        {
+            Lazer();
+
+        }
+        else
+        {
+
+            if (fireCountDown <= 0f)
+            {
+                Shoot();
+                fireCountDown = 1f / fireRate;
+            }
+            fireCountDown -= Time.deltaTime;
+
+        }
+
+        
+
+
+    }
+
+    void Lazer()
+    {
+        if(!lineRenderer.enabled)
+        {
+            lineRenderer.enabled = true;
+            impactEffect.Play();
+            impactLight.enabled = true;
+        }
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+        Vector3 dir = firePoint.position - target.position;
+        impactEffect.transform.position = target.position + dir.normalized ;
+        impactEffect.transform.rotation = Quaternion.LookRotation(dir);
+
+    }
+
+
+    private void LockOnTarget()
+    {
         //Turrets Direction and Rotation Logic when Target Lock on
         Vector3 direction = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(turretsPartToRotate.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
         turretsPartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-
-        if (fireCountDown <= 0f)
-        {
-            Shoot();
-            fireCountDown = 1f / fireRate;
-        }
-        fireCountDown -= Time.deltaTime;
-
-
     }
 
     void Shoot()

@@ -9,7 +9,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
-    public TMPro.TMP_Text waveCountDownText;
+    public TMP_Text waveCountDownText;
 
     public float timeBetweenWaves = 5f;
     public float countDown = 4f;
@@ -35,7 +35,9 @@ public class WaveSpawner : MonoBehaviour
         }
         countDown -= Time.deltaTime;
 
-        waveCountDownText.text = Mathf.Round(countDown).ToString();
+        countDown = Math.Clamp(countDown, 0f, Mathf.Infinity);
+
+        waveCountDownText.text = countDown.ToString("f2");
 
 
     }
@@ -43,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         waveIndex++;
+        PlayerStats.Rounds++;
 
         for (int i = 0; i < waveIndex; i++)
         {

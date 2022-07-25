@@ -7,14 +7,15 @@ public class Nodo : MonoBehaviour
 {
     [Header("Hover Color")]
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Material startMaterial;
     public Material emptyMaterial;
     public Material highLightedMaterial;
 
     public Vector3 positionOffset;
     
-
-    private GameObject turret;
+    [Header("Optional")]
+    public GameObject turret;
 
 
     private Renderer rend;
@@ -32,37 +33,61 @@ public class Nodo : MonoBehaviour
         startMaterial = rend.material;
     }
 
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+
     public void OnButtonPressActivation()
     {
-        if(buildManager.GetTurretToBuild() == null)
-        {
-            return;
-        }
+        
 
 
         if(turret !=null)
         {
-            Debug.Log("Cant Build There - TODO: Display/Error Audio que");
+
+            buildManager.SelectedNode(this);
             return;
         }
 
-        GameObject turretToBuild = buildManager.GetTurretToBuild();
-        turret = (GameObject) Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation); // casting to gameobject
+        if (!buildManager.CanBuild)
+        {
+            return;
+        }
+        buildManager.BuildTurretOn(this);
 
     }
 
+    //*
+    //      WHen the XR Ray Hovers onto the Node
+    //*
 
     public void OnXRRayEnter()
     {
         //only highlight where to build a turret when we have a turret selected
-        if(buildManager.GetTurretToBuild() == null)
+      
+
+        if(!buildManager.CanBuild)
         {
             return;
         }
-        GetComponent<Renderer>().material = highLightedMaterial;
-        GetComponent<Renderer>().material.color = hoverColor;
+
+        if(buildManager.HasMoney)
+        {
+            GetComponent<Renderer>().material = highLightedMaterial;
+            GetComponent<Renderer>().material.color = hoverColor;
+        }
+        else
+        {
+            GetComponent<Renderer>().material.color = notEnoughMoneyColor;
+        }
+
+        
     }
 
+    //*
+    //          WHen the XR Ray Hovers OUT of the Node
+    //*
     public void OnXRRayExit()
     {
         GetComponent<Renderer>().material = startMaterial;

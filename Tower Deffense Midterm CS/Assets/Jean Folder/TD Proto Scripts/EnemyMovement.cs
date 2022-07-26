@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -9,20 +10,31 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
 
-    public int health = 100;
+    public float startHealth = 100;
+    private float health;
+
     public int moneyGained = 50;
 
 
-    //public GameObject deathEffect;
+    //public GameObject deathEffect; TODO:
+
+    [Header("Health Bar Dont Remove")]
+    public Image healthBar;
+
+
+
 
     private void Start()
     {
         target = Waypoints.points[0];
+        health = startHealth;
     }
 
     public void TakeDamage(int amount)
     {
         health -= amount;
+
+        healthBar.fillAmount = health / startHealth;
 
         if(health <=0)
         {
@@ -33,7 +45,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Die()
     {
-        //GameObject death_Effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity);
+        //TODO: Attach an enemy Death effect
+        //GameObject death_Effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity); TODO
         //Destroy(death_Effect, 5f);
         PlayerStats.Money += moneyGained;
         Debug.Log("Money gained1");

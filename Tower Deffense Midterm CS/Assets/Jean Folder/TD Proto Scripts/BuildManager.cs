@@ -19,6 +19,8 @@ public class BuildManager : MonoBehaviour
 
     [Header("Build VFX")]
     public GameObject buildEffect;
+    [Header("Sell VFX")]
+    public GameObject sellEffect;
 
 
     private TurretBluePrint turretToBuild;

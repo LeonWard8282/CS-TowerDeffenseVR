@@ -76,7 +76,8 @@ public class Nodo : MonoBehaviour
     {
         PlayerStats.Money += turretBluePrint.GetSellAmount();
         //TODO: Spawn cool VFX on the Tear down of the tower
-
+        GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
+        Destroy(effect, 4f);
 
         Destroy(turret);
         turretBluePrint = null;

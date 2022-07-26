@@ -32,11 +32,11 @@ namespace TowerDefense.UI
 
 		public MouseScroll mouseScroll;
 
-		public Animation cameraAnimator;
+		//public Animation cameraAnimator;
 
-		public string enterCameraAnim;
+		//public string enterCameraAnim;
 		
-		public string exitCameraAnim;
+		//public string exitCameraAnim;
 
 		/// <summary>
 		/// The reference to the list of levels to display
@@ -65,8 +65,9 @@ namespace TowerDefense.UI
 			for (int i = 0; i < amount; i++)
 			{
 				LevelSelectButton button = CreateButton(m_LevelList[i]);
-				button.transform.SetParent(layout.transform);
-				button.transform.localScale = Vector3.one;
+                button.transform.SetParent(layout.transform);
+				button.transform.localPosition = Vector3.zero;
+                button.transform.localScale = Vector3.one;
 				m_Buttons.Add(button.GetComponent<Button>());
 			}
 			if (rightBuffer != null)
@@ -106,28 +107,28 @@ namespace TowerDefense.UI
 		/// <summary>
 		/// Play camera animations
 		/// </summary>
-		public override void Show()
-		{
-			base.Show();
+		//public override void Show()
+		//{
+		//	base.Show();
 
-			if (cameraAnimator != null && enterCameraAnim != null)
-			{
-				cameraAnimator.Play(enterCameraAnim);
-			}
-		}
+		//	if (cameraAnimator != null && enterCameraAnim != null)
+		//	{
+		//		cameraAnimator.Play(enterCameraAnim);
+		//	}
+		//}
 
-		/// <summary>
-		/// Return camera to normal position
-		/// </summary>
-		public override void Hide()
-		{
-			base.Hide();
+		///// <summary>
+		///// Return camera to normal position
+		///// </summary>
+		//public override void Hide()
+		//{
+		//	base.Hide();
 
-			if (cameraAnimator != null && exitCameraAnim != null)
-			{
-				cameraAnimator.Play(exitCameraAnim);
-			}
-		}
+		//	if (cameraAnimator != null && exitCameraAnim != null)
+		//	{
+		//		cameraAnimator.Play(exitCameraAnim);
+		//	}
+		//}
 
 		/// <summary>
 		/// Sets up the navigation for a selectable

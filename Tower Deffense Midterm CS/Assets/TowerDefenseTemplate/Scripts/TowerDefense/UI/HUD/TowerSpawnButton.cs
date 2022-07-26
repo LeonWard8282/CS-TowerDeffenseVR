@@ -6,14 +6,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 namespace TowerDefense.UI.HUD
 {
 	/// <summary>
 	/// A button controller for spawning towers
 	/// </summary>
 	[RequireComponent(typeof(RectTransform))]
-	public class TowerSpawnButton : MonoBehaviour, IDragHandler
-	{
+    public class TowerSpawnButton : MonoBehaviour, IDragHandler
+    {
 		/// <summary>
 		/// The text attached to the button
 		/// </summary>

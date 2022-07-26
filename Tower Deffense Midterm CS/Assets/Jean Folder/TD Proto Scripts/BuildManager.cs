@@ -31,26 +31,6 @@ public class BuildManager : MonoBehaviour
     public bool HasMoney { get { return PlayerStats.Money >= turretToBuild.cost; } }
 
 
-    public void BuildTurretOn(Nodo nodo)
-    {
-
-        if(PlayerStats.Money < turretToBuild.cost)
-        {
-            Debug.Log("Not enough Money");
-            return;
-        }
-
-        PlayerStats.Money -= turretToBuild.cost;
-
-        //casting to a gameobject
-        GameObject turret = (GameObject) Instantiate(turretToBuild.prefab, nodo.GetBuildPosition(), Quaternion.identity );
-        nodo.turret = turret;
-        //casting the VFX build into a GameObject and waiting 4 seconds to delet the build. 
-        GameObject effect = (GameObject) Instantiate(buildEffect, nodo.GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 4f);
-
-        Debug.Log("Turret build! Money Left: " + PlayerStats.Money);
-    }
 
     public void SelectedNode(Nodo node)
     {
@@ -79,6 +59,12 @@ public class BuildManager : MonoBehaviour
         DeselectNode();
 
     }
+
+    public TurretBluePrint GetTurretToBuild()
+    {
+        return turretToBuild;
+    }
+
 
 
 }

@@ -9573,7 +9573,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 92fbbb607856b484295b0810d1baecac, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14348,7 +14347,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19132,7 +19130,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23907,7 +23904,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a78dd0f6e2aa54870b8ced4051fd71e0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -23970,7 +23966,7 @@ GameObject:
   - component: {fileID: 2370065125869583661}
   - component: {fileID: 2362017236089257671}
   m_Layer: 10
-  m_Name: Turret_MachineGun_L02
+  m_Name: Pivot Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24068,7 +24064,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2348175364300048831}
   m_LocalRotation: {x: 0.0009147092, y: 0.0016288152, z: -0.0014009047, w: 0.9999973}
-  m_LocalPosition: {x: -0, y: 0.697, z: 1.339}
+  m_LocalPosition: {x: 0.00000045774505, y: 0.697, z: 1.339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28786,7 +28782,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38310,7 +38305,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43266,7 +43260,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43498,7 +43491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2349863823786297263}
-  - component: {fileID: 2380067101037225121}
+  - component: {fileID: 7072506670969629121}
   m_Layer: 10
   m_Name: MGTower_1
   m_TagString: Untagged
@@ -43523,7 +43516,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2380067101037225121
+--- !u!114 &7072506670969629121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43532,11 +43525,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2348581674639853799}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d8e55681884ffb9fb6ed0b6f18f0bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2f84b41bf0dbd44a0f45845a473ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerGhostPrefab: {fileID: 114795132175009648, guid: 76f6e1703688e468899389e732f0653a,
+  range: 15
+  fireRate: 1
+  rotationSpeed: 2
+  updatedTarget: 1
+  bulletPrefab: {fileID: 2228136128379212152, guid: 97d9fbb19cef95646912e000b8b56140,
     type: 3}
-  buildEffectPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
-    type: 3}
-  levelData: {fileID: 11400000, guid: 15d47f5f935234d87a2eef876576efab, type: 2}
+  firePoint: {fileID: 2349805002053613017}
+  enemyTag: Enemy
+  turretsPartToRotate: {fileID: 2342929063638535527}
+  useLazer: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}

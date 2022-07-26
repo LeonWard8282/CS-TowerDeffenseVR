@@ -47,6 +47,11 @@ public class Nodo : MonoBehaviour
 
 
 
+
+
+    //
+    // Replacement for mousebutton presss on the interactable
+    //
     public void OnButtonPressActivation()
     {
         
@@ -65,6 +70,22 @@ public class Nodo : MonoBehaviour
         BuildTurret(buildManager.GetTurretToBuild());
 
     }
+
+
+    public void SellTurret()
+    {
+        PlayerStats.Money += turretBluePrint.GetSellAmount();
+        //TODO: Spawn cool VFX on the Tear down of the tower
+
+
+        Destroy(turret);
+        turretBluePrint = null;
+
+    }
+
+
+
+
 
     public void UpgradeTurret()
     {

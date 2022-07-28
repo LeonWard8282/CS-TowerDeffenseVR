@@ -70,6 +70,7 @@ public class WaveSpawner : MonoBehaviour
         if(waveIndex == waves.Length)
         {
             Debug.Log("YOU HAVE SURVIDED");
+            //TODO: Link this to a UI to display on the hand UI that you have completd the level. 
             this.enabled = false;
 
         }

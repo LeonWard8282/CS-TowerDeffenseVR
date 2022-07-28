@@ -50,6 +50,10 @@ public class EnemyMovement : MonoBehaviour
         //Destroy(death_Effect, 5f);
         PlayerStats.Money += moneyGained;
         Debug.Log("Money gained1");
+
+
+        //keeping track of enemies alive by calling wave spawner script. 
+        WaveSpawner.enemiesAlive--;
         Destroy(gameObject);
     }
 
@@ -84,7 +88,10 @@ public class EnemyMovement : MonoBehaviour
 
     void  EndPath()
     {
+
         PlayerStats.Lives--;
+        //keeping track of enemies alive by calling wave spawner script. 
+        WaveSpawner.enemiesAlive--;
         Destroy(gameObject);
     }
 

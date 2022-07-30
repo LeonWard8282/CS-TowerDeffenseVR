@@ -1,0 +1,448 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.3f1 (af2e63e8f9bd) revision 11480675'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Professional' Language: 'en' Physical Memory: 32691 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/GoldenBug_Gabriel/Documents/UnityTempProjects/VFXGraph_StylizedBeam_2021.3_URP
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51205
+Successfully changed project path to: C:/Users/GoldenBug_Gabriel/Documents/UnityTempProjects/VFXGraph_StylizedBeam_2021.3_URP
+C:/Users/GoldenBug_Gabriel/Documents/UnityTempProjects/VFXGraph_StylizedBeam_2021.3_URP
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 159.96 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.3f1 (af2e63e8f9bd)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/GoldenBug_Gabriel/Documents/UnityTempProjects/VFXGraph_StylizedBeam_2021.3_URP/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 (ID=0x2184)
+    Vendor:   NVIDIA
+    VRAM:     5991 MB
+    Driver:   30.0.14.7141
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007043 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 141.79 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.838 seconds
+Domain Reload Profiling:
+	ReloadAssembly (839ms)
+		BeginReloadAssembly (88ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (614ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (125ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (39ms)
+			SetupLoadedEditorAssemblies (385ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (142ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (168ms)
+				ProcessInitializeOnLoadMethodAttributes (62ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007558 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\GoldenBug_Gabriel\Documents\UnityTempProjects\VFXGraph_StylizedBeam_2021.3_URP\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\GoldenBug_Gabriel\Documents\UnityTempProjects\VFXGraph_StylizedBeam_2021.3_URP\Library\PackageCache\com.unity.visualscripting@1.7.6\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 143.11 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.579 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1580ms)
+		BeginReloadAssembly (170ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (44ms)
+		EndReloadAssembly (1275ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (364ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (91ms)
+			SetupLoadedEditorAssemblies (659ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (143ms)
+				BeforeProcessingInitializeOnLoad (166ms)
+				ProcessInitializeOnLoadAttributes (217ms)
+				ProcessInitializeOnLoadMethodAttributes (107ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 2.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4628 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (1.4 MB). Loaded Objects now: 5099.
+Memory consumption went from 192.1 MB to 190.7 MB.
+Total: 11.188600 ms (FindLiveObjects: 1.862600 ms CreateObjectMapping: 0.628700 ms MarkObjects: 7.145100 ms  DeleteObjects: 1.547500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 903403.280018 seconds.
+  path: Assets/GabrielAguiarProductions/Shaders/LaserShaderTut.shadergraph
+  artifactKey: Guid(78f6abf4cc407f44a9c97b1e8b02d0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Shaders/LaserShaderTut.shadergraph using Guid(78f6abf4cc407f44a9c97b1e8b02d0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7deb56a6f77b0c0271f1ab56feac7caf') in 0.052894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.206649 seconds.
+  path: Assets/GabrielAguiarProductions/Models/StylizedBeamMeshes01.blend
+  artifactKey: Guid(85ae39a8a43b2d346b0a75b3f68a1a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Models/StylizedBeamMeshes01.blend using Guid(85ae39a8a43b2d346b0a75b3f68a1a29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74d8448e18a7c6bcc8ef36859e5cb8bc') in 0.016411 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.577625 seconds.
+  path: Assets/GabrielAguiarProductions/Models/StylizedBeamMeshes01.blend1
+  artifactKey: Guid(9d3eb78ddae77ac4a9791e09a62a5d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Models/StylizedBeamMeshes01.blend1 using Guid(9d3eb78ddae77ac4a9791e09a62a5d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e495dd927097b97c7a99a3cda8c99caf') in 0.009175 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.349260 seconds.
+  path: Assets/GabrielAguiarProductions/Models/Plane02.fbx
+  artifactKey: Guid(9c4c330e4318eca40ab5c1f96494646b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Models/Plane02.fbx using Guid(9c4c330e4318eca40ab5c1f96494646b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Attempting to get Camera relative temporary RenderTexture (width || height <= 0) via a CommandBuffer  in a Sriptable Render Pipeline.
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer_Internal (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.ScriptableRenderContext:ExecuteCommandBuffer (UnityEngine.Rendering.CommandBuffer)
+UnityEngine.Rendering.Universal.Internal.CopyColorPass:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/Passes/CopyColorPass.cs:111)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteRenderPass (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.ScriptableRenderPass,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/ScriptableRenderer.cs:1003)
+UnityEngine.Rendering.Universal.ScriptableRenderer:ExecuteBlock (int,UnityEngine.Rendering.Universal.ScriptableRenderer/RenderBlocks&,UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/ScriptableRenderer.cs:962)
+UnityEngine.Rendering.Universal.ScriptableRenderer:Execute (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.RenderingData&) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/ScriptableRenderer.cs:758)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:415)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:324)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:279)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[ line 0]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:431)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:324)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:279)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+Trying to get RenderBuffer with invalid antiAliasing (must be at least 1)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit ()
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData,bool) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:431)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:324)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at Library/PackageCache/com.unity.render-pipelines.universal@12.1.6/Runtime/UniversalRenderPipeline.cs:279)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,System.Collections.Generic.List`1<UnityEngine.Camera/RenderRequest>,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEditor.PreviewRenderUtility:Render (bool,bool)
+UnityEditor.GameObjectInspector:DoRenderPreview ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Runtime\Graphics\RenderBufferManager.cpp line 180]
+
+ -> (artifact id: 'b3603293483394328ce7d888df5ff762') in 1.620596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.980883 seconds.
+  path: Assets/GabrielAguiarProductions/Models/Plane01.fbx
+  artifactKey: Guid(4e8885c253ab06042b22ffcd79df83eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Models/Plane01.fbx using Guid(4e8885c253ab06042b22ffcd79df83eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '315581d40c8bf1c0ee87e545655766c7') in 0.024285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 104.813533 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam01.vfx
+  artifactKey: Guid(19aa61fead9dd584587e30f72238a51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam01.vfx using Guid(19aa61fead9dd584587e30f72238a51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bcd6b2d5944c059814459769210b69b') in 2.028791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 524.717197 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_tut.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_tut.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d1a51fcd52c326dfdda91059a9cbb83') in 0.037762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.088607 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simp.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simp.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d678429d799ebc21c9740101ca6730') in 0.023813 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.517659 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_tut.vfx
+  artifactKey: Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_tut.vfx using Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd1796cd30ec171a847cc305bc42e645') in 1.061172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.943050 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_basic.vfx
+  artifactKey: Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_basic.vfx using Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22ae728aa2d70cebce0692fa130d3506') in 1.062538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.695753 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simp.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simp.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13d65fb6fa8937c3bf840057a58aebc7') in 0.024475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.990137 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_basic.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_basic.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01b45f366119291f6423c793a02b65e7') in 0.027917 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 42.957555 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_simple.vfx
+  artifactKey: Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_simple.vfx using Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8a5e018142a0a49040cb9e3fa52de4a') in 1.057310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.363858 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_basic.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_basic.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cf232055048e14076b1796b039c3119') in 0.020845 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.896128 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simple.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simple.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9324800af3ad44dbf8822cd0084d0e3a') in 0.026462 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.255818 seconds.
+  path: Assets/GabrielAguiarProductions/Shaders/LaserShader_simple.shadergraph
+  artifactKey: Guid(78f6abf4cc407f44a9c97b1e8b02d0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Shaders/LaserShader_simple.shadergraph using Guid(78f6abf4cc407f44a9c97b1e8b02d0ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '429b251d0648bfc4a8be2feb35b5955c') in 0.009012 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 91.423375 seconds.
+  path: Assets/GabrielAguiarProductions/Models/Mountains01.fbx
+  artifactKey: Guid(7d7b1b4c62dbbe4459d4b39b1e805e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Models/Mountains01.fbx using Guid(7d7b1b4c62dbbe4459d4b39b1e805e83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c886bf77d299056697996ab632e14ea4') in 0.069267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.034460 seconds.
+  path: Assets/GabrielAguiarProductions/Scenes/VFXGraph_StylizedBeam.unity
+  artifactKey: Guid(2adc452dd047cf34493a5540351c144f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Scenes/VFXGraph_StylizedBeam.unity using Guid(2adc452dd047cf34493a5540351c144f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72239012e7a2e5da08e97e5c884b70db') in 0.006401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006191 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_simple.vfx
+  artifactKey: Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam_simple.vfx using Guid(8c4e9406a2e4dd549b8a435b99b5c392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e82dd23e3a7622a56b3fb1abbbb06a34') in 1.048218 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001289 seconds.
+  path: Assets/GabrielAguiarProductions/Settings/VFXGraph_FlamethrowerSettings.lighting
+  artifactKey: Guid(b2e57ab53ed039e4e93ce1bd3e8cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Settings/VFXGraph_FlamethrowerSettings.lighting using Guid(b2e57ab53ed039e4e93ce1bd3e8cade8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182057b0860184325a5e1becbc977e5c') in 0.010009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/GabrielAguiarProductions/Script
+  artifactKey: Guid(dbd8f07cbd7c69248a716726da831f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Script using Guid(dbd8f07cbd7c69248a716726da831f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8605b1e618765bfeb39aad11ded18683') in 0.006016 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.017750 seconds.
+  path: Assets/GabrielAguiarProductions/Settings
+  artifactKey: Guid(3582b1ef09d3e4240bfb4503fa1a43fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Settings using Guid(3582b1ef09d3e4240bfb4503fa1a43fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f63cad5ca7ff288eb8dbf4380ee7a19a') in 0.006118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.008236 seconds.
+  path: Assets/GabrielAguiarProductions/Textures/Gradient04_tut.png
+  artifactKey: Guid(92f43abc69b2488468f0ffa1215a05cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Textures/Gradient04_tut.png using Guid(92f43abc69b2488468f0ffa1215a05cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b917c3875fe228500df52267e1e71ee') in 0.033307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.010873 seconds.
+  path: Assets/GabrielAguiarProductions/Textures/Gradient03_tut.png
+  artifactKey: Guid(b687cf73baef2a444a78397286a9a05c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Textures/Gradient03_tut.png using Guid(b687cf73baef2a444a78397286a9a05c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c516633c308d9210b7cb167e1a9ae0a') in 0.013848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.011396 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam01.vfx
+  artifactKey: Guid(19aa61fead9dd584587e30f72238a51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/VFXGraphs/vfxgraph_StylizedBeam01.vfx using Guid(19aa61fead9dd584587e30f72238a51a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9405da4733a6c203bfea158aabf66aa9') in 0.077006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.009635 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v1.prefab
+  artifactKey: Guid(e83c04ec05796514db92032760f8fa54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v1.prefab using Guid(e83c04ec05796514db92032760f8fa54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14215b2a73a391a054c8e26e0ee62a08') in 0.039886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.017814 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v2.prefab
+  artifactKey: Guid(3ce6cc08171cb014e8fa11cd824590a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v2.prefab using Guid(3ce6cc08171cb014e8fa11cd824590a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '159e098f9ccc6340b0e85654219e05ca') in 0.036425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001032 seconds.
+  path: Assets/GabrielAguiarProductions/Materials/Ground.mat
+  artifactKey: Guid(a8cf2a543d416384ea667f7eeda74ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Materials/Ground.mat using Guid(a8cf2a543d416384ea667f7eeda74ef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4cd5feb63ba3d7b49c3fb60e2c3a6a7') in 0.016347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.015362 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simple.prefab
+  artifactKey: Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_simple.prefab using Guid(d6fc1e3b067573d4e99d53f34553dfd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b903f2e706dc533a12ca8b93ebefc166') in 0.017892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001551 seconds.
+  path: Assets/GabrielAguiarProductions/Materials/Sky.mat
+  artifactKey: Guid(28bdf5580579db141aab2df149908772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Materials/Sky.mat using Guid(28bdf5580579db141aab2df149908772) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b3ba02224855fe2701945c3109366d') in 0.015751 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.007271 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v3.prefab
+  artifactKey: Guid(cefa8982aef09754880d1361805b16ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v3.prefab using Guid(cefa8982aef09754880d1361805b16ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3247f783c3fc5eeeab1e71d481315235') in 0.036382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000568 seconds.
+  path: Assets/GabrielAguiarProductions/Script/SimpleCameraController.cs
+  artifactKey: Guid(a0f5d41144a949a4692ead2ab8b6080f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Script/SimpleCameraController.cs using Guid(a0f5d41144a949a4692ead2ab8b6080f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41aedaa4497d2db9276f8d44fc45b472') in 0.017856 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002087 seconds.
+  path: Assets/GabrielAguiarProductions/Settings/UniversalRenderPipelineGlobalSettings.asset
+  artifactKey: Guid(38b35347542e5af4c9b140950c5b18db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Settings/UniversalRenderPipelineGlobalSettings.asset using Guid(38b35347542e5af4c9b140950c5b18db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b93d3c7d39e9ce9197668db816d2a35') in 0.008505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.018806 seconds.
+  path: Assets/GabrielAguiarProductions/Materials
+  artifactKey: Guid(e9d9f08e69c8ee443bae735589a9f9d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Materials using Guid(e9d9f08e69c8ee443bae735589a9f9d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912b2ce0be251a5e5f2d94397b4f921e') in 0.006070 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/GabrielAguiarProductions/Scenes
+  artifactKey: Guid(78ff50fcab250ac4394b103557e14d57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Scenes using Guid(78ff50fcab250ac4394b103557e14d57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b21aeb5e20de405985c5a20e53cbe041') in 0.005926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.009303 seconds.
+  path: Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v4.prefab
+  artifactKey: Guid(71ff6ee6c2fd81440af85204738fdda5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Prefabs/vfx_StylizedBeam_v4.prefab using Guid(71ff6ee6c2fd81440af85204738fdda5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04876c902b141dd0541941bf20b2b379') in 0.036495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.016806 seconds.
+  path: Assets/GabrielAguiarProductions/Textures
+  artifactKey: Guid(ab32fa3a08efc10478c7748b6eb6461b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Textures using Guid(ab32fa3a08efc10478c7748b6eb6461b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13a842f1f02da16dd6600f424b1e07e3') in 0.005682 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002601 seconds.
+  path: Assets/GabrielAguiarProductions/Settings/VFXDefaultResources.asset
+  artifactKey: Guid(1064e6fd442b29140a6d361687a0f7b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Settings/VFXDefaultResources.asset using Guid(1064e6fd442b29140a6d361687a0f7b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0756b724d258ad9ce6becb4ab41078c') in 0.031435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1232.278752 seconds.
+  path: Assets/GabrielAguiarProductions/Documentation_v1.pdf
+  artifactKey: Guid(1a2a0fda1a38cf24eb724987c4d48e92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GabrielAguiarProductions/Documentation_v1.pdf using Guid(1a2a0fda1a38cf24eb724987c4d48e92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '147b720dfd7dc5129ecd432e9a26a168') in 0.012044 seconds 

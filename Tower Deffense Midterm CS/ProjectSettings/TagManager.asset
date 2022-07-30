@@ -6,6 +6,10 @@ TagManager:
   tags:
   - LeftHand
   - RightHand
+  - FxTemporaire
+  - RedBullet
+  - Enemy
+  - laser
   layers:
   - Default
   - TransparentFX

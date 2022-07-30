@@ -21,6 +21,8 @@ public class WaveSpawner : MonoBehaviour
 
     public int waveIndex = 0;
 
+    public GameManager_TD gameManager_TD;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +62,8 @@ public class WaveSpawner : MonoBehaviour
 
         Wave_TD wave = waves[waveIndex];
 
+        enemiesAlive = wave.count;
+
         for (int i = 0; i < wave.count ; i++)
         {
             SpawnEnemy(wave.enemyPrefab);
@@ -70,6 +74,8 @@ public class WaveSpawner : MonoBehaviour
         if(waveIndex == waves.Length)
         {
             Debug.Log("YOU HAVE SURVIDED");
+
+            gameManager_TD.WinLevel();
             //TODO: Link this to a UI to display on the hand UI that you have completd the level. 
             this.enabled = false;
 
@@ -79,7 +85,6 @@ public class WaveSpawner : MonoBehaviour
 
      void SpawnEnemy(GameObject enemyPrefab)
     {
-        enemiesAlive++;
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
 
     }

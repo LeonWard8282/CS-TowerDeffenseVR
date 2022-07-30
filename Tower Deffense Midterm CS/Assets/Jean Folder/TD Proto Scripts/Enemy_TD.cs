@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy_TD : MonoBehaviour
 {
     public float speed = 10f;
 
@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     public int moneyGained = 50;
 
 
-    //public GameObject deathEffect; TODO:
+    public GameObject deathEffect; 
 
     [Header("Health Bar Dont Remove")]
     public Image healthBar;
@@ -46,8 +46,8 @@ public class EnemyMovement : MonoBehaviour
     private void Die()
     {
         //TODO: Attach an enemy Death effect
-        //GameObject death_Effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity); TODO
-        //Destroy(death_Effect, 5f);
+        GameObject death_Effect = (GameObject) Instantiate(deathEffect, transform.position, Quaternion.identity); 
+        Destroy(death_Effect, 5f);
         PlayerStats.Money += moneyGained;
         Debug.Log("Money gained1");
 

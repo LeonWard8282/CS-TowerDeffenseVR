@@ -53025,7 +53025,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1095201990}
-  levelbuttons: []
 --- !u!4 &1618810179
 Transform:
   m_ObjectHideFlags: 0
@@ -74485,11 +74484,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPC_Mech_LOD0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6044378610978946661, guid: e2e4a08fb7ee12c498517f71d6a10efe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e4a08fb7ee12c498517f71d6a10efe, type: 3}

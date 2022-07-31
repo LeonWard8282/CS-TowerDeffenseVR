@@ -89,7 +89,6 @@ public class Bullet_TD : MonoBehaviour
 
     void Damage(Transform enemyGO)
     {
-        //enemymovement is enemy type in script.... TODO :Fix this
         Enemy_TD e = enemyGO.GetComponent<Enemy_TD>();
 
         if (e!= null)

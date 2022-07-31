@@ -299,9 +299,9 @@ MonoBehaviour:
   m_AudioClipForOnHoverExited: {fileID: 0}
   m_PlayAudioClipOnHoverCanceled: 0
   m_AudioClipForOnHoverCanceled: {fileID: 0}
-  m_PlayHapticsOnSelectEntered: 0
-  m_HapticSelectEnterIntensity: 0
-  m_HapticSelectEnterDuration: 0
+  m_PlayHapticsOnSelectEntered: 1
+  m_HapticSelectEnterIntensity: 1
+  m_HapticSelectEnterDuration: 0.2
   m_PlayHapticsOnSelectExited: 0
   m_HapticSelectExitIntensity: 0
   m_HapticSelectExitDuration: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_SphereCastRadius: 0.1
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65343
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
@@ -868,9 +868,9 @@ MonoBehaviour:
   m_AudioClipForOnHoverExited: {fileID: 0}
   m_PlayAudioClipOnHoverCanceled: 0
   m_AudioClipForOnHoverCanceled: {fileID: 0}
-  m_PlayHapticsOnSelectEntered: 0
-  m_HapticSelectEnterIntensity: 0
-  m_HapticSelectEnterDuration: 0
+  m_PlayHapticsOnSelectEntered: 1
+  m_HapticSelectEnterIntensity: 1
+  m_HapticSelectEnterDuration: 0.2
   m_PlayHapticsOnSelectExited: 0
   m_HapticSelectExitIntensity: 0
   m_HapticSelectExitDuration: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_SphereCastRadius: 0.1
   m_RaycastMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65343
   m_RaycastTriggerInteraction: 1
   m_HitClosestOnly: 0
   m_HoverToSelect: 0
@@ -1415,11 +1415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   inputSource: 4
-  primaryButtonInputSource: 0
+  primaryButtonInputSource: 5
   gravity: -9.81
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 65536
   additionalHeight: 0.2
   jumpVelocity: 100
   isJumping: 0
@@ -2163,12 +2163,12 @@ PrefabInstance:
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.22857146
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.085714296
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
@@ -2178,37 +2178,37 @@ PrefabInstance:
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.4304594
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.4304594
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.5609855
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.5609855
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4917164244974130165, guid: 8b5ac6901924d43478a733467239c182,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5ac6901924d43478a733467239c182, type: 3}

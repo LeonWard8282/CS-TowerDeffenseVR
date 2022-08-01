@@ -22,10 +22,6 @@ public class Jetpack : MonoBehaviour
     //Reference our Character Controller on the Oculus prefab
     public CharacterController character;
 
-    public Rigidbody rb;
-
-    public ContinuousMovement ab;
-
     //Declare our new upwards velocity for the Jetpack
     public float liftVelocity = 100f;
 
@@ -38,6 +34,9 @@ public class Jetpack : MonoBehaviour
     private Handness m_hand = Handness.Right;
     private Handness m_hand2 = Handness.Left;
 
+    private string jetpackLeftButton;
+    private string jetpackRightButton;
+
     //Declare two floats to reference the float value of the Oculus hand triggers
     private float JetpackRight;
     private float JetpackLeft;
@@ -49,8 +48,8 @@ public class Jetpack : MonoBehaviour
     void Start()
     {
 
-        JetpackRight = Input.GetAxis("XRI_" + m_hand + "_GripButton");
-        JetpackLeft = Input.GetAxis("XRI_" + m_hand2 + "_GripButton");
+        jetpackLeftButton = "XRI_" + m_hand + "_GripButton";
+        jetpackRightButton = "XRI_" + m_hand2 + "_GripButton";
 
 
         //Set character to our Character Controller component
@@ -61,10 +60,10 @@ public class Jetpack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            flyTime = 5f;
-        //Continually re-declare our float values for JetpackLeft and JetpackRight
-        JetpackRight = Input.GetAxis("XRI_" + m_hand + "_GripButton");
-        JetpackLeft = Input.GetAxis("XRI_" + m_hand2 + "_GripButton");
+        //    flyTime = 5f;
+        ////Continually re-declare our float values for JetpackLeft and JetpackRight
+        //JetpackRight = Input.GetAxis("XRI_" + m_hand + "_GripButton");
+        //JetpackLeft = Input.GetAxis("XRI_" + m_hand2 + "_GripButton");
 
         //Call Jetpack function
         newJetpack();
@@ -86,11 +85,9 @@ public class Jetpack : MonoBehaviour
         }
 
         //Check to see if both hand triggers are grabbed
-        if (JetpackLeft > 0.9 && JetpackRight > 0.9 && fuel)
+        if (Input.GetButtonDown(jetpackLeftButton) && Input.GetButtonDown(jetpackRightButton) && fuel)
         {
             //Negate FallSpeed calculated in OVRPlayerController script
-            ab.GetComponent<DeviceBasedContinuousMoveProvider>().useGravity = false;
-            rb.GetComponent<Rigidbody>().useGravity = false;
 
             //Increment y velocity on our Vector3 to create upward velocity
             moveDirection.y += liftVelocity;
@@ -104,10 +101,8 @@ public class Jetpack : MonoBehaviour
 
         }
 
-        if(JetpackLeft < 0.9 && fuel && slowFall|| JetpackRight < 0.9 && fuel && slowFall)
+        if(Input.GetButtonDown(jetpackLeftButton) && Input.GetButtonDown(jetpackRightButton) && fuel && slowFall)
         {
-            ab.GetComponent<DeviceBasedContinuousMoveProvider>().useGravity = true;
-            rb.GetComponent<Rigidbody>().useGravity = true;
             moveDirection.y += fallVelocity;
         }
 
@@ -126,16 +121,11 @@ public class Jetpack : MonoBehaviour
         //If slowFall is still true (meaning we're still in the air) then negate the gravity equation from OVRPlayerController
         if (slowFall)
         {
-            //If you just add this line, you'll slowly drift down to the ground
-            ab.GetComponent<DeviceBasedContinuousMoveProvider>().useGravity = false;
-            rb.GetComponent<Rigidbody>().useGravity = false;
 
             //Add this if you want to fall faster once you run out of fuel
             if (!fuel)
             {
                 moveDirection.y += fallVelocity; //Fall velocity has to be a negative number
-               ab.GetComponent<DeviceBasedContinuousMoveProvider>().useGravity = true;
-                rb.GetComponent<Rigidbody>().useGravity = true;
             }
 
         }

@@ -7,6 +7,12 @@ public class GameManager_TD : MonoBehaviour
     public static bool GameIsOver;
     public GameObject gameOverUI;
 
+    public GameObject playerHealth_UI;
+    public GameObject waveCountDown_UI;
+    public GameObject livesCountDown_UI;
+    public GameObject money_UI;
+    public GameObject builderCanvas_UI;
+
     public string nextLevel = "Level02";
     public int levelToUnlock = 2;
 
@@ -40,6 +46,11 @@ public class GameManager_TD : MonoBehaviour
         Debug.Log("Game Over!");
 
         gameOverUI.SetActive(true);
+        waveCountDown_UI.SetActive(false);
+        livesCountDown_UI.SetActive(false);
+        money_UI.SetActive(false);
+        builderCanvas_UI.SetActive(false);
+
 
     }
 

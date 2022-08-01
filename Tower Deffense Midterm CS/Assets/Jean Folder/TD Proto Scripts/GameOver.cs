@@ -15,8 +15,8 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
-        //TODO Link this to Prototype scene. 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //SceneManger.LoadScene("Prototype Scene")
 
     }

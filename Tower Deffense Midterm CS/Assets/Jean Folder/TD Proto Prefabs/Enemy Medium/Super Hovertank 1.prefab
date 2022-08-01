@@ -14521,7 +14521,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4379824046344048}
-  - component: {fileID: 195793231520020778}
   - component: {fileID: 54954296514567692}
   - component: {fileID: 82464293457267712}
   - component: {fileID: 114348681867643788}
@@ -14553,28 +14552,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &195793231520020778
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271389358909432}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.45
-  m_Speed: 2
-  m_Acceleration: 20
-  avoidancePriority: 60
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 7
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &54954296514567692
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24344,7 +24321,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4926809754854304}
-  - component: {fileID: 114391716573485074}
   - component: {fileID: 135186272143134658}
   m_Layer: 11
   m_Name: Targetter
@@ -24368,26 +24344,6 @@ Transform:
   m_Father: {fileID: 4379824046344048}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114391716573485074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649051243634104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e4035901ee40bba7c0866d2c6338a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 4329195597445580}
-  turretXRotationRange: {x: 0, y: 359}
-  onlyYTurretRotation: 1
-  searchRate: 1
-  idleRotationSpeed: 0
-  idleCorrectionTime: 2
-  attachedCollider: {fileID: 135186272143134658}
-  idleWaitTime: 2
 --- !u!135 &135186272143134658
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -5,43 +5,36 @@ using UnityEngine.UI;
 
 public class UI_Toggler_TD : MonoBehaviour
 {
-    public GameObject  wristUI;
-    public bool toggle = true;
-    //public Canvas lives_CanvasWrist;
-    //public Canvas builder_CanvasShopWrist;
-    //public Canvas waveCountDownTimerWrist;
-    //public Canvas playerHealthUI;
-    
+    public GameObject playerHealth_UI;
+    public GameObject waveCountDown_UI;
+    public GameObject livesCountDown_UI;
+    public GameObject money_UI;
+    public GameObject builderCanvas_UI;
+
+
+    public bool isCanvasOn ;
+
     // Start is called before the first frame update
     void Start()
     {
-        //lives_CanvasWrist = GetComponent<Canvas>();
-        //builder_CanvasShopWrist = GetComponent<Canvas>();
-        //waveCountDownTimerWrist = GetComponent<Canvas>();
-        //playerHealthUI = GetComponent<Canvas>();
-        wristUI = this.gameObject;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        TogglingWristUI();
+      
     }
 
     public void TogglingWristUI()
     {
-
-
-        //lives_CanvasWrist.enabled = !lives_CanvasWrist;
-        //builder_CanvasShopWrist.enabled = !builder_CanvasShopWrist;
-        //waveCountDownTimerWrist.enabled = !waveCountDownTimerWrist;
-        //playerHealthUI.enabled = !playerHealthUI;
-
-        if(toggle =!toggle)
-        {
-            wristUI.SetActive(toggle);
-
-        }
+       
+        isCanvasOn = !isCanvasOn;
+        playerHealth_UI.SetActive(isCanvasOn);
+        waveCountDown_UI.SetActive(isCanvasOn);
+        livesCountDown_UI.SetActive(isCanvasOn);
+        money_UI.SetActive(isCanvasOn);
+        builderCanvas_UI.SetActive(isCanvasOn);
 
     }
 

@@ -1,6 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Tower Deffense Midterm CS/Assets/AA FINALIZED LEVELS.meta
 guid: 74df2763ac0e2364e8aa7c8110aa09a1
 folderAsset: yes
+========
+guid: c169d88fa687cde42a388b30aaca74f8
+>>>>>>>> origin/Jean-Branch-:Tower Deffense Midterm CS/Assets/SCI-FI UI Pack Pro/Asset Document.pdf.meta
+=======
+guid: d992789af011d9348918345e47848c65
+folderAsset: yes
+>>>>>>> origin/Jean-Branch-
 DefaultImporter:
   externalObjects: {}
   userData: 

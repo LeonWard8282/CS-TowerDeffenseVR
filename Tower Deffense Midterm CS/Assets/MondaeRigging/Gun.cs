@@ -46,7 +46,7 @@ public class Gun : MonoBehaviour
         initialBulletLimit = bulletLimit;
         initialLaserLimit = LaserLimit;
         m_ShootButton = "XRI_" + m_hand + "_TriggerButton";
-        m_laserButton = "XRI_" + m_hand2 + "_TriggerButton";
+        m_laserButton = "XRI_" + m_hand2 + "_SecondaryButton";
     }
     // Start is called before the first frame update
     public void Update()

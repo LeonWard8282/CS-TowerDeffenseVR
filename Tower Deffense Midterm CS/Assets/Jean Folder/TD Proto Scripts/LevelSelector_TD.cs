@@ -9,18 +9,18 @@ public class LevelSelector_TD : MonoBehaviour
 
     private void Start()
     {
-        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+        //int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
 
-        for (int i = 0; i < levelbuttons.Length; i++)
-        {
+        //for (int i = 0; i < levelbuttons.Length; i++)
+        //{
 
-            if(i + 1 < levelReached)
-            {
-                 levelbuttons[i].interactable = false;
+        //    if(i + 1 < levelReached)
+        //    {
+        //         levelbuttons[i].interactable = false;
 
-            }
-        }
+        //    }
+        //}
     }
 
 

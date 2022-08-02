@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 2975310735666699644}
   - component: {fileID: 9102616244950734432}
   - component: {fileID: 6116580167460044230}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 375134131401506614}
   - component: {fileID: 8273976658459706366}
   - component: {fileID: 5150088414223187628}
-  m_Layer: 5
+  m_Layer: 17
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5932788998789550454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.27, z: -6.0699997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2628,7 +2628,19 @@ MonoBehaviour:
       m_Calls: []
   right_2DAxis_Click:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1884815068}
+        m_TargetAssemblyTypeName: UI_Toggler_TD, Assembly-CSharp
+        m_MethodName: TogglingWristUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   right_2DAxisTouch:
     m_PersistentCalls:
       m_Calls: []
@@ -2683,7 +2695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5932788998853331951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.93, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2721,7 +2733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5932788998933763850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.065, z: -0.061}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4217,9 +4229,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b59191c5619d8fc4392cdccb71aad592, type: 3}
+--- !u!1 &2135812127856824577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2205048153119852410, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2731112209875092450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2800348746123171225, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4013380664089355154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3785396706011526633, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5226650181086908926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5454634207342823301, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6470021803878745280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6552782270330966715, guid: b59191c5619d8fc4392cdccb71aad592,
     type: 3}
   m_PrefabInstance: {fileID: 232509655328724603}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6712144286772632995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6781393983877123032, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8723707453558338258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8803094685434389673, guid: b59191c5619d8fc4392cdccb71aad592,
+    type: 3}
+  m_PrefabInstance: {fileID: 232509655328724603}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1884815068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8723707453558338258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfed618a36fa6f41bc35d285846ea3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth_UI: {fileID: 5226650181086908926}
+  waveCountDown_UI: {fileID: 2731112209875092450}
+  livesCountDown_UI: {fileID: 4013380664089355154}
+  money_UI: {fileID: 6712144286772632995}
+  builderCanvas_UI: {fileID: 2135812127856824577}
+  winLoseLock: 0
+  isCanvasOn: 0

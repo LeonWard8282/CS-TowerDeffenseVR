@@ -21,14 +21,12 @@ public class Gun : MonoBehaviour
     [SerializeField] private float m_shootForceLaser;
     [SerializeField] private Transform m_spawn;
     [SerializeField] public int bulletLimit;
-    [SerializeField] public int LaserLimit;
+    [SerializeField] public float LaserLimit;
     [SerializeField] public float m_bulletCooldown = 5f;
-    [SerializeField] private Transform m_spawnLaser;
-    [SerializeField] public int bulletLimitLaser;
     [SerializeField] public float m_bulletCooldownLaser = 10f;
 
     public int initialBulletLimit;
-    public int initialLaserLimit;
+    public float initialLaserLimit;
     public AudioSource source;
     public AudioClip fireSound;
 
@@ -44,8 +42,9 @@ public class Gun : MonoBehaviour
     {
         reloadingCanvas.SetActive(false);
         bulletLimit = 15;
-        LaserLimit = 100;
+        LaserLimit = 30;
         initialBulletLimit = bulletLimit;
+        initialLaserLimit = LaserLimit;
         m_ShootButton = "XRI_" + m_hand + "_TriggerButton";
         m_laserButton = "XRI_" + m_hand2 + "_TriggerButton";
     }
@@ -75,19 +74,22 @@ public class Gun : MonoBehaviour
         {
             if (LaserAvailable == true)
             {
-                GameObject laser = Instantiate(m_prefabLaser, m_spawnLaser.position, m_spawnLaser.rotation);
-                bulletLimitLaser -= 1;
-                if (bulletLimitLaser <= 0)
+                m_prefabLaser.SetActive(true);
+                LaserLimit -= 1 * Time.deltaTime;
+                if (LaserLimit <= 0)
                 {
                     LaserAvailable = false;
                     StartCoroutine(LaserReloadTimer());
                 }
-                laser.GetComponent<Rigidbody>().AddForce(m_shootForceLaser * m_spawnLaser.forward);
                 if (!source.isPlaying)
                 {
                     source.PlayOneShot(fireSound);
                 }
             }
+        }
+        if (Input.GetButtonUp(m_laserButton))
+        {
+            m_prefabLaser.SetActive(false);
         }
     }
 
@@ -106,6 +108,7 @@ public class Gun : MonoBehaviour
     }
     private IEnumerator LaserReloadTimer()
     {
+        m_prefabLaser.SetActive(false);
         rechargingCanvas.SetActive(true);
         if (!reloading.isPlaying)
         {
@@ -115,6 +118,6 @@ public class Gun : MonoBehaviour
         rechargingCanvas.SetActive(false);
         reloading.Stop();
         LaserAvailable = true;
-        initialLaserLimit = initialBulletLimit;
+        LaserLimit = initialLaserLimit;
     }
 }

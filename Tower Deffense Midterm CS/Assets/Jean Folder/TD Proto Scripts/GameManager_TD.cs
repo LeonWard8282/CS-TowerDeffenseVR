@@ -8,6 +8,7 @@ public class GameManager_TD : MonoBehaviour
     public static bool GameIsOver;
     public GameObject gameOverUI;
     public GameObject Winning_UI;
+    public PausedMenue Pause;
  
 
     public string nextLevel = "Level02";
@@ -44,7 +45,8 @@ public class GameManager_TD : MonoBehaviour
 
     
         toggle.GameWonOrLose();
-
+        gameOverUI.SetActive(true);
+        Pause.Toggle();
 
     }
 
@@ -55,6 +57,7 @@ public class GameManager_TD : MonoBehaviour
         //sceneFader.FadeTo(nextLevel);
         Winning_UI.SetActive(true);
         toggle.GameWonOrLose();
+
     }
 
 }

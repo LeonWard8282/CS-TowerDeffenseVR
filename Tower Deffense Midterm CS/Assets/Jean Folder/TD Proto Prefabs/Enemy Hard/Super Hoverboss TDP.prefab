@@ -5063,8 +5063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f5106deac3dbe49928ec918900b2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  startHealth: 200
+  speed: 4
+  startHealth: 500
   moneyGained: 150
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
     type: 3}

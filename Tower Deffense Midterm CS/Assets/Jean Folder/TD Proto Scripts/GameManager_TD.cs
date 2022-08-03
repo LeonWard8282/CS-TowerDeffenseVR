@@ -43,10 +43,10 @@ public class GameManager_TD : MonoBehaviour
         GameIsOver = true;
         Debug.Log("Game Over!");
 
-    
+        
         toggle.GameWonOrLose();
         gameOverUI.SetActive(true);
-        Pause.Toggle();
+        Time.timeScale = 0f;
 
     }
 
@@ -55,8 +55,9 @@ public class GameManager_TD : MonoBehaviour
         Debug.Log("Level Won!!!");
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
         //sceneFader.FadeTo(nextLevel);
-        Winning_UI.SetActive(true);
         toggle.GameWonOrLose();
+        Winning_UI.SetActive(true);
+        Time.timeScale = 0f;
 
     }
 

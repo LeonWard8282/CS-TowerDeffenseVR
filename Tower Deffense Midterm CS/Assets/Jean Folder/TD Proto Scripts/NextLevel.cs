@@ -15,4 +15,14 @@ public class NextLevel : MonoBehaviour
     {
         
     }
+
+
+    public void ContinueToNextLevel()
+    {
+
+
+
+    }
+
 }
+

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.66880584, g: 0.56764585, b: 0.53452784, a: 1}
+  m_IndirectSpecularColor: {r: 0.40484354, g: 0.28208035, b: 0.24740277, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8011,7 +8011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &385311230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53010,7 +53010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fader: {fileID: 1095201990}
   levelbuttons:
-  - {fileID: 0}
+  - {fileID: 1146648967}
 --- !u!4 &1618810179
 Transform:
   m_ObjectHideFlags: 0

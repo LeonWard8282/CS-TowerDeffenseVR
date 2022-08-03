@@ -29027,7 +29027,7 @@ GameObject:
   - component: {fileID: 136043246709112900}
   - component: {fileID: 8036894557294498289}
   m_Layer: 14
-  m_Name: Super Hovercopter 1
+  m_Name: Medium Hover Copt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29226,7 +29226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f5106deac3dbe49928ec918900b2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 16
+  speed: 10
   startHealth: 25
   moneyGained: 12
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,

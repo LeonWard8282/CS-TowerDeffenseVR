@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class PausedMenue : MonoBehaviour
 {
     public GameObject userInterFacePauseMenue;
-
+    public string MainMenueScene;
+    public string LevelOneScene;
+    public bool StartTime;
 
     private void Update()
     {
@@ -25,10 +27,11 @@ public class PausedMenue : MonoBehaviour
     {
         userInterFacePauseMenue.SetActive(!userInterFacePauseMenue.activeSelf);
 
-        if(userInterFacePauseMenue.activeSelf)
+        if (userInterFacePauseMenue.activeSelf)
         {
-            Time.timeScale = 0f;
             
+            Time.timeScale = 0f;
+
 
 
         }
@@ -43,16 +46,31 @@ public class PausedMenue : MonoBehaviour
 
     public void Retry()
     {
-        Toggle();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if(Time.timeScale == 0)
+        {
+            PlayerStats.Rounds = 0;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
+
+        else
+        {
+            PlayerStats.Rounds = 0;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
 
 
     }
 
     public void Menu()
     {
-
-        Debug.Log("Go to Menue");
+        
+        SceneManager.LoadScene(MainMenueScene);
+        Time.timeScale = 1f;
     }
 
 

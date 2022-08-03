@@ -14527,7 +14527,7 @@ GameObject:
   - component: {fileID: 65159708320296242}
   - component: {fileID: 8612095811679728941}
   m_Layer: 11
-  m_Name: Super Hovertank 1
+  m_Name: Medium Tank
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14704,7 +14704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  startHealth: 125
+  startHealth: 200
   moneyGained: 50
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
     type: 3}

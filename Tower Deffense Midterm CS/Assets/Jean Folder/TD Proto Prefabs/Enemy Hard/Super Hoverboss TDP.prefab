@@ -4879,7 +4879,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4527377347391372}
-  - component: {fileID: 195757057196411538}
   - component: {fileID: 54943286195798258}
   - component: {fileID: 82428518445736458}
   - component: {fileID: 114193652483182726}
@@ -4912,28 +4911,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &195757057196411538
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300474929184216}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.6
-  m_Speed: 1.2
-  m_Acceleration: 20
-  avoidancePriority: 50
-  m_AngularSpeed: 360
-  m_StoppingDistance: 0.2
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0
-  m_WalkableMask: 7
-  m_ObstacleAvoidanceType: 4
 --- !u!54 &54943286195798258
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5068,12 +5045,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300474929184216}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2936322507739860577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5086,9 +5063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f5106deac3dbe49928ec918900b2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  startHealth: 300
+  speed: 5
+  startHealth: 200
   moneyGained: 150
+  deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
+    type: 3}
   healthBar: {fileID: 2477495222993408035}
 --- !u!1 &1341545582985454
 GameObject:
@@ -39517,7 +39496,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4175779797794324}
-  - component: {fileID: 114560507477559634}
   - component: {fileID: 135178550783613698}
   m_Layer: 11
   m_Name: Targetter
@@ -39541,26 +39519,6 @@ Transform:
   m_Father: {fileID: 4527377347391372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114560507477559634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1937591702967222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e4035901ee40bba7c0866d2c6338a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 4509685366740576}
-  turretXRotationRange: {x: 0, y: 359}
-  onlyYTurretRotation: 1
-  searchRate: 1
-  idleRotationSpeed: 0
-  idleCorrectionTime: 2
-  attachedCollider: {fileID: 135178550783613698}
-  idleWaitTime: 2
 --- !u!135 &135178550783613698
 SphereCollider:
   m_ObjectHideFlags: 0

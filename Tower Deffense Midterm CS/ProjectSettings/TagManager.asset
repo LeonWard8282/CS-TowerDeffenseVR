@@ -6,6 +6,10 @@ TagManager:
   tags:
   - LeftHand
   - RightHand
+  - FxTemporaire
+  - RedBullet
+  - Enemy
+  - laser
   layers:
   - Default
   - TransparentFX
@@ -13,7 +17,7 @@ TagManager:
   - head
   - Water
   - UI
-  - 
+  - laser
   - 
   - PlacementLayer
   - PlacementGhosts
@@ -23,7 +27,7 @@ TagManager:
   - EnemyProjectiles
   - FlyingEnemies
   - GroundEnemyTargettingProjectiles
-  - 
+  - Ground
   - 
   - 
   - 

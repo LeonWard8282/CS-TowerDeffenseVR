@@ -193,9 +193,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61f5106deac3dbe49928ec918900b2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 4
   startHealth: 50
   moneyGained: 50
+  deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
+    type: 3}
   healthBar: {fileID: 2990601533112728387}
 --- !u!1001 &3721409368021363947
 PrefabInstance:

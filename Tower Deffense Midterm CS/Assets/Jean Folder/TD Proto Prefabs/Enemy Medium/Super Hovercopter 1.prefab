@@ -29229,6 +29229,8 @@ MonoBehaviour:
   speed: 16
   startHealth: 25
   moneyGained: 12
+  deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
+    type: 3}
   healthBar: {fileID: 6673639940284777896}
 --- !u!1 &1614495679255888
 GameObject:

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; 
+
 
 public class Nodo : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Nodo : MonoBehaviour
 
     BuildManager buildManager;
 
-
+    public InputActionProperty OnBButtonSelect;
 
     void Start()
     {

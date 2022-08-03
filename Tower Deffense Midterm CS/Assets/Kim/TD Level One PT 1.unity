@@ -826,6 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 306613607}
+  levelbuttons: []
 --- !u!4 &261238329
 Transform:
   m_ObjectHideFlags: 0
@@ -6997,7 +6998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.0699999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
       propertyPath: m_LocalPosition.z

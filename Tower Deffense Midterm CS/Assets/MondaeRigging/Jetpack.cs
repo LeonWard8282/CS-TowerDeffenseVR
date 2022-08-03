@@ -90,7 +90,7 @@ public class Jetpack : MonoBehaviour
             //Negate FallSpeed calculated in OVRPlayerController script
 
             //Increment y velocity on our Vector3 to create upward velocity
-            moveDirection.y += liftVelocity;
+            character.Move(Vector3.up * liftVelocity * Time.fixedDeltaTime);
 
             //Set slowFall to true 
             slowFall = true;

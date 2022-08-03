@@ -1,7 +1,12 @@
 fileFormatVersion: 2
-guid: 346d596108198834195719147e06ed4f
+<<<<<<<< HEAD:Tower Deffense Midterm CS/Assets/CyberCity/_HDRP.meta
+guid: 3364295acde09974e9ab78cd1e89253e
 folderAsset: yes
 timeCreated: 1558912352
+========
+guid: 3d83bc5ac11765f469f04823b36470eb
+timeCreated: 1496673004
+>>>>>>>> origin/Jean-Branch-:Tower Deffense Midterm CS/Assets/Jean Folder/TD_Level One 1.unity.meta
 licenseType: Store
 DefaultImporter:
   userData: 

@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: 43d9187d6f1cb3e4bb0315687b9dff81
+<<<<<<<< HEAD:Tower Deffense Midterm CS/Assets/#OnePotatoKingdom_FULL/Materials/Materials/Earth_Like/Earth-Like_Designs7/Base_Earth-Like.mat.meta
+guid: fe931a925fd4d384989eef10763c14a7
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+========
+guid: 5cc1bc244d53ea34e8afb7c2cf08bee1
+timeCreated: 1499778900
+licenseType: Store
+DefaultImporter:
+>>>>>>>> origin/Jean-Branch-:Tower Deffense Midterm CS/Assets/Jean Folder/TD Main Menue 1.unity.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

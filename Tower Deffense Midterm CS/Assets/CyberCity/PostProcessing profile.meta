@@ -1,7 +1,12 @@
 fileFormatVersion: 2
-guid: 5c209e9e38a154a408aa7b067a02dd3d
+<<<<<<<< HEAD:Tower Deffense Midterm CS/Assets/CyberCity/PostProcessing profile.meta
+guid: edf926b8830ccbf4898791937b0902a4
 folderAsset: yes
 timeCreated: 1528244862
+========
+guid: aa1037c4de98cc144b3b51074b7e3010
+timeCreated: 1561181463
+>>>>>>>> origin/Jean-Branch-:Tower Deffense Midterm CS/Assets/SCI-FI UI Pack Pro/SCI-FI UI Pack_V1 Pro(Blue)/Scenes/Demo Scene V1(Blue).unity.meta
 licenseType: Store
 DefaultImporter:
   userData: 

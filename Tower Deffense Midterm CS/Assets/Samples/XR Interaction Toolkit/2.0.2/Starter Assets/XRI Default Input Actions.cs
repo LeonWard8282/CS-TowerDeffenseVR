@@ -818,6 +818,15 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Wrist UI Toggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8170112-42d4-46c7-9c26-212846ba2cd5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -996,6 +1005,17 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""action"": ""Translate Anchor"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5907776-dc31-4c73-b13e-386aa8527512"",
+                    ""path"": ""<XRController>{RightHand}/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Generic XR Controller"",
+                    ""action"": ""Wrist UI Toggle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1201,6 +1221,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIRightHandInteraction_UIPressValue = m_XRIRightHandInteraction.FindAction("UI Press Value", throwIfNotFound: true);
         m_XRIRightHandInteraction_RotateAnchor = m_XRIRightHandInteraction.FindAction("Rotate Anchor", throwIfNotFound: true);
         m_XRIRightHandInteraction_TranslateAnchor = m_XRIRightHandInteraction.FindAction("Translate Anchor", throwIfNotFound: true);
+        m_XRIRightHandInteraction_WristUIToggle = m_XRIRightHandInteraction.FindAction("Wrist UI Toggle", throwIfNotFound: true);
         // XRI RightHand Locomotion
         m_XRIRightHandLocomotion = asset.FindActionMap("XRI RightHand Locomotion", throwIfNotFound: true);
         m_XRIRightHandLocomotion_TeleportSelect = m_XRIRightHandLocomotion.FindAction("Teleport Select", throwIfNotFound: true);
@@ -1584,6 +1605,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
     private readonly InputAction m_XRIRightHandInteraction_UIPressValue;
     private readonly InputAction m_XRIRightHandInteraction_RotateAnchor;
     private readonly InputAction m_XRIRightHandInteraction_TranslateAnchor;
+    private readonly InputAction m_XRIRightHandInteraction_WristUIToggle;
     public struct XRIRightHandInteractionActions
     {
         private @XRIDefaultInputActions m_Wrapper;
@@ -1596,6 +1618,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         public InputAction @UIPressValue => m_Wrapper.m_XRIRightHandInteraction_UIPressValue;
         public InputAction @RotateAnchor => m_Wrapper.m_XRIRightHandInteraction_RotateAnchor;
         public InputAction @TranslateAnchor => m_Wrapper.m_XRIRightHandInteraction_TranslateAnchor;
+        public InputAction @WristUIToggle => m_Wrapper.m_XRIRightHandInteraction_WristUIToggle;
         public InputActionMap Get() { return m_Wrapper.m_XRIRightHandInteraction; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1629,6 +1652,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @TranslateAnchor.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
                 @TranslateAnchor.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnTranslateAnchor;
+                @WristUIToggle.started -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnWristUIToggle;
+                @WristUIToggle.performed -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnWristUIToggle;
+                @WristUIToggle.canceled -= m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface.OnWristUIToggle;
             }
             m_Wrapper.m_XRIRightHandInteractionActionsCallbackInterface = instance;
             if (instance != null)
@@ -1657,6 +1683,9 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                 @TranslateAnchor.started += instance.OnTranslateAnchor;
                 @TranslateAnchor.performed += instance.OnTranslateAnchor;
                 @TranslateAnchor.canceled += instance.OnTranslateAnchor;
+                @WristUIToggle.started += instance.OnWristUIToggle;
+                @WristUIToggle.performed += instance.OnWristUIToggle;
+                @WristUIToggle.canceled += instance.OnWristUIToggle;
             }
         }
     }
@@ -1801,6 +1830,7 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnUIPressValue(InputAction.CallbackContext context);
         void OnRotateAnchor(InputAction.CallbackContext context);
         void OnTranslateAnchor(InputAction.CallbackContext context);
+        void OnWristUIToggle(InputAction.CallbackContext context);
     }
     public interface IXRIRightHandLocomotionActions
     {

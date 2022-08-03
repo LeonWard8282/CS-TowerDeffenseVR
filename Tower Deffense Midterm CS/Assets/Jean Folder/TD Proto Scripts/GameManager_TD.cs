@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class GameManager_TD : MonoBehaviour
 {
+    public UI_Toggler_TD toggle;
     public static bool GameIsOver;
     public GameObject gameOverUI;
-
-    public GameObject playerHealth_UI;
-    public GameObject waveCountDown_UI;
-    public GameObject livesCountDown_UI;
-    public GameObject money_UI;
-    public GameObject builderCanvas_UI;
+    public GameObject Winning_UI;
+    public PausedMenue Pause;
+ 
 
     public string nextLevel = "Level02";
-    public int levelToUnlock = 2;
+    public int levelToUnlock = 1;
 
     public SceneFader sceneFader;
 
@@ -45,12 +43,10 @@ public class GameManager_TD : MonoBehaviour
         GameIsOver = true;
         Debug.Log("Game Over!");
 
+    
+        toggle.GameWonOrLose();
         gameOverUI.SetActive(true);
-        waveCountDown_UI.SetActive(false);
-        livesCountDown_UI.SetActive(false);
-        money_UI.SetActive(false);
-        builderCanvas_UI.SetActive(false);
-
+        Pause.Toggle();
 
     }
 
@@ -58,7 +54,10 @@ public class GameManager_TD : MonoBehaviour
     {
         Debug.Log("Level Won!!!");
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
-        sceneFader.FadeTo(nextLevel);
+        //sceneFader.FadeTo(nextLevel);
+        Winning_UI.SetActive(true);
+        toggle.GameWonOrLose();
+
     }
 
 }

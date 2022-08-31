@@ -33,7 +33,22 @@ public class Turret : MonoBehaviour
     public ParticleSystem impactEffect;
     public Light impactLight;
 
-     void Start()
+    private void Awake()
+    {
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
+    }
+
+    void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }

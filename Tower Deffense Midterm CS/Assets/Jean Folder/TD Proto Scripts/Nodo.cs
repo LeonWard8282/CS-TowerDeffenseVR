@@ -28,7 +28,23 @@ public class Nodo : MonoBehaviour
 
     BuildManager buildManager;
 
-    public InputActionProperty OnBButtonSelect;
+    //public InputActionProperty OnBButtonSelect;
+    public InputActionReference onBButtonPressed;
+
+    private void Awake()
+    {
+        onBButtonPressed.action.started += rightbButtonPressed;
+
+    }
+    private void OnDestroy()
+    {
+        onBButtonPressed.action.started += rightbButtonPressed;
+    }
+   
+    private void rightbButtonPressed(InputAction.CallbackContext context)
+    {
+        OnButtonPressActivation();
+    }
 
     void Start()
     {

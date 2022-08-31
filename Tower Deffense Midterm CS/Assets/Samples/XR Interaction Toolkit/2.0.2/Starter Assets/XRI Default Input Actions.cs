@@ -1115,6 +1115,142 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""XRI RightHand ButtonPress"",
+            ""id"": ""d5e01fc8-d53f-45b0-be2e-6385e887f354"",
+            ""actions"": [
+                {
+                    ""name"": ""PrimaryButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""2c9bbde2-1c3d-447d-bb88-53a8e3cee234"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondaryButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""c072025d-1cb0-486c-ba40-eccbf560ef2f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""12bb6830-6cdd-474b-a830-af2421e5f960"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e9421e33-bc0e-477d-97f4-a4997b7f6db6"",
+                    ""path"": ""<XRController>/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2310a514-a73f-4974-8c31-864f6f6b8aef"",
+                    ""path"": ""<XRController>/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondaryButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bccf807a-614d-4520-82fa-d49aaef7df27"",
+                    ""path"": ""<XRController>/thumbstickClicked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""XRI LeftHand ButtonPress"",
+            ""id"": ""106847ed-b2d1-47bd-bf88-af790137ad54"",
+            ""actions"": [
+                {
+                    ""name"": ""PrimaryButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""0614ade4-f56c-42e8-a343-ab04159300c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondaryButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""14f8803c-a16d-4dfd-b2df-b307a21d5423"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleButtonPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""ba6df593-1ba5-4773-81da-8851c0396418"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7fe74fc6-8432-4d18-a0d2-b9dde7a03667"",
+                    ""path"": ""<XRController>/primaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee316bb6-63a9-46ae-a4d0-d9fa40f81e45"",
+                    ""path"": ""<XRController>/secondaryButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondaryButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0662cc0-2921-4c3f-abbd-b0e0227408e4"",
+                    ""path"": ""<XRController>/thumbstickClicked"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleButtonPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1229,6 +1365,16 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         m_XRIRightHandLocomotion_TeleportModeCancel = m_XRIRightHandLocomotion.FindAction("Teleport Mode Cancel", throwIfNotFound: true);
         m_XRIRightHandLocomotion_Turn = m_XRIRightHandLocomotion.FindAction("Turn", throwIfNotFound: true);
         m_XRIRightHandLocomotion_Move = m_XRIRightHandLocomotion.FindAction("Move", throwIfNotFound: true);
+        // XRI RightHand ButtonPress
+        m_XRIRightHandButtonPress = asset.FindActionMap("XRI RightHand ButtonPress", throwIfNotFound: true);
+        m_XRIRightHandButtonPress_PrimaryButtonPressed = m_XRIRightHandButtonPress.FindAction("PrimaryButtonPressed", throwIfNotFound: true);
+        m_XRIRightHandButtonPress_SecondaryButtonPressed = m_XRIRightHandButtonPress.FindAction("SecondaryButtonPressed", throwIfNotFound: true);
+        m_XRIRightHandButtonPress_ToggleButtonPressed = m_XRIRightHandButtonPress.FindAction("ToggleButtonPressed", throwIfNotFound: true);
+        // XRI LeftHand ButtonPress
+        m_XRILeftHandButtonPress = asset.FindActionMap("XRI LeftHand ButtonPress", throwIfNotFound: true);
+        m_XRILeftHandButtonPress_PrimaryButtonPressed = m_XRILeftHandButtonPress.FindAction("PrimaryButtonPressed", throwIfNotFound: true);
+        m_XRILeftHandButtonPress_SecondaryButtonPressed = m_XRILeftHandButtonPress.FindAction("SecondaryButtonPressed", throwIfNotFound: true);
+        m_XRILeftHandButtonPress_ToggleButtonPressed = m_XRILeftHandButtonPress.FindAction("ToggleButtonPressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1755,6 +1901,104 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         }
     }
     public XRIRightHandLocomotionActions @XRIRightHandLocomotion => new XRIRightHandLocomotionActions(this);
+
+    // XRI RightHand ButtonPress
+    private readonly InputActionMap m_XRIRightHandButtonPress;
+    private IXRIRightHandButtonPressActions m_XRIRightHandButtonPressActionsCallbackInterface;
+    private readonly InputAction m_XRIRightHandButtonPress_PrimaryButtonPressed;
+    private readonly InputAction m_XRIRightHandButtonPress_SecondaryButtonPressed;
+    private readonly InputAction m_XRIRightHandButtonPress_ToggleButtonPressed;
+    public struct XRIRightHandButtonPressActions
+    {
+        private @XRIDefaultInputActions m_Wrapper;
+        public XRIRightHandButtonPressActions(@XRIDefaultInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PrimaryButtonPressed => m_Wrapper.m_XRIRightHandButtonPress_PrimaryButtonPressed;
+        public InputAction @SecondaryButtonPressed => m_Wrapper.m_XRIRightHandButtonPress_SecondaryButtonPressed;
+        public InputAction @ToggleButtonPressed => m_Wrapper.m_XRIRightHandButtonPress_ToggleButtonPressed;
+        public InputActionMap Get() { return m_Wrapper.m_XRIRightHandButtonPress; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(XRIRightHandButtonPressActions set) { return set.Get(); }
+        public void SetCallbacks(IXRIRightHandButtonPressActions instance)
+        {
+            if (m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface != null)
+            {
+                @PrimaryButtonPressed.started -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.performed -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.canceled -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @SecondaryButtonPressed.started -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.performed -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.canceled -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @ToggleButtonPressed.started -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+                @ToggleButtonPressed.performed -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+                @ToggleButtonPressed.canceled -= m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+            }
+            m_Wrapper.m_XRIRightHandButtonPressActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PrimaryButtonPressed.started += instance.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.performed += instance.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.canceled += instance.OnPrimaryButtonPressed;
+                @SecondaryButtonPressed.started += instance.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.performed += instance.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.canceled += instance.OnSecondaryButtonPressed;
+                @ToggleButtonPressed.started += instance.OnToggleButtonPressed;
+                @ToggleButtonPressed.performed += instance.OnToggleButtonPressed;
+                @ToggleButtonPressed.canceled += instance.OnToggleButtonPressed;
+            }
+        }
+    }
+    public XRIRightHandButtonPressActions @XRIRightHandButtonPress => new XRIRightHandButtonPressActions(this);
+
+    // XRI LeftHand ButtonPress
+    private readonly InputActionMap m_XRILeftHandButtonPress;
+    private IXRILeftHandButtonPressActions m_XRILeftHandButtonPressActionsCallbackInterface;
+    private readonly InputAction m_XRILeftHandButtonPress_PrimaryButtonPressed;
+    private readonly InputAction m_XRILeftHandButtonPress_SecondaryButtonPressed;
+    private readonly InputAction m_XRILeftHandButtonPress_ToggleButtonPressed;
+    public struct XRILeftHandButtonPressActions
+    {
+        private @XRIDefaultInputActions m_Wrapper;
+        public XRILeftHandButtonPressActions(@XRIDefaultInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @PrimaryButtonPressed => m_Wrapper.m_XRILeftHandButtonPress_PrimaryButtonPressed;
+        public InputAction @SecondaryButtonPressed => m_Wrapper.m_XRILeftHandButtonPress_SecondaryButtonPressed;
+        public InputAction @ToggleButtonPressed => m_Wrapper.m_XRILeftHandButtonPress_ToggleButtonPressed;
+        public InputActionMap Get() { return m_Wrapper.m_XRILeftHandButtonPress; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(XRILeftHandButtonPressActions set) { return set.Get(); }
+        public void SetCallbacks(IXRILeftHandButtonPressActions instance)
+        {
+            if (m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface != null)
+            {
+                @PrimaryButtonPressed.started -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.performed -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.canceled -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnPrimaryButtonPressed;
+                @SecondaryButtonPressed.started -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.performed -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.canceled -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnSecondaryButtonPressed;
+                @ToggleButtonPressed.started -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+                @ToggleButtonPressed.performed -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+                @ToggleButtonPressed.canceled -= m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface.OnToggleButtonPressed;
+            }
+            m_Wrapper.m_XRILeftHandButtonPressActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @PrimaryButtonPressed.started += instance.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.performed += instance.OnPrimaryButtonPressed;
+                @PrimaryButtonPressed.canceled += instance.OnPrimaryButtonPressed;
+                @SecondaryButtonPressed.started += instance.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.performed += instance.OnSecondaryButtonPressed;
+                @SecondaryButtonPressed.canceled += instance.OnSecondaryButtonPressed;
+                @ToggleButtonPressed.started += instance.OnToggleButtonPressed;
+                @ToggleButtonPressed.performed += instance.OnToggleButtonPressed;
+                @ToggleButtonPressed.canceled += instance.OnToggleButtonPressed;
+            }
+        }
+    }
+    public XRILeftHandButtonPressActions @XRILeftHandButtonPress => new XRILeftHandButtonPressActions(this);
     private int m_GenericXRControllerSchemeIndex = -1;
     public InputControlScheme GenericXRControllerScheme
     {
@@ -1839,5 +2083,17 @@ public partial class @XRIDefaultInputActions : IInputActionCollection2, IDisposa
         void OnTeleportModeCancel(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
+    }
+    public interface IXRIRightHandButtonPressActions
+    {
+        void OnPrimaryButtonPressed(InputAction.CallbackContext context);
+        void OnSecondaryButtonPressed(InputAction.CallbackContext context);
+        void OnToggleButtonPressed(InputAction.CallbackContext context);
+    }
+    public interface IXRILeftHandButtonPressActions
+    {
+        void OnPrimaryButtonPressed(InputAction.CallbackContext context);
+        void OnSecondaryButtonPressed(InputAction.CallbackContext context);
+        void OnToggleButtonPressed(InputAction.CallbackContext context);
     }
 }

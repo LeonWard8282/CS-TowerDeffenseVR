@@ -17,7 +17,18 @@ public class GameManager_TD : MonoBehaviour
     public SceneFader sceneFader;
 
 
-     void Start()
+     void Awake()
+    {
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+
+     void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+
+    void Start()
     {
         GameIsOver = false;
     }
@@ -60,6 +71,12 @@ public class GameManager_TD : MonoBehaviour
         Time.timeScale = 0f;
 
     }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
+    }
+
 
 }
 

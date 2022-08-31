@@ -118,6 +118,26 @@ MonoBehaviour:
   highLightedMaterial: {fileID: 2100000, guid: c6a5181c39f2ce4408030b9c2d1b47e2, type: 2}
   positionOffset: {x: 0, y: 0, z: 0}
   turret: {fileID: 0}
+  turretBluePrint:
+    prefab: {fileID: 0}
+    cost: 0
+    upgradedPrefab: {fileID: 0}
+    upgradeCost: 0
+  isUpgraded: 0
+  OnBButtonSelect:
+    m_UseReference: 0
+    m_Action:
+      m_Name: On B Button Select
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 98fb92d1-2429-4b8d-a022-064296f902c1
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  onBButtonPressed: {fileID: 5606184606078056458, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!114 &5485127113600271601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4956435778711892973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8924588921177148295}
   - component: {fileID: 426132091765592468}
   - component: {fileID: 8688705171088316856}
+  - component: {fileID: 1949800901661644991}
   m_Layer: 10
   m_Name: LTower_0
   m_TagString: Untagged
@@ -161,6 +162,22 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!208 &1949800901661644991
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921635429843046515}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.75, y: 0.75, z: 0.75}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.8, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8921749268814355025
 GameObject:
   m_ObjectHideFlags: 0
@@ -29266,8 +29283,6 @@ GameObject:
   - component: {fileID: 8725229151349721847}
   - component: {fileID: 8724032681957085921}
   - component: {fileID: 8859146283711928947}
-  - component: {fileID: 8809425734746905199}
-  - component: {fileID: 8809709677182835785}
   m_Layer: 0
   m_Name: LaserFireEffect
   m_TagString: Untagged
@@ -34054,37 +34069,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &8809425734746905199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922422285379464037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11f03a17effc4238ba95c5b616ee02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-    weightedItems:
-    - clip: {fileID: 8300000, guid: f7f2b958b23574551b561f7e871a8306, type: 3}
-      weight: 1
-  playOnEnabled: 0
---- !u!114 &8809709677182835785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8922422285379464037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1b3950d58247008c0834d7e945fa91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultParticles: {fileID: 8725427576240013137}
-  mobileParticles: {fileID: 8749327148341721045}
 --- !u!1 &8923799214798441933
 GameObject:
   m_ObjectHideFlags: 0

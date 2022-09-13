@@ -18,8 +18,8 @@ public class AgentLinkMover : MonoBehaviour
 
     //Addting this to the scriptprovided
     public delegate void LinkEvent();
-    //public LinkEvent OnLinkStart();
-    //public LinkEvent OnLinkEnd();
+    public LinkEvent OnLinkStart;
+    public LinkEvent OnLinkEnd;
 
     IEnumerator Start()
     {
@@ -29,7 +29,7 @@ public class AgentLinkMover : MonoBehaviour
         {
             if (agent.isOnOffMeshLink)
             {
-                //OnLinkStart?.Invoke();
+                OnLinkStart?.Invoke();
                 if (m_Method == OffMeshLinkMoveMethod.NormalSpeed)
                 {
                     yield return StartCoroutine(NormalSpeed(agent));
@@ -42,7 +42,7 @@ public class AgentLinkMover : MonoBehaviour
                 {
                     yield return StartCoroutine(Curve(agent, 0.5f));
                 }
-                //OnLinkEnd?.Invoke();
+                OnLinkEnd?.Invoke();
                 agent.CompleteOffMeshLink();
             }
             yield return null;

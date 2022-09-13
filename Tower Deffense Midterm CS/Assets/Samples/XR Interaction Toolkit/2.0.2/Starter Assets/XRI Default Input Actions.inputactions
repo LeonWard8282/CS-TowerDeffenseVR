@@ -1093,6 +1093,142 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "XRI RightHand ButtonPress",
+            "id": "d5e01fc8-d53f-45b0-be2e-6385e887f354",
+            "actions": [
+                {
+                    "name": "PrimaryButtonPressed",
+                    "type": "Button",
+                    "id": "2c9bbde2-1c3d-447d-bb88-53a8e3cee234",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryButtonPressed",
+                    "type": "Button",
+                    "id": "c072025d-1cb0-486c-ba40-eccbf560ef2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleButtonPressed",
+                    "type": "Button",
+                    "id": "12bb6830-6cdd-474b-a830-af2421e5f960",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e9421e33-bc0e-477d-97f4-a4997b7f6db6",
+                    "path": "<XRController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2310a514-a73f-4974-8c31-864f6f6b8aef",
+                    "path": "<XRController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bccf807a-614d-4520-82fa-d49aaef7df27",
+                    "path": "<XRController>/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "XRI LeftHand ButtonPress",
+            "id": "106847ed-b2d1-47bd-bf88-af790137ad54",
+            "actions": [
+                {
+                    "name": "PrimaryButtonPressed",
+                    "type": "Button",
+                    "id": "0614ade4-f56c-42e8-a343-ab04159300c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryButtonPressed",
+                    "type": "Button",
+                    "id": "14f8803c-a16d-4dfd-b2df-b307a21d5423",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleButtonPressed",
+                    "type": "Button",
+                    "id": "ba6df593-1ba5-4773-81da-8851c0396418",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7fe74fc6-8432-4d18-a0d2-b9dde7a03667",
+                    "path": "<XRController>/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee316bb6-63a9-46ae-a4d0-d9fa40f81e45",
+                    "path": "<XRController>/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0662cc0-2921-4c3f-abbd-b0e0227408e4",
+                    "path": "<XRController>/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleButtonPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

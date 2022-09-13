@@ -10,18 +10,7 @@ public class PausedMenue : MonoBehaviour
     public string LevelOneScene;
     public bool StartTime;
 
-    private void Update()
-    {
-        
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
-        {
 
-            Toggle();
-
-        }
-
-
-    }
 
     public void Toggle()
     {

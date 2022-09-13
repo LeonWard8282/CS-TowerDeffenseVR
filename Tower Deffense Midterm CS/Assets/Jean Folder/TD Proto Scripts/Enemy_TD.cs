@@ -21,7 +21,17 @@ public class Enemy_TD : MonoBehaviour
     [Header("Health Bar Dont Remove")]
     public Image healthBar;
 
+    private void Awake()
+    {
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
 
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+   
 
 
     private void Start()
@@ -95,5 +105,10 @@ public class Enemy_TD : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+    private void OnGameStateChanged( GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
+    }
 
 }

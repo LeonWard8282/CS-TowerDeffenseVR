@@ -10,7 +10,7 @@ public class ContinuousMovement : MonoBehaviour
 {
 
     [Header("Movement Speed")]
-    public float speed = 1f;
+    public float movementSpeed = 1f;
     [Header("Controller Movement")]
     public XRNode inputSource;
 
@@ -128,7 +128,7 @@ public class ContinuousMovement : MonoBehaviour
         Quaternion headYaw = Quaternion.Euler(0, y: rig.Camera.transform.eulerAngles.y, 0);
 
         Vector3 direction = headYaw * new Vector3(inputAxis.x, 0, inputAxis.y);
-        character.Move(direction * Time.fixedDeltaTime * speed);
+        character.Move(direction * Time.fixedDeltaTime * movementSpeed);
 
         
 
@@ -232,4 +232,19 @@ public class ContinuousMovement : MonoBehaviour
         }
 
     }
+
+    public void Boost(float buff)
+    {
+        Debug.Log("Boost Ability Activated");
+        movementSpeed = movementSpeed * buff;
+
+    }
+
+
+    public void ResetBoost(float buff)
+    {
+        movementSpeed = movementSpeed / buff;
+
+    }
+
 }

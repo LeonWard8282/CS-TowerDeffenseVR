@@ -23,6 +23,22 @@ public class WaveSpawner : MonoBehaviour
 
     public GameManager_TD gameManager_TD;
 
+    private void Awake()
+    {
+        GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
+    }
+
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
+    }
+
+    private void OnGameStateChanged(GameState newGameState)
+    {
+        enabled = newGameState == GameState.Gameplay;
+    }
+
+
 
     // Start is called before the first frame update
     void Start()

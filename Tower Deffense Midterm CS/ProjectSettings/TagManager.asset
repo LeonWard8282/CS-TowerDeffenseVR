@@ -10,6 +10,9 @@ TagManager:
   - RedBullet
   - Enemy
   - laser
+  - spawnpoint
+  - HomeBase
+  - Flyingspawnpoint
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Water
   - UI
   - laser
-  - 
+  - Player
   - PlacementLayer
   - PlacementGhosts
   - Towers
@@ -28,9 +31,9 @@ TagManager:
   - FlyingEnemies
   - GroundEnemyTargettingProjectiles
   - Ground
-  - 
-  - 
-  - 
+  - Enemy
+  - EnemyAttackRadius
+  - EnemyBullets
   - 
   - 
   - 

@@ -2795,8 +2795,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1543486941119960765}
   - component: {fileID: 5866666021909216657}
-  - component: {fileID: 5142451087393934289}
   - component: {fileID: -2823314510096720060}
+  - component: {fileID: 8414367364912646055}
   m_Layer: 0
   m_Name: SK_FuturisticTribalWarrior_AllMergedB
   m_TagString: Untagged
@@ -2850,7 +2850,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5142451087393934289
+--- !u!114 &-2823314510096720060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389843567213410258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3794e441b17986a4da73ae8825d47d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  watcher: {fileID: 0}
+  IsPressed: 0
+  ik: {fileID: 8414367364912646055}
+  scaleMlp: 1
+--- !u!114 &8414367364912646055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2865,27 +2881,27 @@ MonoBehaviour:
   fixTransforms: 1
   references:
     root: {fileID: 1543486941119960765}
-    pelvis: {fileID: 0}
-    spine: {fileID: 0}
-    chest: {fileID: 0}
-    neck: {fileID: 0}
-    head: {fileID: 0}
-    leftShoulder: {fileID: 0}
-    leftUpperArm: {fileID: 0}
-    leftForearm: {fileID: 0}
-    leftHand: {fileID: 0}
-    rightShoulder: {fileID: 0}
-    rightUpperArm: {fileID: 0}
-    rightForearm: {fileID: 0}
-    rightHand: {fileID: 0}
-    leftThigh: {fileID: 0}
-    leftCalf: {fileID: 0}
-    leftFoot: {fileID: 0}
-    leftToes: {fileID: 0}
-    rightThigh: {fileID: 0}
-    rightCalf: {fileID: 0}
-    rightFoot: {fileID: 0}
-    rightToes: {fileID: 0}
+    pelvis: {fileID: 2168394226173205682}
+    spine: {fileID: 1846256759547140760}
+    chest: {fileID: -8013909246233647550}
+    neck: {fileID: 4325436833983905973}
+    head: {fileID: 2304244481032835489}
+    leftShoulder: {fileID: -8496879035693090889}
+    leftUpperArm: {fileID: -6394934201113919074}
+    leftForearm: {fileID: -7208441673433506407}
+    leftHand: {fileID: -5846270692196909274}
+    rightShoulder: {fileID: 6855267054193146121}
+    rightUpperArm: {fileID: -3444371385876697102}
+    rightForearm: {fileID: 6061983877138398293}
+    rightHand: {fileID: -2349476437193732044}
+    leftThigh: {fileID: -6308482710477979527}
+    leftCalf: {fileID: -1938894886215782688}
+    leftFoot: {fileID: 4520667811460685156}
+    leftToes: {fileID: 88557215932375470}
+    rightThigh: {fileID: 4265496315168895388}
+    rightCalf: {fileID: -5607847394290140049}
+    rightFoot: {fileID: 5176393074398667330}
+    rightToes: {fileID: 8259520711292204883}
   solver:
     executedInEditor: 0
     IKPosition: {x: 0, y: 0, z: 0}
@@ -2931,8 +2947,8 @@ MonoBehaviour:
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
       swivelOffset: 0
-      wristToPalmAxis: {x: 0, y: 0, z: 0}
-      palmToThumbAxis: {x: 0, y: 0, z: 0}
+      wristToPalmAxis: {x: -1, y: -0, z: -0}
+      palmToThumbAxis: {x: -0, y: -0, z: -1}
       armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
@@ -2953,8 +2969,8 @@ MonoBehaviour:
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
       swivelOffset: 0
-      wristToPalmAxis: {x: 0, y: 0, z: 0}
-      palmToThumbAxis: {x: 0, y: 0, z: 0}
+      wristToPalmAxis: {x: 1, y: 0, z: 0}
+      palmToThumbAxis: {x: 0, y: 0, z: 1}
       armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
@@ -3106,22 +3122,6 @@ MonoBehaviour:
       onRightFootstep:
         m_PersistentCalls:
           m_Calls: []
---- !u!114 &-2823314510096720060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3389843567213410258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3794e441b17986a4da73ae8825d47d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  watcher: {fileID: 0}
-  IsPressed: 0
-  ik: {fileID: 5142451087393934289}
-  scaleMlp: 1
 --- !u!1 &4473849054309220002
 GameObject:
   m_ObjectHideFlags: 0

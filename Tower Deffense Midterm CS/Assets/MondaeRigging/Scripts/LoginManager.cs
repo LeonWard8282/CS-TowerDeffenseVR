@@ -7,12 +7,20 @@ using TMPro;
 public class LoginManager : MonoBehaviourPunCallbacks
 {
     public TMP_InputField playerNameInput;
+    public RoomManager roomManager;
 
     #region Unity Methods
     // Start is called before the first frame update
     void Start()
     {
-        
+        //if (!PhotonNetwork.IsConnectedAndReady)
+        //{
+        //    PhotonNetwork.ConnectUsingSettings();
+        //}
+        //else
+        //{
+        //    PhotonNetwork.JoinLobby();
+        //}
     }
 
     // Update is called once per frame
@@ -25,12 +33,12 @@ public class LoginManager : MonoBehaviourPunCallbacks
     #region UI Callback Methods
     public void ConnectAnonymously()
     {
-        PhotonNetwork.ConnectUsingSettings();
+        roomManager.OnEnterButtonClicked_Multiplayer();
     }
 
     public void ConnectToPhotonServer()
     {
-        if(playerNameInput != null)
+        if (playerNameInput != null)
         {
             PhotonNetwork.NickName = playerNameInput.text;
             PhotonNetwork.ConnectUsingSettings();
@@ -47,7 +55,12 @@ public class LoginManager : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Conencted to Master Server with player name: " + PhotonNetwork.NickName);
-        PhotonNetwork.LoadLevel("Home");
+        PhotonNetwork.JoinLobby();
+    }
+
+    public override void OnJoinedLobby()
+    {
+        roomManager.OnEnterButtonClicked_Multiplayer();
     }
 
 

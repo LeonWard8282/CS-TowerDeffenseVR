@@ -14,7 +14,11 @@ public class SpawnManager : MonoBehaviour
     {
         if(PhotonNetwork.IsConnectedAndReady)
         {
-            PhotonNetwork.Instantiate("Human1", spawnPosition, Quaternion.identity);
+            PhotonNetwork.Instantiate("Player", spawnPosition, Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Network not ready");
         }
     }
 

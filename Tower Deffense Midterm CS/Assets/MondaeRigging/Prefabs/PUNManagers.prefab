@@ -106,7 +106,7 @@ MonoBehaviour:
   voiceDetectionThreshold: 0.01
   voiceDetectionDelayMs: 500
   unityMicrophoneDevice: 
-  photonMicrophoneDeviceId: -1
+  photonMicrophoneDeviceId: 0
   interestGroup: 0
   debugEchoMode: 0
   reliableMode: 0
@@ -179,10 +179,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7650576853555260539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ef787677779c348934426a628b5c19, type: 3}
+  m_Script: {fileID: 11500000, guid: cdd56b6320639504ba38090966a83115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Human1: {fileID: 1128616236758990551, guid: 1de51efa8d04ffb498a9c5942fb26a03, type: 3}
+  Human1: {fileID: 0}
   spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &7650576853686040598
 GameObject:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7650576853686040598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0f821a4b31f43c40adf653ece34c5ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 935e61068baff964f9fe843f922ab9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7650576854688966671

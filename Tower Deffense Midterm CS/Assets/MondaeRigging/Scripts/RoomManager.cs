@@ -9,25 +9,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     private string mapType;
 
-    public TextMeshProUGUI occupancyColony;
-    public TextMeshProUGUI occupancyScavenger;
-    public TextMeshProUGUI occupancyCorporation;
-    public TextMeshProUGUI occupancyExplorer;
-    public TextMeshProUGUI occupancyBlackMarket;
+    public TextMeshProUGUI occupancyMultiplayer;
 
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
 
-        if(!PhotonNetwork.IsConnectedAndReady)
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
-        else
-        {
-            PhotonNetwork.JoinLobby();
-        }
+        //if(!PhotonNetwork.IsConnectedAndReady)
+        //{
+        //    PhotonNetwork.ConnectUsingSettings();
+        //}
+        //else
+        //{
+        //    PhotonNetwork.JoinLobby();
+        //}
     }
 
     // Update is called once per frame
@@ -42,39 +38,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    public void OnEnterButtonClicked_Colony()
+    public void OnEnterButtonClicked_Multiplayer()
     {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_COLONY;
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER;
         ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY,mapType} };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-
-    }
-
-    public void OnEnterButtonClicked_Scavenger()
-    {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_SCAVENGER;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-    }
-
-    public void OnEnterButtonClicked_Explorer()
-    {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_EXPLORER;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-    }
-
-    public void OnEnterButtonClicked_Corporation()
-    {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_CORPORATION;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-    }
-
-    public void OnEnterButtonClicked_BlackMarket()
-    {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_BLACKMARKET;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
         PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
     }
 
@@ -106,25 +73,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if(PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType))
             {
                 Debug.Log("Joined room with map: " + (string)mapType);
-                if((string) mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_COLONY)
+                if((string) mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER)
                 {
-                    PhotonNetwork.LoadLevel("Colony");
-                }
-                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_EXPLORER)
-                {
-                    PhotonNetwork.LoadLevel("Explorer");
-                }
-                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_CORPORATION)
-                {
-                    PhotonNetwork.LoadLevel("Corporation");
-                }
-                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_BLACKMARKET)
-                {
-                    PhotonNetwork.LoadLevel("BlackMarket");
-                }
-                else
-                {
-                    PhotonNetwork.LoadLevel("Scavenger");
+                    PhotonNetwork.LoadLevel("Multiplayer");
                 }
             }
         }
@@ -139,35 +90,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if(roomList.Count == 0)
         {
-            occupancyColony.text = 0 + "/" + 20;
-            occupancyScavenger.text = 0 + "/" + 20;
-            occupancyExplorer.text = 0 + "/" + 20;
-            occupancyCorporation.text = 0 + "/" + 20;
-            occupancyBlackMarket.text = 0 + "/" + 20;
+            occupancyMultiplayer.text = 0 + "/" + 20;
         }
 
         foreach(RoomInfo room in roomList)
         {
             Debug.Log(room.Name);
-            if(room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_COLONY))
+            if(room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER))
             {
-                occupancyColony.text = room.PlayerCount + "/" + 20;
-            }
-            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_SCAVENGER))
-            {
-                occupancyScavenger.text = room.PlayerCount + "/" + 20;
-            }
-            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_EXPLORER))
-            {
-                occupancyExplorer.text = room.PlayerCount + "/" + 20;
-            }
-            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_CORPORATION))
-            {
-                occupancyCorporation.text = room.PlayerCount + "/" + 20;
-            }
-            else if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_BLACKMARKET))
-            {
-                occupancyBlackMarket.text = room.PlayerCount + "/" + 20;
+                occupancyMultiplayer.text = room.PlayerCount + "/" + 20;
             }
         }
     }

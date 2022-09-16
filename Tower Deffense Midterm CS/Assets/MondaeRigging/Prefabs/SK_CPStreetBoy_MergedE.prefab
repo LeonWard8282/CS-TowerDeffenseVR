@@ -1053,7 +1053,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe711518914e2a94984a0cf54705dd28, type: 2}
+  - {fileID: 2100000, guid: b483df8476a6b2d42bb7c54678be3414, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1299,7 +1299,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b891714f985306488ae9d652e053fe6, type: 2}
+  - {fileID: 2100000, guid: e18213771fe5030459141ea47baff103, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2946,8 +2946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1009318234980990827}
   - component: {fileID: 5866666021909216657}
-  - component: {fileID: -3680578399508483875}
-  - component: {fileID: 2761450058582450129}
+  - component: {fileID: 5598552052641060377}
   m_Layer: 0
   m_Name: SK_CPStreetBoy_MergedE
   m_TagString: Untagged
@@ -2994,7 +2993,7 @@ Animator:
   m_GameObject: {fileID: 3774424322245633150}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d2f8bf35f0726c348bbff101e151f362, type: 3}
-  m_Controller: {fileID: 9100000, guid: 41dc8bb8258c8604fa7891523dbaeba6, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3004,7 +3003,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3680578399508483875
+--- !u!114 &5598552052641060377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3018,28 +3017,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixTransforms: 1
   references:
-    root: {fileID: 1009318234980990827}
-    pelvis: {fileID: 2168394226173205682}
-    spine: {fileID: 1846256759547140760}
-    chest: {fileID: -8013909246233647550}
-    neck: {fileID: 4325436833983905973}
-    head: {fileID: 2304244481032835489}
-    leftShoulder: {fileID: -8496879035693090889}
-    leftUpperArm: {fileID: -6394934201113919074}
-    leftForearm: {fileID: -7208441673433506407}
-    leftHand: {fileID: -5846270692196909274}
-    rightShoulder: {fileID: 6855267054193146121}
-    rightUpperArm: {fileID: -3444371385876697102}
-    rightForearm: {fileID: 6061983877138398293}
-    rightHand: {fileID: -2349476437193732044}
-    leftThigh: {fileID: -6308482710477979527}
-    leftCalf: {fileID: -1938894886215782688}
-    leftFoot: {fileID: 4520667811460685156}
-    leftToes: {fileID: 88557215932375470}
-    rightThigh: {fileID: 4265496315168895388}
-    rightCalf: {fileID: -5607847394290140049}
-    rightFoot: {fileID: 5176393074398667330}
-    rightToes: {fileID: 8259520711292204883}
+    root: {fileID: 0}
+    pelvis: {fileID: 0}
+    spine: {fileID: 0}
+    chest: {fileID: 0}
+    neck: {fileID: 0}
+    head: {fileID: 0}
+    leftShoulder: {fileID: 0}
+    leftUpperArm: {fileID: 0}
+    leftForearm: {fileID: 0}
+    leftHand: {fileID: 0}
+    rightShoulder: {fileID: 0}
+    rightUpperArm: {fileID: 0}
+    rightForearm: {fileID: 0}
+    rightHand: {fileID: 0}
+    leftThigh: {fileID: 0}
+    leftCalf: {fileID: 0}
+    leftFoot: {fileID: 0}
+    leftToes: {fileID: 0}
+    rightThigh: {fileID: 0}
+    rightCalf: {fileID: 0}
+    rightFoot: {fileID: 0}
+    rightToes: {fileID: 0}
   solver:
     executedInEditor: 0
     IKPosition: {x: 0, y: 0, z: 0}
@@ -3085,8 +3084,8 @@ MonoBehaviour:
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
       swivelOffset: 0
-      wristToPalmAxis: {x: -1, y: -0, z: -0}
-      palmToThumbAxis: {x: -0, y: -0, z: -1}
+      wristToPalmAxis: {x: 0, y: 0, z: 0}
+      palmToThumbAxis: {x: 0, y: 0, z: 0}
       armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
@@ -3107,8 +3106,8 @@ MonoBehaviour:
       bendGoal: {fileID: 0}
       bendGoalWeight: 0
       swivelOffset: 0
-      wristToPalmAxis: {x: 1, y: 0, z: 0}
-      palmToThumbAxis: {x: 0, y: 0, z: 1}
+      wristToPalmAxis: {x: 0, y: 0, z: 0}
+      palmToThumbAxis: {x: 0, y: 0, z: 0}
       armLengthMlp: 1
       stretchCurve:
         serializedVersion: 2
@@ -3179,68 +3178,14 @@ MonoBehaviour:
       stepSpeed: 3
       stepHeight:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.5
-          value: 0.03
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       maxBodyYOffset: 0.05
       heelHeight:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.5
-          value: 0.03
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -3260,22 +3205,6 @@ MonoBehaviour:
       onRightFootstep:
         m_PersistentCalls:
           m_Calls: []
---- !u!114 &2761450058582450129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774424322245633150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3794e441b17986a4da73ae8825d47d8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  watcher: {fileID: 0}
-  IsPressed: 0
-  ik: {fileID: -3680578399508483875}
-  scaleMlp: 1
 --- !u!1 &4473849054309220002
 GameObject:
   m_ObjectHideFlags: 0
@@ -4082,7 +4011,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b891714f985306488ae9d652e053fe6, type: 2}
+  - {fileID: 2100000, guid: e18213771fe5030459141ea47baff103, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4367,7 +4296,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 54a7c7fd7dd2e174ab0fbfd5e7a3ef1e, type: 2}
-  - {fileID: 2100000, guid: fe711518914e2a94984a0cf54705dd28, type: 2}
+  - {fileID: 2100000, guid: b483df8476a6b2d42bb7c54678be3414, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

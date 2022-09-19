@@ -25,12 +25,7 @@ public class Grenade : MonoBehaviour
     {
         if (dropped == true && alreadyPickedUp == true)
         {
-            countdown -= Time.deltaTime;
-            if (countdown <= 0 && !hasExploded)
-            {
-                Explode();
-                hasExploded = true;
-            }
+            StartCoutrdown();
         }
     }
 
@@ -71,5 +66,15 @@ public class Grenade : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+
+    public void StartCoutrdown()
+    {
+        countdown -= Time.deltaTime;
+        if (countdown <= 0 && !hasExploded)
+        {
+            Explode();
+            hasExploded = true;
+        }
     }
 }

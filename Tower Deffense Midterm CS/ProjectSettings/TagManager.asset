@@ -16,6 +16,7 @@ TagManager:
   - Bullet
   - ShieldPowerUp
   - HealthPowerUp
+  - GrapplePoint
   layers:
   - Default
   - TransparentFX
@@ -38,8 +39,8 @@ TagManager:
   - EnemyAttackRadius
   - EnemyBullets
   - Shield
-  - 
-  - 
+  - GrapplePoint
+  - Grenade
   - 
   - 
   - 

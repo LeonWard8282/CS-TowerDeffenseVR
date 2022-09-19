@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 8363197479440600916}
   - component: {fileID: 6049737851089664926}
   - component: {fileID: 324474665229581802}
+  - component: {fileID: 9053541376235743666}
   m_Layer: 0
   m_Name: Loot1j_2
   m_TagString: Untagged
@@ -259,6 +260,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21759023, y: 1.1068883, z: 1.1068883}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9053541376235743666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256827721488570955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ddc10defd7b6e94b920b716656363c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  ForwardX: 0
+  ForwardY: 1
+  ForwardZ: 0
+  ReverseX: 0
+  ReverseY: 0
+  ReverseZ: 0
 --- !u!1 &6204476361808668728
 GameObject:
   m_ObjectHideFlags: 0

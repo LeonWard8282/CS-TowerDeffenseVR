@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour, iDamageable
     public int startLives = 3;
 
     [SerializeField]
-    private int health = 300;
+    public int health = 300;
 
     public static int Rounds;
 

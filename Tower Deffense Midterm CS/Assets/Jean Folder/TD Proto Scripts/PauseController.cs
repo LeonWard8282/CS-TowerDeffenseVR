@@ -9,7 +9,6 @@ public class PauseController : MonoBehaviour
     //Creating a variable object thingy that contains InputActionReference of the PauseButton we will assign. 
     public InputActionReference pauseButton = null;
 
-
     // Subscribing 
     private void Awake()
     {
@@ -19,12 +18,6 @@ public class PauseController : MonoBehaviour
     private void OnDestroy()
     {
         pauseButton.action.performed -= pauseButtonMethod;
-    }
-
-
-    void Start()
-    {
-        
     }
 
     void Update()
@@ -38,15 +31,11 @@ public class PauseController : MonoBehaviour
 
             GameStateManager.Instance.SetState(newGameState);
         }
-
-
     }
+
     private void pauseButtonMethod(InputAction.CallbackContext obj)
     {
         throw new NotImplementedException();
     }
-
-
-
 
 }

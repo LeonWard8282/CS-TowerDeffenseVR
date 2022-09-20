@@ -10,6 +10,7 @@ public class Enemy_Bullet : PoolableObject
     public float moveSpeed = 2f;
     public int Damage = 5;
     public Rigidbody rigidbody;
+    public GameObject impactEffect;
 
     private const string Disable_Method_Name = "Disable";
 
@@ -33,6 +34,8 @@ public class Enemy_Bullet : PoolableObject
 
         if(other.TryGetComponent<iDamageable>(out damageable))
         {
+            GameObject effectInstance = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(effectInstance, 5f);
             damageable.TakeDamage(Damage);
 
         }

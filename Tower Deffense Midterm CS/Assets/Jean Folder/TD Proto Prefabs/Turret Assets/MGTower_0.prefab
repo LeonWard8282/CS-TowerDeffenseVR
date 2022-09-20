@@ -19529,6 +19529,8 @@ GameObject:
   - component: {fileID: 3431444813318770029}
   - component: {fileID: 850509719317788864}
   - component: {fileID: 6565327369146115834}
+  - component: {fileID: -4875905628184152277}
+  - component: {fileID: 3571733807713384809}
   m_Layer: 10
   m_Name: MGTower_0
   m_TagString: Untagged
@@ -19594,6 +19596,47 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.7, z: 0}
   m_TimeToStationary: 0.5
+--- !u!135 &-4875905628184152277
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425836261186646553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3571733807713384809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3425836261186646553}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab63bc71e3553443bd844c8a1563854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: -4875905628184152277}
+  Damage: 100
+  AttackDelay: 0.5
+  range: 15
+  fireRate: 1
+  rotationSpeed: 2
+  updatedTarget: 0.704
+  enemybulletPrefab: {fileID: 284441091990911348, guid: 812484466ee8ba840975ca51997ac18b,
+    type: 3}
+  firePoint: {fileID: 3422788073121289721}
+  enemyTag: Enemy
+  turretsPartToRotate: {fileID: 7113404335949835007}
+  useLazer: 0
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
 --- !u!1 &3425836601735977659
 GameObject:
   m_ObjectHideFlags: 0

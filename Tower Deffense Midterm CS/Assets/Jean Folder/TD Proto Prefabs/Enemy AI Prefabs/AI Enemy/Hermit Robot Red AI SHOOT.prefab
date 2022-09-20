@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 7876669155291221822}
   - component: {fileID: 7876669155291221821}
   - component: {fileID: 8525665421785324878}
+  - component: {fileID: 5003475413181119524}
   m_Layer: 17
   m_Name: Hermit Robot Red AI SHOOT
   m_TagString: Enemy
@@ -606,6 +607,9 @@ MonoBehaviour:
   movement: {fileID: 7876669155291221952}
   agent: {fileID: 7876669155291221821}
   health: 100
+  deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
+    type: 3}
+  moneyGained: 50
 --- !u!195 &7876669155291221821
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -644,6 +648,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &5003475413181119524
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401936506567274566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5500606556211437402
 GameObject:
   m_ObjectHideFlags: 0

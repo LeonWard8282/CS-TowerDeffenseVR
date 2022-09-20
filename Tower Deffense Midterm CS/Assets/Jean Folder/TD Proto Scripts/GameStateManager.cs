@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameStateManager : MonoBehaviour
+public class GameStateManager
 {
     public static GameStateManager _instance;
 
@@ -17,6 +13,8 @@ public class GameStateManager : MonoBehaviour
         }
 
     }
+
+    //Creating a public delgater with a private setter. 
     public GameState currentGameState { get; private set; }
 
     public delegate void GameStateChangeHandler(GameState newGameState);
@@ -37,15 +35,5 @@ public class GameStateManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newGameState);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

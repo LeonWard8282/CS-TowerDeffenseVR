@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class ObjectPool
 {
+    private GameObject parent;
     // Object pool will have a PoolableObject Prefab variable
     private PoolableObject prefab;
+
+    private int Size;
     // And it will have a list of poolabale object variable called availableobjects.  
     private List<PoolableObject> availableObjects;
 
@@ -15,6 +18,7 @@ public class ObjectPool
         {
         //this constructoc will make this.Prefab equal the prefab that is passed in. 
         this.prefab = Prefab;
+        this.Size = size;
         //This constructor will then go ahead and make a list of (x-Size) valled available Objects. 
         availableObjects = new List<PoolableObject>(size);
         }
@@ -24,24 +28,28 @@ public class ObjectPool
     {
         ObjectPool pool = new ObjectPool(prefab, size);
 
-        GameObject poolObject = new GameObject(prefab.name + "Pool");
-        pool.CreateObjects(poolObject.transform, size);
+        pool.parent = new GameObject(prefab + "Pool");
+        pool.CreateObjects();
 
         return pool;
 
 
     }
 
-    private void CreateObjects( Transform parent, int Size)
+    private void CreateObjects( )
     {
         for (int i = 0; i < Size; i++)
-        { 
-
-            PoolableObject poolableObject = GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity, parent.transform);
-            poolableObject.Parent = this;
-            poolableObject.gameObject.SetActive(false);
+        {
+            CreateObject();
         }
 
+    }
+
+    private void CreateObject()
+    {
+        PoolableObject poolableObject = GameObject.Instantiate(prefab, Vector3.zero, Quaternion.identity, parent.transform);
+        poolableObject.Parent = this;
+        poolableObject.gameObject.SetActive(false); // poolable object handles re-adding the object to the availableobjects
     }
 
     public void ReturnObjectToPool(PoolableObject poolableObject)
@@ -52,8 +60,12 @@ public class ObjectPool
 
     public PoolableObject GetObject()
     {
-        if (availableObjects.Count > 0)
+        if (availableObjects.Count == 0) //auto expand pool size if out of objects
         {
+            CreateObject();
+
+
+        }
             PoolableObject instance = availableObjects[0];
             availableObjects.RemoveAt(0);
 
@@ -61,18 +73,8 @@ public class ObjectPool
 
             return instance;
 
-        }
 
-        else
-        {
-            // couple of options to this
-            //1. Return null - if you do not want to auto epand the size of the pol. Okay option if you are sure you will never configure pools wrong.  or if the pool not return gan object. 
-            // this is sometimes okay to perfrom. 
-            //2. Expand the size of the pool - the downside to doing this is if you expand the pool you will have to create new objects, which then create new garbage which then create sturtter. 
-
-            Debug.LogError($"Could not get an object from pool \"{prefab.name} \"Pool. probably a configuration issue. ");
-        return null;
-        }
+        
     }
 
 

@@ -52,12 +52,12 @@ MonoBehaviour:
   fireRate: 1
   rotationSpeed: 2
   updatedTarget: 1
-  bulletPrefab: {fileID: 2228136128379212152, guid: 751dd5273f54b704a829038b9320230c,
+  bulletPrefab: {fileID: 2228136128379212152, guid: 61f9ee36c786aac48a53c6e8f1c1bb8e,
     type: 3}
   firePoint: {fileID: 8918539068177702923}
   enemyTag: Enemy
   turretsPartToRotate: {fileID: 8918482069260664613}
-  useLazer: 1
+  useLazer: 0
   lineRenderer: {fileID: 8688705171088316856}
   impactEffect: {fileID: 4280371262383989423, guid: 765ecaffa01edeb4d8035bba53260ff2,
     type: 3}

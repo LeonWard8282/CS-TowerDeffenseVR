@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_TD : MonoBehaviour
+public class Bullet_TD : MonoBehaviour 
 {
     private Transform target;
     [Header("Bullet Speed")]
@@ -14,6 +14,7 @@ public class Bullet_TD : MonoBehaviour
     [Header("Bullet Damage")]
     public int damage = 50;
 
+   
 
     public void Seek(Transform _target)
     {
@@ -21,16 +22,17 @@ public class Bullet_TD : MonoBehaviour
 
     }
 
+    // GameState Pausing Mechanism
     private void Awake()
     {
         GameStateManager.Instance.OnGameStateChanged += OnGameStateChanged;
     }
-
+    // GameState Pausing Mechanism
     private void OnDestroy()
     {
         GameStateManager.Instance.OnGameStateChanged -= OnGameStateChanged;
     }
-
+    // GameState Pausing Mechanism
     private void OnGameStateChanged(GameState newGameState)
     {
         enabled = newGameState == GameState.Gameplay;
@@ -42,11 +44,15 @@ public class Bullet_TD : MonoBehaviour
         
     }
 
+    
+
     // Update is called once per frame
     void Update()
     {
         if(target == null)
         {
+            Debug.Log("target is a null deleting");
+
             Destroy(gameObject);
             return;
         }
@@ -97,17 +103,25 @@ public class Bullet_TD : MonoBehaviour
             if(collider.tag == "Enemy")
             {
                 Damage(collider.transform);
+
             }
         }
     }
 
     void Damage(Transform enemyGO)
     {
-        Enemy_TD e = enemyGO.GetComponent<Enemy_TD>();
+        //Enemy_TD e = enemyGO.GetComponent<Enemy_TD>();
+        Enemigo enemigo = enemyGO.GetComponent<Enemigo>();
 
-        if (e!= null)
+        //if (e!= null || enemigo != null)
+        //{
+        //    e.TakeDamage(damage);
+        //    enemigo.TakeDamage(damage);
+        //}
+
+        if (enemigo != null)
         {
-            e.TakeDamage(damage);
+            enemigo.TakeDamage(damage);
         }
 
     }
@@ -117,5 +131,19 @@ public class Bullet_TD : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
+
+    //adding this part
+    private void OnTriggerEnter(Collider other)
+    {
+        iDamageable damageable;
+
+        if (other.TryGetComponent<iDamageable>(out damageable))
+        {
+            damageable.TakeDamage(damage);
+
+        }
+
+    }
+
 
 }

@@ -16,7 +16,7 @@ public class HandGun : MonoBehaviour
         GameObject spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
         spawnedBullet.GetComponent<Rigidbody>().velocity = speed * barrel.forward;
         audioSource.PlayOneShot(audioclip);
-        Destroy(spawnedBullet, 2);
+       // Destroy(spawnedBullet, 10);
 
     }
  

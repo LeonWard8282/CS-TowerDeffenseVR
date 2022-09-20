@@ -12,8 +12,14 @@ public class Enemigo : PoolableObject , iDamageable
     public NavMeshAgent agent;
     public int health = 100;
 
+    public GameObject deathEffect;
+    public int moneyGained = 50;
+
     private Coroutine lookCoroutine;
     private const string Attack_Trigger = "Attack";
+
+    public delegate void DeathEvent (Enemigo enemy);
+    public DeathEvent OnDie;
 
     private void Awake()
     {
@@ -73,6 +79,21 @@ public class Enemigo : PoolableObject , iDamageable
 
         if(health <= 0)
         {
+            OnDie?.Invoke(this);
+
+            // Death Sequence
+            //instantiate death VFX
+            GameObject death_Effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+            //Destroys the death effect
+            Destroy(death_Effect, 5f);
+
+            // Linking to wave spawner 
+            //WaveSpawner.enemiesAlive--;
+
+            // Link to player stats money 
+            //PlayerStats.Money += moneyGained;
+
+            // setting the game object to false. 
             gameObject.SetActive(false);
         }
 

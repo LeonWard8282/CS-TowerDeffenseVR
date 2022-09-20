@@ -44,6 +44,43 @@ public class EnemyScriptableObject : ScriptableObject
     public float speed = 3f;
     public float stoppingDistance = 0.5f;
 
+    public EnemyScriptableObject ScaleUpForLevel(ScalingScriptableObject scaling, int level)
+    {
+        EnemyScriptableObject scaledUpEnemy = CreateInstance<EnemyScriptableObject>();
+
+        scaledUpEnemy.name = name;
+        scaledUpEnemy.Prefab = Prefab;
+
+        scaledUpEnemy.attackConfiguarions = attackConfiguarions.ScaleUpForLevel(scaling, level);
+
+        scaledUpEnemy.Health = Mathf.FloorToInt(Health * scaling.healthCurve.Evaluate(level));
+        scaledUpEnemy.defaultState = defaultState;
+        scaledUpEnemy.idleLocationRadius = idleLocationRadius;
+        scaledUpEnemy.idleMovespeedMultiplier = idleMovespeedMultiplier;
+        scaledUpEnemy.waypoints = waypoints;
+        scaledUpEnemy.LineOfSightRange = LineOfSightRange;
+        scaledUpEnemy.FieldOfView = FieldOfView;
+
+        scaledUpEnemy.ai_UpdateInterval = ai_UpdateInterval;
+        scaledUpEnemy.acceleration = acceleration;
+        scaledUpEnemy.angularSpeed = angularSpeed;
+
+        scaledUpEnemy.areamask = areamask;
+        scaledUpEnemy.avoidancePriority = avoidancePriority;
+
+        scaledUpEnemy.bassOffset = bassOffset;
+        scaledUpEnemy.height = height;
+        scaledUpEnemy.obstacleAvoidanceType = obstacleAvoidanceType;
+        scaledUpEnemy.radius = radius;
+
+        scaledUpEnemy.speed = speed * scaling.speedCurve.Evaluate(level);
+        scaledUpEnemy.stoppingDistance = stoppingDistance;
+
+        return scaledUpEnemy;
+    }
+
+
+
     public void Setupenemy(Enemigo enemigo)
     {
         enemigo.agent.acceleration = acceleration;

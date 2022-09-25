@@ -116,4 +116,20 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void Boost(float buff)
+    {
+        Debug.Log("Boost Ability Activated");
+        movementSpeed = movementSpeed * buff;
+
+    }
+
+
+    public void ResetBoost(float buff)
+    {
+        movementSpeed = movementSpeed / buff;
+
+    }
+
+
+
 }

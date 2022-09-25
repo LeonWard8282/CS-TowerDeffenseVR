@@ -95,7 +95,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2228136128379212152}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -115,7 +115,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &-2659429522268488588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,10 +132,10 @@ MonoBehaviour:
   explosion: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 147456
+    m_Bits: 197633
   bounciness: 0
   useGravity: 1
-  explostionDamage: 1000
+  explostionDamage: 25
   explosionRange: 1
   maxCollisions: 0
   maxLifeTime: 4

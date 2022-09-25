@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3600601264310507089}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 6891483276549728948}
   m_Layer: 0
   m_Name: WaterPistol_01_Trigger
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -570,6 +570,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 650a77cacb6f44d4dbe95c6c8e7e9333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 15
+  enemyTag: Enemy
   Reload_Button: {fileID: 5606184606078056458, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   Trigger_Button: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
@@ -586,7 +588,6 @@ MonoBehaviour:
   magazineSize: 20
   bulletsPerTap: 1
   allowButtonHold: 0
-  fpsCam: {fileID: 0}
   attackPoint: {fileID: 3600601264310507089}
   muzzleflash: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567,
     type: 3}
@@ -605,7 +606,7 @@ GameObject:
   - component: {fileID: 5430559720362911012}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -740,7 +741,7 @@ GameObject:
   - component: {fileID: 8776281811908072167}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -818,7 +819,7 @@ GameObject:
   - component: {fileID: 2461029497237348524}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

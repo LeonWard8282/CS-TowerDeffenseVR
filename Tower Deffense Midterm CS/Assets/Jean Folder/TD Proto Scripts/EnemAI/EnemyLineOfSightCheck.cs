@@ -15,15 +15,30 @@ public class EnemyLineOfSightCheck : MonoBehaviour
     public delegate  void LoseSightEvent(PlayerStats player);
     public LoseSightEvent onLoseSight;
 
+
     private Coroutine checkForLineOfSightCoroutine;
+    private EnemyMovement enemymovement;
 
     private void Awake()
     {
         collider = GetComponent<SphereCollider>();
     }
 
+    private void Start()
+    {
+        enemymovement = GetComponent<EnemyMovement>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        //if (other.tag == "Player")
+        //{
+        //    Transform player_Transform = other.GetComponent<Transform>();
+        //    enemymovement.FoundPlayer(player_Transform);
+
+        //}
+
+
         PlayerStats player;
         if(other.TryGetComponent<PlayerStats>(out player))
         {
@@ -39,6 +54,7 @@ public class EnemyLineOfSightCheck : MonoBehaviour
     {
         PlayerStats player;
         if(other.TryGetComponent<PlayerStats>(out player))
+            
         {
             onLoseSight?.Invoke(player);
 

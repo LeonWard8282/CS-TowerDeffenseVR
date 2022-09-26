@@ -5,6 +5,7 @@ using UnityEditor.XR.Interaction.Toolkit;
 
 public class SocketWithTagEditor : XRSocketInteractorEditor
 {
+        
 
 
 

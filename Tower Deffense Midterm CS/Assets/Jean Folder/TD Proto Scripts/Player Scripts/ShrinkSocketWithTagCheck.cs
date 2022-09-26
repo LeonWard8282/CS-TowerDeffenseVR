@@ -21,8 +21,8 @@ public class ShrinkSocketWithTagCheck : XRSocketInteractor
     public override bool CanHover(XRBaseInteractable interactable)
     {
         return base.CanHover(interactable) && MatchUsingTag(interactable);
-    }
 
+    }
 
     public override bool CanSelect(XRBaseInteractable interactable)
     {

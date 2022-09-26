@@ -6,43 +6,68 @@ using UnityEngine.AI;
 
 public class EnemigoSpawner : MonoBehaviour
 {
-    public Transform player; // assigning this to the enemy that is spaned. 
+    // Chosen state spawn method
+    public enum SpawnMethod { RoundRobin, Random, SetSpawnLocation, WeightedRandom, SetSpawnLocationWeightedRandom }
+    public SpawnMethod EnemySpawnMethod = SpawnMethod.RoundRobin;
+
+    public Transform player; // assigning this to the enemy that is spawned. 
+    [Tooltip("How many enemies do you wish to spawn. Note that this will be affected by the scaling scriptable object")]
     public int NumberOfEnemiesToSpawn = 4;
     public float SpawnDelay = 1f;
     public List<WeightedSpawnScriptableObject> weightedEnemies = new List<WeightedSpawnScriptableObject>();
-    public SpawnMethod EnemySpawnMethod = SpawnMethod.RoundRobin;
     [Space]
     [Tooltip("If true, it will spawn Enemies Continuosly, wave after wave with out the need to clear the wave. If False" +
         "you will need to clear the wave first before any more enemies spawn")]
     public bool continuousSpawning;
-    public ScalingScriptableObject scaling;
-    public GameObject[] spawnlocations;
     [Space]
+    public ScalingScriptableObject scaling;
+    [Header("Set Spawn location and GameObject Tag")] [Tooltip("Enemies will spawn at random at said location")]
+    public GameObject[] spawnlocations;
     public string spawnPointTagName = "spawnpoint";
+    [Space]
 
     private Dictionary<int, ObjectPool> EnemyObjectPools = new Dictionary<int, ObjectPool>();
 
+
     private NavMeshTriangulation triangulation;
+    [Space]
+    [Header("Current Level to Max level")] [Tooltip("Do not change or input value into the level")]
+    [SerializeField] private int level = 0;
+    [Tooltip("Do not change or input a value into the Max level, this item is reflected" +
+        " on the quantity of keys present in the spawn count curve of the scaling scritpable object")]
+    [SerializeField] private int MaxLevel;
+    [Space] [Header(" Game Play View of Scaled & Weighted Enemy")]
+    [Tooltip("Do Not Add or Change it will auto populate when running")]
+    [SerializeField] private List<EnemyScriptableObject> scaledEnemies = new List<EnemyScriptableObject>();
+    [Tooltip("Do Not Add or Change it will auto populate when running")]
+    [SerializeField] private float[] weights;
 
-    [SerializeField]
-    private int level = 0;
+    [SerializeField] private int enemiesAlive = 0;
 
-    [SerializeField]
-    private List<EnemyScriptableObject> scaledEnemies = new List<EnemyScriptableObject>();
-
-    [SerializeField]
-    private float[] weights;
-
-    [SerializeField]
-    private int enemiesAlive = 0;
+    [Space] [Header("Wave Settings")]
     private int spawnedEnemies = 0;
     private int intialEnemiesToSpawn;
     private float initialSpawnDelay;
 
 
+    private float searchCountDown = 1f;
+    public enum SpawnState { Counting, Spawning, Waiting, }
+    public enum PlayState { Play, Paused, Finished }
+    [Header("Wave Spawner, wave configuration")]
+    public float timeBetweenWaves = 5f;
+    public float waveCountDown;
+    [SerializeField] private SpawnState spawn_State = SpawnState.Counting;
+    [SerializeField] private PlayState play_State = PlayState.Play;
+
+    [Space][Header("Connected Scripts")]
+    public Wrist_UI_Manager HandUIState;
+
     private void Awake()
     {
+        MaxLevel = scaling.spawnCountCurve.length;
         //spawnlocations = GameObject.FindGameObjectsWithTag(spawnPointTagName);
+        GameObject _player = GameObject.FindGameObjectWithTag("Player");
+        player = _player.GetComponent<Transform>();
 
         for (int i = 0; i < weightedEnemies.Count; i++)
         {
@@ -57,12 +82,17 @@ public class EnemigoSpawner : MonoBehaviour
 
     }
 
+   
+
+
     private void Start()
     {
+        //Connecting to the UI Hand Manager Script 
+
         triangulation = NavMesh.CalculateTriangulation();
         spawnlocations = GameObject.FindGameObjectsWithTag(spawnPointTagName);
 
-        for(int i = 0; i < weightedEnemies.Count; i++)
+        for (int i = 0; i < weightedEnemies.Count; i++)
         {
 
 
@@ -70,12 +100,124 @@ public class EnemigoSpawner : MonoBehaviour
 
         }
 
-        StartCoroutine(SpawnEnemies());
+        //Calling to start spawning enemies. 
+        //StartCoroutine(SpawnEnemies());
+
+
     }
+
+    private void Update()
+    {
+        if(play_State == PlayState.Play)
+        {
+
+
+            if(spawn_State == SpawnState.Waiting)
+            {
+                // and if enemy alive is false
+                if(!EnemyIsAlive())
+                {
+                    // run the method Wave completed. 
+                    WaveCompleted();
+                
+                }
+                else
+                {
+                    //return
+                    return;
+                }
+           
+
+            }
+            //if wavecountdown is less than or equal to zero. 
+            if(waveCountDown <= 0)
+            {
+                // and if the sate is not equal to spawning
+                if(spawn_State != SpawnState.Spawning)
+                {
+                    //scale up the spawns and start the coroutine spawn enemies method. 
+                    ScaledUpSpawns();
+                    StartCoroutine(SpawnEnemies());
+                }
+            }
+            // if not continue counting down the waveCountDown Timer
+            else
+            {
+                    waveCountDown -= Time.deltaTime;
+            }
+
+        }
+        else
+        {
+            return;
+        }
+        
+    }
+
+    public void Pause_Play_State()
+    {
+        play_State = PlayState.Paused;
+
+    }
+
+    public void Activate_Play_State()
+    {
+        play_State = PlayState.Play;
+
+    }
+    
+
+  
+    public bool EnemyIsAlive()
+    {
+        searchCountDown -= Time.deltaTime;
+        if(searchCountDown <= 0f)
+        {
+            searchCountDown = 2f;
+            //if we try and find a game object with tag enemy and nothing comes up
+            // GameObject.FindGameObjectWithTag("Enemy") == null ||
+            if (GameObject.FindGameObjectWithTag("Enemy") == null && enemiesAlive <= 0 && spawnedEnemies == NumberOfEnemiesToSpawn)
+            {
+                // EnemyIs Alive will be set as false
+                return false;
+            }
+        }
+
+        //else EnemyIsAlive will be set as true
+        return true;
+
+    }
+
+    void WaveCompleted()
+    {
+        Debug.Log("Wave Completed");
+        spawn_State = SpawnState.Counting;
+        waveCountDown = timeBetweenWaves;
+
+        if (level == MaxLevel )
+        {
+            Debug.Log("All Waves are complete, Play state is set to Finished");
+            play_State = PlayState.Finished;
+            Debug.Log(PlayState.Finished);
+            // TODO: Connect to complete state
+            HandUIState.SetHandUIStateTo_GameWonState();
+        }
+        else
+        {
+            level++;
+            //Connecting the levels passed to the static round variable that is connected to the HandUI;
+            PlayerStats.Rounds = level;
+        }
+
+
+    }
+
+
 
     private IEnumerator SpawnEnemies()
     {
-        level++;
+        spawn_State = SpawnState.Spawning;
+        //level++;
         spawnedEnemies = 0;
         enemiesAlive = 0;
 
@@ -89,13 +231,12 @@ public class EnemigoSpawner : MonoBehaviour
 
         WaitForSeconds wait = new WaitForSeconds(SpawnDelay);
 
-        int SpawnedEnemies = 0;
 
-        while (SpawnedEnemies < NumberOfEnemiesToSpawn)
+        while (spawnedEnemies < NumberOfEnemiesToSpawn)
         {
             if(EnemySpawnMethod == SpawnMethod.RoundRobin)
             {
-                SpawnRoundRobinEnemy(SpawnedEnemies);
+                SpawnRoundRobinEnemy(spawnedEnemies);
             }
             else if(EnemySpawnMethod == SpawnMethod.Random)
             {
@@ -103,7 +244,7 @@ public class EnemigoSpawner : MonoBehaviour
             }
             else if(EnemySpawnMethod == SpawnMethod.SetSpawnLocation)
             {
-                int SpawnIndex = SpawnedEnemies % weightedEnemies.Count;
+                int SpawnIndex = spawnedEnemies % weightedEnemies.Count;
                 SpawnEnemyAtSetLocation(SpawnIndex);
             }
             else if(EnemySpawnMethod == SpawnMethod.WeightedRandom)
@@ -116,7 +257,9 @@ public class EnemigoSpawner : MonoBehaviour
                 SpawnWeightedEnemy_AtSetLocation();
             }
 
-            SpawnedEnemies++;
+            spawnedEnemies++;
+
+            spawn_State = SpawnState.Waiting;
             yield return wait;
         }
 
@@ -292,32 +435,35 @@ public class EnemigoSpawner : MonoBehaviour
         SpawnDelay = initialSpawnDelay * scaling.SpawnRateCurve.Evaluate(level + 1);
 
     }
-
+   
 
 
     private void HandleEnemyDeath(Enemigo enemy)
     {
+        
+
         enemiesAlive--;
-        Debug.Log("HandleEnemyDeath is being passed trhough");
-        if(enemiesAlive <= 0 && spawnedEnemies == NumberOfEnemiesToSpawn)
-        {
-            ScaledUpSpawns();
-            StartCoroutine( SpawnEnemies() );
-        }
+        //Debug.Log("HandleEnemyDeath is being passed trhough");
+        //if(enemiesAlive == 0 && spawnedEnemies == NumberOfEnemiesToSpawn)
+        //{
+        //    if(!EnemyIsAlive())
+        //    {
+        //        ScaledUpSpawns();
+        //        StartCoroutine(SpawnEnemies());
+
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
+      
 
     }
 
 
+    
 
-    public enum SpawnMethod
-    {
-        RoundRobin,
-        Random,
-        SetSpawnLocation,
-        WeightedRandom,
-        SetSpawnLocationWeightedRandom
-
-    }
 
 
 }

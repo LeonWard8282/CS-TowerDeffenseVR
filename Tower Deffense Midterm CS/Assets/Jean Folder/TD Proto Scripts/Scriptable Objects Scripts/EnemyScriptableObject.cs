@@ -108,8 +108,10 @@ public class EnemyScriptableObject : ScriptableObject
 
         //enemigo.movement.player = player;
         //enemigo.movement.targeted_HomeBase = targeted_HomeBase;
-
-        Health = Health;
+        enemigo.start_Health = Health;
+        enemigo.health = Health;
+        
+        //Health = Health;
 
         
 

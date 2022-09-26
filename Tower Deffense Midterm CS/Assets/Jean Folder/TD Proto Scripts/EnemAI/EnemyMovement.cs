@@ -69,6 +69,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //targeted_HomeBase = GameObject.FindGameObjectWithTag("HomeBase").GetComponent<Transform>();
 
     }
 
@@ -82,6 +84,7 @@ public class EnemyMovement : MonoBehaviour
     private void handleLoseSight(PlayerStats player)
     {
         Debug.Log("Lost sight of player Default state activate.");
+
         State = DefaultState;
     }
 
@@ -279,6 +282,13 @@ public class EnemyMovement : MonoBehaviour
                 Gizmos.DrawLine(waypoints[i], waypoints[0]);
             }
         }
+    }
+
+
+    public void FoundPlayer(Transform player_)
+    {
+        player = player_;
+
     }
 
 

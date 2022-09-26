@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour, iDamageable
 {
     [SerializeField]
-    private AttackRadius attackRadius;
+    //private AttackRadius attackRadius;
     //possible future hand animation???
     //[SerializeField]
     //private Animator animator;
@@ -37,6 +37,12 @@ public class PlayerStats : MonoBehaviour, iDamageable
         if(health <= 0 )
         {
             // TODO: Remove Life, respwan at base, Penalty?
+            
+
+            // Respawn new pillar or set point
+
+
+            // trigger a penalty
 
         }
 

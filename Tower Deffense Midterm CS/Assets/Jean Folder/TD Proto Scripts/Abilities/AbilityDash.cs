@@ -9,7 +9,7 @@ public class AbilityDash : Abilities
     public InputActionReference rightThumstickPress = null;
 
     [SerializeField] private int boostPercentage;
-    [SerializeField] ContinuousMovement movement;
+    [SerializeField] PlayerMovement movement;
 
     private float boostAsPercent;
 
@@ -27,7 +27,7 @@ public class AbilityDash : Abilities
     // Start is called before the first frame update
     void Start()
     {
-        movement = GetComponent<ContinuousMovement>();
+        movement = GetComponent<PlayerMovement>();
         boostAsPercent = (100 + boostPercentage) / 100;
     }
 

@@ -31,11 +31,19 @@ public class LoginManager : MonoBehaviourPunCallbacks
     #endregion
 
     #region UI Callback Methods
-    public void ConnectAnonymously()
+    public void ConnectAnonymously1()
     {
-        roomManager.OnEnterButtonClicked_Multiplayer();
+        roomManager.OnEnterButtonClicked_Multiplayer1();
     }
 
+    public void ConnectAnonymously2()
+    {
+        roomManager.OnEnterButtonClicked_Multiplayer2();
+    }
+    public void ConnectAnonymously3()
+    {
+        roomManager.OnEnterButtonClicked_Multiplayer3();
+    }
     public void ConnectToPhotonServer()
     {
         if (playerNameInput != null)
@@ -60,7 +68,7 @@ public class LoginManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
-        roomManager.OnEnterButtonClicked_Multiplayer();
+        roomManager.OnEnterButtonClicked_Multiplayer1();
     }
 
 

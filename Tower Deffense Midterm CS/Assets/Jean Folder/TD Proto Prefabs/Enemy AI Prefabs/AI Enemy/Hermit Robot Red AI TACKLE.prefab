@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4846060778354115387}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBLLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7782010533203077500}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 691790708827707044}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8390626920938274501}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBRLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2487839571751675170}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBRLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3651072575116115635}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFRLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7391076044653081982}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9016507378118023970}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFRLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 718271364829156070}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFLLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4691530835382363135}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3917787901978280784}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298183831076319954}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFLLeg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4956626343112225614}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 7876669155291221822}
   - component: {fileID: 7876669155291221821}
   - component: {fileID: 8525665421785324878}
-  - component: {fileID: 5290257395202677426}
+  - component: {fileID: 2102306926333937759}
   m_Layer: 17
   m_Name: Hermit Robot Red AI TACKLE
   m_TagString: Enemy
@@ -521,6 +521,7 @@ Transform:
   - {fileID: 4956626343112225614}
   - {fileID: 4258568817114841122}
   - {fileID: 3813395316652826044}
+  - {fileID: 8430503617113259969}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -561,7 +562,7 @@ MonoBehaviour:
   lineOfSightChecker: {fileID: 6115461269329163053}
   updateRate: 0.1
   animator: {fileID: 1683348839624716422}
-  DefaultState: 3
+  DefaultState: 2
   IdleLocationRadius: 4
   IdleMoveSpeedMultiplier: 0.5
   waypoints:
@@ -606,7 +607,9 @@ MonoBehaviour:
   Animator: {fileID: 1683348839624716422}
   movement: {fileID: 7876669155291221952}
   agent: {fileID: 7876669155291221821}
+  start_Health: 100
   health: 100
+  healthBar: {fileID: 3671455335450283160}
   deathEffect: {fileID: 1280141305896002, guid: e473029e4c70ad543a6879b82a732f4f,
     type: 3}
   moneyGained: 50
@@ -647,21 +650,20 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &5290257395202677426
-MeshCollider:
+  m_CollisionDetection: 2
+--- !u!135 &2102306926333937759
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5401936506567274566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Center: {x: 0, y: 0.66, z: 0}
 --- !u!1 &5500606556211437402
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +673,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3289150709207942115}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBRLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329160411922927185}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBLLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5841569070513429147}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigRGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2027525444036762011}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFRLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +798,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5383633049758081443}
   - component: {fileID: 7638730590557987344}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Hermit Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5302146102768109575}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigLGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9092074846331544791}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,7 +1023,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3567276327179337636}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigFLLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5992030093309815129}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: RigBLLeg1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,3 +1078,145 @@ Transform:
   m_Father: {fileID: 4956626343112225614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2942674686450817840
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4736757722414344956}
+    m_Modifications:
+    - target: {fileID: 1735418503299217584, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1653
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 732
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.011975288
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6489991
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8497067014808246594, guid: cfda28e9157124247bf65d34ea9063ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy Health Bar Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfda28e9157124247bf65d34ea9063ad, type: 3}
+--- !u!114 &3671455335450283160 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1884151874414008232, guid: cfda28e9157124247bf65d34ea9063ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2942674686450817840}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &8430503617113259969 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6640928556161508593, guid: cfda28e9157124247bf65d34ea9063ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 2942674686450817840}
+  m_PrefabAsset: {fileID: 0}

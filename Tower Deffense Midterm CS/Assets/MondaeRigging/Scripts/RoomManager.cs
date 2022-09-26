@@ -9,7 +9,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     private string mapType;
 
-    public TextMeshProUGUI occupancyMultiplayer;
+    public TextMeshProUGUI occupancyMultiplayer1;
+    public TextMeshProUGUI occupancyMultiplayer2;
+    public TextMeshProUGUI occupancyMultiplayer3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,11 +40,52 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    public void OnEnterButtonClicked_Multiplayer()
+    public void OnEnterButtonClicked_Multiplayer1()
     {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER;
+        if (!PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            PhotonNetwork.JoinLobby();
+        }
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER1;
         ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY,mapType} };
         PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+        Debug.Log("Level 1");
+    }
+
+    public void OnEnterButtonClicked_Multiplayer2()
+    {
+        if (!PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            PhotonNetwork.JoinLobby();
+        }
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER2;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+        Debug.Log("Level 2");
+    }
+
+    public void OnEnterButtonClicked_Multiplayer3()
+    {
+        if (!PhotonNetwork.IsConnectedAndReady)
+        {
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            PhotonNetwork.JoinLobby();
+        }
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER3;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+        Debug.Log("Level 3");
     }
 
     #endregion
@@ -73,9 +116,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if(PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType))
             {
                 Debug.Log("Joined room with map: " + (string)mapType);
-                if((string) mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER)
+                if((string) mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER1)
                 {
-                    PhotonNetwork.LoadLevel("Multiplayer");
+                    PhotonNetwork.LoadLevel("Multiplayer1");
+                }
+                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER2)
+                {
+                    PhotonNetwork.LoadLevel("Multiplayer2");
+                }
+                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER3)
+                {
+                    PhotonNetwork.LoadLevel("Multiplayer3");
                 }
             }
         }
@@ -90,15 +141,27 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if(roomList.Count == 0)
         {
-            occupancyMultiplayer.text = 0 + "/" + 20;
+            occupancyMultiplayer1.text = 0 + "/" + 20;
+            occupancyMultiplayer2.text = 0 + "/" + 20;
+            occupancyMultiplayer3.text = 0 + "/" + 20;
         }
 
         foreach(RoomInfo room in roomList)
         {
             Debug.Log(room.Name);
-            if(room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER))
+            if(room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER1))
             {
-                occupancyMultiplayer.text = room.PlayerCount + "/" + 20;
+                occupancyMultiplayer1.text = room.PlayerCount + "/" + 20;
+            }
+
+            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER2))
+            {
+                occupancyMultiplayer2.text = room.PlayerCount + "/" + 20;
+            }
+
+            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER3))
+            {
+                occupancyMultiplayer3.text = room.PlayerCount + "/" + 20;
             }
         }
     }

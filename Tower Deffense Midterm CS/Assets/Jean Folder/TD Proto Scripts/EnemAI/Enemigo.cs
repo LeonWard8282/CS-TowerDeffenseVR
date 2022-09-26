@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemigo : PoolableObject , iDamageable
 {
@@ -10,8 +11,12 @@ public class Enemigo : PoolableObject , iDamageable
 
     public EnemyMovement movement;
     public NavMeshAgent agent;
-    public int health = 100;
 
+    [Header("Enemy Health")]
+    public float start_Health = 100;
+    public float health;
+    public Image healthBar;
+    [Header("Enemy Death Effects")]
     public GameObject deathEffect;
     public int moneyGained = 50;
 
@@ -23,7 +28,14 @@ public class Enemigo : PoolableObject , iDamageable
 
     private void Awake()
     {
+        health = start_Health;
         AttackRadius.OnAttack += OnAttack;
+    }
+
+    private void Start()
+    {
+        //health = start_Health;
+        Debug.Log("Start health is set at" + start_Health);
     }
 
     private void OnAttack(iDamageable target)
@@ -76,9 +88,12 @@ public class Enemigo : PoolableObject , iDamageable
     public void TakeDamage(int Damage)
     {
         health -= Damage;
+        //start_Health -= Damage;
+        healthBar.fillAmount = health / start_Health;
 
-        if(health <= 0)
+        if (health <= 0)
         {
+            // Linking to wave spawner 
             OnDie?.Invoke(this);
 
             // Death Sequence
@@ -87,11 +102,10 @@ public class Enemigo : PoolableObject , iDamageable
             //Destroys the death effect
             Destroy(death_Effect, 5f);
 
-            // Linking to wave spawner 
-            //WaveSpawner.enemiesAlive--;
+         
 
             // Link to player stats money 
-            //PlayerStats.Money += moneyGained;
+            PlayerStats.Money += moneyGained;
 
             // setting the game object to false. 
             gameObject.SetActive(false);

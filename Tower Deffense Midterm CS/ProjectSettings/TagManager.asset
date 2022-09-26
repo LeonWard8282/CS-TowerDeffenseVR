@@ -17,6 +17,8 @@ TagManager:
   - ShieldPowerUp
   - HealthPowerUp
   - GrapplePoint
+  - LHand
+  - RHand
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - head
   - Water
   - UI
-  - laser
+  - Bullet
   - Player
   - PlacementLayer
   - PlacementGhosts
@@ -41,7 +43,7 @@ TagManager:
   - Shield
   - GrapplePoint
   - Grenade
-  - 
+  - Gun
   - 
   - 
   - 

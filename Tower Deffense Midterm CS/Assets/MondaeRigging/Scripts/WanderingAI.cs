@@ -10,7 +10,7 @@ public class WanderingAI : MonoBehaviour
     public float wanderTimer;
 
     private Transform target;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     private float timer;
 
     // Use this for initialization

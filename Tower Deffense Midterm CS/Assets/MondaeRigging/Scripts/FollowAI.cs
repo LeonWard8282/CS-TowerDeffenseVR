@@ -28,7 +28,7 @@ public class FollowAI : MonoBehaviour
 
     public States currentState;
 
-    private int currentWaypoint;
+    public int currentWaypoint;
     // Start is called before the first frame update
     void Start()
     {        

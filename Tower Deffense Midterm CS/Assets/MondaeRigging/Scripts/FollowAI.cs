@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class FollowAI : MonoBehaviour
 {
@@ -173,6 +174,6 @@ public class FollowAI : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

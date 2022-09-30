@@ -42,51 +42,51 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     public void OnEnterButtonClicked_Multiplayer1()
     {
-        if (!PhotonNetwork.IsConnectedAndReady)
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
-        else
-        {
-            PhotonNetwork.JoinLobby();
-        }
+        //if (!PhotonNetwork.IsConnectedAndReady)
+        //{
+        //    PhotonNetwork.ConnectUsingSettings();
+        //}
+        //else
+        //{
+        //    PhotonNetwork.JoinLobby();
+        //}
         mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER1;
         ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY,mapType} };
         PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
         Debug.Log("Level 1");
     }
 
-    public void OnEnterButtonClicked_Multiplayer2()
-    {
-        if (!PhotonNetwork.IsConnectedAndReady)
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
-        else
-        {
-            PhotonNetwork.JoinLobby();
-        }
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER2;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-        Debug.Log("Level 2");
-    }
+    //public void OnEnterButtonClicked_Multiplayer2()
+    //{
+    //    if (!PhotonNetwork.IsConnectedAndReady)
+    //    {
+    //        PhotonNetwork.ConnectUsingSettings();
+    //    }
+    //    else
+    //    {
+    //        PhotonNetwork.JoinLobby();
+    //    }
+    //    mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER2;
+    //    ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+    //    PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    //    Debug.Log("Level 2");
+    //}
 
-    public void OnEnterButtonClicked_Multiplayer3()
-    {
-        if (!PhotonNetwork.IsConnectedAndReady)
-        {
-            PhotonNetwork.ConnectUsingSettings();
-        }
-        else
-        {
-            PhotonNetwork.JoinLobby();
-        }
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER3;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-        Debug.Log("Level 3");
-    }
+    //public void OnEnterButtonClicked_Multiplayer3()
+    //{
+    //    if (!PhotonNetwork.IsConnectedAndReady)
+    //    {
+    //        PhotonNetwork.ConnectUsingSettings();
+    //    }
+    //    else
+    //    {
+    //        PhotonNetwork.JoinLobby();
+    //    }
+    //    mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_MULTIPLAYER3;
+    //    ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { { MultiplayerVRConstants.MAP_TYPE_KEY, mapType } };
+    //    PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    //    Debug.Log("Level 3");
+    //}
 
     #endregion
 

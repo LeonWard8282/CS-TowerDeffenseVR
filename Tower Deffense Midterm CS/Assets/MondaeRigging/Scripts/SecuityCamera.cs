@@ -11,6 +11,7 @@ public class SecuityCamera : MonoBehaviour
     private float panSoFar = 0.0f;
     private bool panBack = false;
     private bool firstRotation = true;
+
     // Update is called once per frame
     void Update()
     {

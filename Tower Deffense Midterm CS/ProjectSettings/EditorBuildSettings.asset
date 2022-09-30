@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/AA FINALIZED LEVELS/TD_Level Three.unity
     guid: ae4551b16b5272348b4479a851aa20f2
   - enabled: 1
-    path: Assets/MondaeRigging/Scenes/Multiplayer.unity
-    guid: f106c63934f07754bb25db92f1e1d38a
-  - enabled: 1
     path: Assets/Scenes/F_Prototype Intro Level.unity
     guid: a8304f0fcb160fa41b00910cfb8d1ea2
   - enabled: 1
@@ -35,6 +32,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/F_Prototype Scene Level 3.unity
     guid: 004ebf6272c49a042b5abbf2de673580
+  - enabled: 1
+    path: Assets/AA FINALIZED LEVELS/Multiplayer1.unity
+    guid: 144fd3369f22f274684c4f6ab0b6d227
+  - enabled: 1
+    path: Assets/AA FINALIZED LEVELS/Multiplayer2.unity
+    guid: f41a7c145e84b3a44aece2a3bf14d066
+  - enabled: 1
+    path: Assets/AA FINALIZED LEVELS/Multiplayer3.unity
+    guid: 6bfec367a96e2a44eb23e8d0ab75f0ac
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 60fee588ca68fc3449cd318b4878ed19,
       type: 2}

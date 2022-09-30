@@ -23,6 +23,7 @@ public class SecurityBeam : MonoBehaviour
     {
         beamColor = beamMaterial.color;
         enemyAI = GameObject.FindGameObjectsWithTag("Enemy");
+        detectedPlayer = null;
     }
 
     // Update is called once per frame

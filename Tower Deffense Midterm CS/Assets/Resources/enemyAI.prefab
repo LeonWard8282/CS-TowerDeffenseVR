@@ -2057,6 +2057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
+  xpDrop: {fileID: 6262760109702015730, guid: b44bf429506e6d74c950afa1483f2c51, type: 3}
 --- !u!1 &1847022287218958
 GameObject:
   m_ObjectHideFlags: 0

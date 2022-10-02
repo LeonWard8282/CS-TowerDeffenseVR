@@ -36,7 +36,7 @@ public class Skill : MonoBehaviour
     {
         if (skillTree.saveData.SkillPoints < 1 || skillTree.SkillLevels[id] >= skillTree.SkillCaps[id])
             return;
-        skillTree.saveData.SkillPoints -= 1;
+        skillTree.saveData.UpdateSkills(-1);
         skillTree.SkillLevels[id]++;
         skillTree.UpdateAllSkillsUI();
     }

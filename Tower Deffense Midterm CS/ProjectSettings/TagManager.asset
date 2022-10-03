@@ -19,6 +19,7 @@ TagManager:
   - GrapplePoint
   - LHand
   - RHand
+  - Security
   layers:
   - Default
   - TransparentFX

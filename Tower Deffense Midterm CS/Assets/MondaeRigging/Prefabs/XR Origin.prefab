@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4296816009169838018}
   - component: {fileID: 4296816009169838017}
   - component: {fileID: 4296816009169837880}
+  - component: {fileID: 7543726743767919200}
   m_Layer: 3
   m_Name: XR Origin
   m_TagString: Untagged
@@ -303,6 +304,21 @@ MonoBehaviour:
   rightGrabRay: {fileID: 4296816010506464984}
   leftDirectGrab: {fileID: 4296816009686728341}
   rightDirectGrab: {fileID: 4296816010281228418}
+--- !u!114 &7543726743767919200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4296816009169838021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bbcc2588b26d6746b0fbf5458b99443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButtonPress:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4296816009686728345
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,4 +16,10 @@ public class SaveData : MonoBehaviour
     {
         
     }
+
+    public void UpdateSkills(int skills)
+    {
+        SkillPoints += skills;
+        ES3AutoSaveMgr.Current.Save();
+    }
 }

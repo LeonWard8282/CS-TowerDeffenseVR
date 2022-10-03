@@ -8,6 +8,7 @@ public class LoginManager : MonoBehaviourPunCallbacks
 {
     public TMP_InputField playerNameInput;
     public RoomManager roomManager;
+    public GameObject connectButton;
 
     #region Unity Methods
     // Start is called before the first frame update
@@ -16,10 +17,6 @@ public class LoginManager : MonoBehaviourPunCallbacks
         //if (!PhotonNetwork.IsConnectedAndReady)
         //{
         //    PhotonNetwork.ConnectUsingSettings();
-        //}
-        //else
-        //{
-        //    PhotonNetwork.JoinLobby();
         //}
     }
 
@@ -36,14 +33,6 @@ public class LoginManager : MonoBehaviourPunCallbacks
         roomManager.OnEnterButtonClicked_Multiplayer1();
     }
 
-    public void ConnectAnonymously2()
-    {
-        roomManager.OnEnterButtonClicked_Multiplayer2();
-    }
-    public void ConnectAnonymously3()
-    {
-        roomManager.OnEnterButtonClicked_Multiplayer3();
-    }
     public void ConnectToPhotonServer()
     {
         if (playerNameInput != null)
@@ -67,6 +56,11 @@ public class LoginManager : MonoBehaviourPunCallbacks
     }
 
     public override void OnJoinedLobby()
+    {
+        connectButton.SetActive(true);
+    }
+
+    public void EnterRoom1()
     {
         roomManager.OnEnterButtonClicked_Multiplayer1();
     }

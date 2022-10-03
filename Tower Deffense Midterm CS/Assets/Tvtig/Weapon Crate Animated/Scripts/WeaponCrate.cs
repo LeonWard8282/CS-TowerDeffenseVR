@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using Photon.Pun;
 
 public class WeaponCrate : MonoBehaviour
 {
     [SerializeField]
     private VisualEffect _visualEffect;
 
-    public GameObject[] powerups;
-    public GameObject[] weapons;
+    public string[] powerups;
+    public string[] weapons;
     public Transform spawn1;
     public Transform spawn2;
     public Transform spawn3;
@@ -48,9 +49,9 @@ public class WeaponCrate : MonoBehaviour
     IEnumerator WeaponCache()
     {
         yield return new WaitForSeconds(1);
-        Instantiate(weapons[Random.Range(0, weapons.Length)], spawn1.position, spawn1.rotation);
-        Instantiate(weapons[Random.Range(0, weapons.Length)], spawn3.position, spawn3.rotation);
-        Instantiate(powerups[Random.Range(0, powerups.Length)], spawn2.position, spawn2.rotation);
-        Destroy(gameObject);
+        PhotonNetwork.Instantiate(weapons[Random.Range(0, weapons.Length)], spawn1.position, spawn1.rotation);
+        PhotonNetwork.Instantiate(weapons[Random.Range(0, weapons.Length)], spawn3.position, spawn3.rotation);
+        PhotonNetwork.Instantiate(powerups[Random.Range(0, powerups.Length)], spawn2.position, spawn2.rotation);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

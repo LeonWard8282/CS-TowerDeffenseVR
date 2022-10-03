@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class AIWeapon : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class AIWeapon : MonoBehaviour
     
     public void Fire()
     {
-        Rigidbody rb = Instantiate(bullet, bulletTransform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Rigidbody rb = PhotonNetwork.Instantiate("bullet", bulletTransform.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.right * shootForce);
         //rb.AddForce(transform.forward * 500f);
     }

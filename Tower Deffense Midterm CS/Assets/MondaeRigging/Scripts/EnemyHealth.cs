@@ -7,11 +7,12 @@ public class EnemyHealth : MonoBehaviour
 {
     public float Health;
     public GameObject xpDrop;
+    public SpawnManager1 spawnManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnManager1>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,14 @@ public class EnemyHealth : MonoBehaviour
 
     private void DestroyEnemy()
     {
+        if(this.gameObject.CompareTag("Enemy"))
+        {
+            spawnManager.enemyCount--;
+        }
+        if (this.gameObject.CompareTag("Security"))
+        {
+            spawnManager.securityCount--;
+        }
         PhotonNetwork.Destroy(gameObject);
     }
 }

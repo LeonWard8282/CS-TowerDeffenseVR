@@ -24,6 +24,14 @@ public class SpawnManager1 : MonoBehaviour
     //public float securitySpawnTimer = 10f;
     //public float cacheSpawnTimer = 60f;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectsWithTag("SpawnManager").Length == 0)
+            DontDestroyOnLoad(gameObject);
+        else
+            Destroy(this.gameObject);
+    }
+
     void Start()
     {
 

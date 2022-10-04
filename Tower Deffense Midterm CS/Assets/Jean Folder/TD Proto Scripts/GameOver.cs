@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public TMP_Text roundsText;
+    public string menueScene;
 
      void OnEnable()
     {
@@ -15,16 +16,15 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
-        //TODO Link this to Prototype scene. 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         //SceneManger.LoadScene("Prototype Scene")
 
     }
 
     public void Menu()
     {
-
-        Debug.Log("Going to Menu");
+        SceneManager.LoadScene(menueScene);
     }
 
 

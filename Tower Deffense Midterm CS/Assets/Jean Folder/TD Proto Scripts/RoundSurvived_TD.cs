@@ -9,7 +9,7 @@ public class RoundSurvived_TD : MonoBehaviour
 
     private void OnEnable()
     {
-        roundsText.text = PlayerStats.Rounds.ToString();
+        roundsText.text = ("Rounds completed: ") + PlayerStats.Rounds.ToString();
     }
 
     

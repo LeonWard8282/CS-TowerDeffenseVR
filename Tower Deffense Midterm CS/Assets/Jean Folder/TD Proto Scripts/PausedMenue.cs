@@ -5,54 +5,48 @@ using UnityEngine.SceneManagement;
 
 public class PausedMenue : MonoBehaviour
 {
-    public GameObject userInterFacePauseMenue;
-
-
-    private void Update()
-    {
-        
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
-        {
-
-            Toggle();
-
-        }
-
-
-    }
-
-    public void Toggle()
-    {
-        userInterFacePauseMenue.SetActive(!userInterFacePauseMenue.activeSelf);
-
-        if(userInterFacePauseMenue.activeSelf)
-        {
-            Time.timeScale = 0f;
-            
-
-
-        }
-        else
-        {
-            Time.timeScale = 1f;
-
-        }
-
-    }
+    public Wrist_UI_Manager WristUIManager;
+    public string MainMenueScene;
 
 
     public void Retry()
     {
-        Toggle();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        if(Time.timeScale == 0)
+        {
+            PlayerStats.Rounds = 0;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
+
+        else
+        {
+            PlayerStats.Rounds = 0;
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
 
 
     }
 
     public void Menu()
     {
+        
+        SceneManager.LoadScene(MainMenueScene);
+        Time.timeScale = 1f;
+    }
 
-        Debug.Log("Go to Menue");
+    public void Continue()
+    {
+        // have everything go back to motion, 
+        WristUIManager.SetHandUIStateTo_GameWonState();
+
+        //return menue to previous screen
+
+
+
     }
 
 

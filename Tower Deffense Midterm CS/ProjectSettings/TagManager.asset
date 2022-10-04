@@ -10,6 +10,16 @@ TagManager:
   - RedBullet
   - Enemy
   - laser
+  - spawnpoint
+  - HomeBase
+  - Flyingspawnpoint
+  - Bullet
+  - ShieldPowerUp
+  - HealthPowerUp
+  - GrapplePoint
+  - LHand
+  - RHand
+  - Security
   layers:
   - Default
   - TransparentFX
@@ -17,8 +27,8 @@ TagManager:
   - head
   - Water
   - UI
-  - 
-  - 
+  - Bullet
+  - Player
   - PlacementLayer
   - PlacementGhosts
   - Towers
@@ -27,14 +37,14 @@ TagManager:
   - EnemyProjectiles
   - FlyingEnemies
   - GroundEnemyTargettingProjectiles
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Enemy
+  - EnemyAttackRadius
+  - EnemyBullets
+  - Shield
+  - GrapplePoint
+  - Grenade
+  - Gun
   - 
   - 
   - 

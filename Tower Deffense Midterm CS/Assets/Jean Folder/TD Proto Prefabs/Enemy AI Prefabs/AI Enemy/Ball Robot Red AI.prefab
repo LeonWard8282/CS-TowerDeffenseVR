@@ -134,6 +134,8 @@ MonoBehaviour:
   collider: {fileID: 6846413866666763046}
   Damage: 10
   AttackDelay: 0.5
+  enemyMovement: {fileID: 0}
+  enemyLineOfSightCheck: {fileID: 0}
 --- !u!1 &912282057359519747
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +370,8 @@ GameObject:
   - component: {fileID: 4047795318024618213}
   - component: {fileID: -1117205340518450302}
   - component: {fileID: -917848821126069384}
+  - component: {fileID: 8158583629378050586}
+  - component: {fileID: 5917989389015725006}
   m_Layer: 17
   m_Name: Ball Robot Red AI
   m_TagString: Enemy
@@ -450,13 +454,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bc8063c9e95401f9a8a38bc716750d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Method: 2
-  m_Curve:
+  DefaultMoveMethod: 2
+  Curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ParabolaHeight: 8
+  NavMeshLinkTraversalTypes: []
 --- !u!114 &6355415744162274354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,7 +480,8 @@ MonoBehaviour:
   lineOfSightChecker: {fileID: 9146462503120341150}
   updateRate: 0.1
   animator: {fileID: 277658014911399434}
-  DefaultState: 3
+  DefaultState: 1
+  _oldToNewState: 0
   IdleLocationRadius: 4
   IdleMoveSpeedMultiplier: 0.5
   waypoints:
@@ -484,6 +491,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   waypointMarchingPath: []
   WaypoinIndex: 0
+  stoppingDistance: 0.5
+  inAttackMode: 0
 --- !u!54 &4047795318024618213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -514,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackRadius: {fileID: 7040780562438063210}
   Animator: {fileID: 277658014911399434}
-  movement: {fileID: 6355415744162274354}
+  enemyMovement: {fileID: 6355415744162274354}
   agent: {fileID: 4220705779300127874}
   start_Health: 100
   health: 100
@@ -535,6 +544,46 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.33638254
   m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!114 &8158583629378050586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805374470607865546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239d82f2971134b4bb9baf384ad602d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  angle: 30
+  height: 1
+  mesh_Color: {r: 1, g: 0, b: 0, a: 1}
+  scanFrequency: 30
+  layers:
+    serializedVersion: 2
+    m_Bits: 1152
+  occlusionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Objects: []
+--- !u!114 &5917989389015725006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805374470607865546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fee0f24a77ad53408ac36eb3bc884b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  aISensor: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  scanFrequency: 1.5
 --- !u!1 &7536504301764994716
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +613,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6141322930688646256}
   m_RootOrder: 4
@@ -588,8 +637,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
-  m_Center: {x: 0, y: 0.86, z: 0}
+  m_Radius: 10
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &9146462503120341150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,16 +646,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7536504301764994716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fee0f24a77ad53408ac36eb3bc884b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 4495179486562581099}
-  fieldOfView: 100
-  lineOfSightLayer:
-    serializedVersion: 2
-    m_Bits: 66689
+  currentTarget: {fileID: 0}
+  aISensor: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  scanFrequency: 1.5
 --- !u!1 &8626697307934915389
 GameObject:
   m_ObjectHideFlags: 0

@@ -93,7 +93,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1516d145af6a74a2c9a24b3333dc64b2, type: 2}
+  - {fileID: 2100000, guid: f3547104031b1d64f9514b09d27a7b46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +124,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636806404886292779}
-  - component: {fileID: 8527687644071742471}
   m_Layer: 10
   m_Name: RTower_2
   m_TagString: Untagged
@@ -151,23 +150,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8527687644071742471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8631443942205008787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d8e55681884ffb9fb6ed0b6f18f0bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerGhostPrefab: {fileID: 114921728373014414, guid: a97cb849a741c434a91e947709d0fb71,
-    type: 3}
-  buildEffectPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
-    type: 3}
-  levelData: {fileID: 11400000, guid: b663c24c5aafb42b5bea169fd2b54da1, type: 2}
 --- !u!1 &8631464399114735403
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +159,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636946804942576465}
-  - component: {fileID: 8528291549555225899}
   - component: {fileID: 8514253017883637703}
   m_Layer: 15
   m_Name: Targetter
@@ -201,26 +182,6 @@ Transform:
   m_Father: {fileID: 8636806404886292779}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8528291549555225899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8631464399114735403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e4035901ee40bba7c0866d2c6338a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 8637289286515689117}
-  turretXRotationRange: {x: -15, y: 15}
-  onlyYTurretRotation: 0
-  searchRate: 1
-  idleRotationSpeed: 30
-  idleCorrectionTime: 2
-  attachedCollider: {fileID: 8514253017883637703}
-  idleWaitTime: 2
 --- !u!136 &8514253017883637703
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -301,7 +262,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1516d145af6a74a2c9a24b3333dc64b2, type: 2}
+  - {fileID: 2100000, guid: f3547104031b1d64f9514b09d27a7b46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,10 +438,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8629738117302346769}
-  - component: {fileID: 8528364391237066087}
-  - component: {fileID: 8528329817585533231}
   - component: {fileID: 8569023818073412759}
-  - component: {fileID: 8528172784151270415}
   m_Layer: 10
   m_Name: Affector
   m_TagString: Untagged
@@ -503,44 +461,6 @@ Transform:
   m_Father: {fileID: 8636806404886292779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8528364391237066087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8632153123119664545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60237945a79b432f872d1c8c9d7c74a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireParticleSystem: {fileID: 0}
---- !u!114 &8528329817585533231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8632153123119664545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a4f7293b07e4698a4e3b652679f0c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  description: Offensive
-  projectile: {fileID: 1593046666255972, guid: 53e6a1eae90074d84a70f9f1a1aa36de, type: 3}
-  projectilePoints:
-  - {fileID: 8637259267930407651}
-  - {fileID: 8629727505342528803}
-  - {fileID: 8637192802280202853}
-  - {fileID: 8636957092832251963}
-  epicenter: {fileID: 8636806404886292779}
-  isMultiAttack: 0
-  fireRate: 0.8
-  randomAudioSource: {fileID: 8528172784151270415}
-  towerTargetter: {fileID: 8528291549555225899}
-  radiusEffectColor: {r: 0, g: 1, b: 1, a: 0.09803922}
 --- !u!82 &8569023818073412759
 AudioSource:
   m_ObjectHideFlags: 0
@@ -638,23 +558,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &8528172784151270415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8632153123119664545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11f03a17effc4238ba95c5b616ee02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-    weightedItems:
-    - clip: {fileID: 8300000, guid: ce02cc583b9d84102a12a156e90ca692, type: 3}
-      weight: 1
-  playOnEnabled: 0
 --- !u!1 &8633013036747977493
 GameObject:
   m_ObjectHideFlags: 0

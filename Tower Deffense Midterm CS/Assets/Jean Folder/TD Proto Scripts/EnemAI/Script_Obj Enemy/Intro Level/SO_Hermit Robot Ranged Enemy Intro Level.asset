@@ -16,14 +16,14 @@ MonoBehaviour:
   attackConfiguarions: {fileID: 11400000, guid: 87ba7048237a64c4b8788a6a6a43d31a,
     type: 2}
   Health: 50
-  defaultState: 1
+  defaultState: 4
   idleLocationRadius: 4
   idleMovespeedMultiplier: 0.5
   waypoints: 4
   LineOfSightRange: 6
   FieldOfView: 90
   ai_UpdateInterval: 0.1
-  acceleration: 8
+  acceleration: 3
   angularSpeed: 120
   areamask: -1
   avoidancePriority: 50
@@ -31,5 +31,5 @@ MonoBehaviour:
   height: 2
   obstacleAvoidanceType: 1
   radius: 0.5
-  speed: 3
+  speed: 1
   stoppingDistance: 0.5

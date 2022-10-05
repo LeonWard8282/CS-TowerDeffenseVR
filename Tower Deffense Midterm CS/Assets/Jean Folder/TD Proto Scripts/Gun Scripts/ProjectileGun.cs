@@ -89,7 +89,7 @@ public class ProjectileGun : MonoBehaviour
         else
         {
             shooting = Trigger_Button.action.IsPressed();
-            Debug.Log("Was pressed this frame");
+            //Debug.Log("Was pressed this frame");
         }
 
         if(allowButtonHold) // pressing the reload button do this

@@ -6,12 +6,13 @@ public class CompleteLevel_TD : MonoBehaviour
 {
     public SceneFader sceneFader;
     public string menuSceneName;
+    public string nextLevel;
 
 
     public void Continue()
     {
 
-
+        sceneFader.FadeTo(nextLevel);
 
     }
 
@@ -20,7 +21,7 @@ public class CompleteLevel_TD : MonoBehaviour
    
     public void Menu()
     {
-        //SceneFader.FadeTo(menuSceneName);
+        sceneFader.FadeTo(menuSceneName);
 
     }
 

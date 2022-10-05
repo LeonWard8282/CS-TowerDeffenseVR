@@ -34,13 +34,19 @@ public class AISensor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         scanTimer -= Time.deltaTime;
-        if(scanTimer < 0)
+        if (scanTimer < 0)
         {
             scanTimer += scanInterval;
             scan();
         }
+
+        
+
     }
+
+
 
     public bool IsInSight(GameObject obj)
     {

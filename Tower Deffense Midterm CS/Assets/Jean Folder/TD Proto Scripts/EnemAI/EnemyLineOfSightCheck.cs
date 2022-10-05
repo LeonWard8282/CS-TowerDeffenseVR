@@ -3,100 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 [RequireComponent(typeof(SphereCollider))]
 public class EnemyLineOfSightCheck : MonoBehaviour
 {
-    public SphereCollider collider;
-    public float fieldOfView;
-    public LayerMask lineOfSightLayer;
 
     public delegate void GainSightEvent(PlayerStats player);
     public GainSightEvent onGainSight;
     public delegate  void LoseSightEvent(PlayerStats player);
     public LoseSightEvent onLoseSight;
 
+    public CharacterStats currentTarget;
+    public AISensor aISensor;
+    public EnemyMovement enemyMovement;
 
-    private Coroutine checkForLineOfSightCoroutine;
-    private EnemyMovement enemymovement;
-
-    private void Awake()
-    {
-        collider = GetComponent<SphereCollider>();
-    }
+    float scanInterval;
+    float scanTimer;
+    public float scanFrequency = 1.5f;
 
     private void Start()
     {
-        enemymovement = GetComponent<EnemyMovement>();
+        aISensor = GetComponent<AISensor>();
+        enemyMovement = GetComponent<EnemyMovement>();
+        scanInterval = 1.0f / scanFrequency;
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        //if (other.tag == "Player")
-        //{
-        //    Transform player_Transform = other.GetComponent<Transform>();
-        //    enemymovement.FoundPlayer(player_Transform);
-
-        //}
-
-
-        PlayerStats player;
-        if(other.TryGetComponent<PlayerStats>(out player))
-        {
-            if(!CheckLineOfSight(player))
+        scanTimer -= Time.deltaTime;
+        
+            if (scanTimer < 0)
             {
-                checkForLineOfSightCoroutine = StartCoroutine(CheckForLineOfSight(player));
+                scanTimer += scanInterval;
+                LineOfSight();
+            }
+       
+      
+       
+    }
+
+
+    public void LineOfSight()
+    {
+        // If object count array is greater than zero.
+        if(aISensor.Objects.Count > 0 )
+        {
+            currentTarget = aISensor.Objects[0].GetComponent<CharacterStats>();
+
+            if(aISensor.Objects[0].CompareTag("Player") )
+            {
+                enemyMovement.HandleGainSight(currentTarget);
+            }
+            if (aISensor.Objects[0].CompareTag("Tower") || aISensor.Objects[0].CompareTag("HomeBase")) ;
+            {
+                enemyMovement.GainedSightOfTower(currentTarget);
 
             }
-        }
-    }
 
-    private void OnTigerrExit(Collider other)
-    {
-        PlayerStats player;
-        if(other.TryGetComponent<PlayerStats>(out player))
-            
+            //enemyMovement.HandleGainSight(currentTarget);
+
+        }
+        else if(aISensor.Objects.Count == 0)
         {
-            onLoseSight?.Invoke(player);
-
-            if(checkForLineOfSightCoroutine != null)
-            {
-                StopCoroutine(checkForLineOfSightCoroutine);
-
-            }
-        }
-    }
-
-    private bool CheckLineOfSight(PlayerStats player)
-    {
-        Vector3 direction = (player.transform.position - transform.position).normalized;
-
-        if (Vector3.Dot(transform.forward, direction) >= Mathf.Cos(fieldOfView))
-        {
-            RaycastHit hit;
-
-            if(Physics.Raycast(transform.position, direction, out hit, collider.radius, lineOfSightLayer))
-            {
-                if(hit.transform.GetComponent<PlayerStats>() != null)
-                {
-
-                    onGainSight?.Invoke(player);
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private IEnumerator CheckForLineOfSight(PlayerStats player)
-    {
-        WaitForSeconds wait = new WaitForSeconds(0.1f);
-        while(!CheckLineOfSight(player))
-        {
-            yield return wait;
+            currentTarget = null;
+            enemyMovement.HandleLoseSight(currentTarget);
         }
 
-    }
 
+    }
 
 
 }
+

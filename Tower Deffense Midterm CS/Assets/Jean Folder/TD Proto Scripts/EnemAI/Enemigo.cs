@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class Enemigo : PoolableObject , iDamageable
+
+public class Enemigo : PoolableObject , iDamageable 
 {
     public AttackRadius AttackRadius;
     public Animator Animator;
+    public EnemyMovement enemyMovement;
 
-    public EnemyMovement movement;
     public NavMeshAgent agent;
 
     [Header("Enemy Health")]
@@ -22,24 +23,29 @@ public class Enemigo : PoolableObject , iDamageable
 
     private Coroutine lookCoroutine;
     private const string Attack_Trigger = "Attack";
+    private const string Take_Damage = "Take Damage";
+    private const string Movement = "Movement";
 
+    // Connected to Enemy Spawner for counting and keeping track;
     public delegate void DeathEvent (Enemigo enemy);
     public DeathEvent OnDie;
 
     private void Awake()
     {
+        
         health = start_Health;
         AttackRadius.OnAttack += OnAttack;
     }
 
     private void Start()
     {
-        //health = start_Health;
+        health = start_Health;
         Debug.Log("Start health is set at" + start_Health);
     }
 
     private void OnAttack(iDamageable target)
     {
+        
         Animator.SetTrigger(Attack_Trigger);
         Debug.Log("Animator Trigger should have ran on attack of enemigo script ran. ");
       if(lookCoroutine != null)
@@ -48,7 +54,7 @@ public class Enemigo : PoolableObject , iDamageable
             StopCoroutine(lookCoroutine);
         }
         lookCoroutine = StartCoroutine(LookAt(target.GetTransform()));
-
+        Animator.SetTrigger(Movement);
     }
 
     private IEnumerator LookAt(Transform target)
@@ -87,6 +93,8 @@ public class Enemigo : PoolableObject , iDamageable
 
     public void TakeDamage(int Damage)
     {
+        Animator.SetTrigger(Take_Damage);
+        Animator.SetTrigger(Movement);
         health -= Damage;
         //start_Health -= Damage;
         healthBar.fillAmount = health / start_Health;

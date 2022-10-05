@@ -12,24 +12,27 @@ public class EnemyMovement : MonoBehaviour
     public EnemyLineOfSightCheck lineOfSightChecker;
     //public AISensor AI_Sensor;
     public NavMeshTriangulation triangulation;
-    public float updateRate = 0.1f; // How quickly we recalcula te the targets transform path. 
+    public float updateRate = 0.01f; // How quickly we recalcula te the targets transform path. 
     private NavMeshAgent agent;
     private AgentLinkMover LinkMover;
     [SerializeField]
     private Animator animator = null;
 
+    public Vector3 PositionDisplacement = new Vector3(.5f, 0, .5f);
+    // creating property of the state method, where _state is the old, and value is the new. And 
     public EnemyState DefaultState;
-    private EnemyState _state;
+    public EnemyState _oldToNewState;
     public EnemyState State
     {
         get
         {
-            return _state;
+            return _oldToNewState;
         }
         set
         {
-            onStateChange?.Invoke(_state, value);
-            _state = value;
+            onStateChange?.Invoke(_oldToNewState, value);
+            _oldToNewState = value;
+
         }
     }
 
@@ -49,6 +52,13 @@ public class EnemyMovement : MonoBehaviour
 
     private Coroutine FollowCoroutine;
 
+
+    private float distanceFromTarget;
+    public float stoppingDistance = 0.5f;
+
+
+    public  bool inAttackMode = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -57,12 +67,12 @@ public class EnemyMovement : MonoBehaviour
         LinkMover.OnLinkStart += HandleLinkStart;
         LinkMover.OnLinkEnd += HandleLinkEnd;
 
-        lineOfSightChecker.onGainSight += handleGainSight;
-        lineOfSightChecker.onLoseSight += handleLoseSight;
+        lineOfSightChecker.onGainSight += HandleGainSight;
+        lineOfSightChecker.onLoseSight += HandleLoseSight;
 
         onStateChange += HandleStateChange;
 
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         targeted_HomeBase = GameObject.FindGameObjectWithTag("HomeBase").GetComponent<Transform>();
 
     }
@@ -70,27 +80,44 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        //targeted_HomeBase = GameObject.FindGameObjectWithTag("HomeBase").GetComponent<Transform>();
+        targeted_HomeBase = GameObject.FindGameObjectWithTag("HomeBase").GetComponent<Transform>();
 
     }
 
 
-    private void handleGainSight(PlayerStats player)
+    public void HandleGainSight(CharacterStats _player)
     {
         Debug.Log("Enemy has spotted you!! RUN");
+        player = _player.GetComponent<Transform>();
         State = EnemyState.Chase;
     }
 
-    private void handleLoseSight(PlayerStats player)
+    public void HandleLoseSight(CharacterStats player)
     {
         Debug.Log("Lost sight of player Default state activate.");
-
+        player = null;
         State = DefaultState;
+    }
+
+    public void GainedSightOfTower(CharacterStats _player)
+    {
+        player = _player.GetComponent<Transform>();
+        State = EnemyState.HeadToTower;
+    }
+
+    public void TriggerAttackModeOn()
+    {
+        inAttackMode = true;
+    }
+
+    public void TriggerAttackModeOff()
+    {
+        inAttackMode = false;
     }
 
     private void OnDisable()
     {
-        _state = DefaultState; // use _state to avoid triggering OnStateChange when recyclin object in the pool
+        _oldToNewState = DefaultState; // use _state to avoid triggering OnStateChange when recyclin object in the pool
     }
 
     public void Spawn()
@@ -113,35 +140,59 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    private void Update()
+     void Update()
     {
+        //UpdateStates();
         // may need to remove line
         animator.SetFloat("Speed", agent.velocity.magnitude);
+
+
+        if (!agent.isOnOffMeshLink)
+        {
+            animator.SetFloat("Speed", agent.velocity.magnitude);
+        }
     }
 
 
 
 
 
-    private void HandleLinkStart()
+    private void HandleLinkStart(OffMeshLinkMoveMethod MoveMethod)
     {
-        animator.SetTrigger(Jump);
+        //animator.SetTrigger(Jump);
+        if (MoveMethod == OffMeshLinkMoveMethod.NormalSpeed)
+        {
+            animator.SetBool(IsWalking, true);
+        }
+        else if (MoveMethod != OffMeshLinkMoveMethod.Teleport)
+        {
+            animator.SetTrigger(Jump);
+        }
     }
 
-    private void HandleLinkEnd()
+    private void HandleLinkEnd(OffMeshLinkMoveMethod MoveMethod)
     {
 
-        animator.SetTrigger(Landed);
+        //animator.SetTrigger(Landed);
+        if (MoveMethod != OffMeshLinkMoveMethod.Teleport && MoveMethod != OffMeshLinkMoveMethod.NormalSpeed)
+        {
+            animator.SetTrigger(Landed);
+        }
+
     }
 
-    private void HandleStateChange(EnemyState oldState, EnemyState newstate)
+
+
+    public void HandleStateChange(EnemyState oldState, EnemyState newstate)
     {
-        // if the old state is not the new state
+        // if the old state does not equal the new state do the following. 
         if(oldState != newstate)
         {
+            // if the FollowCotuoyine does not equle null do the following. 
             if(FollowCoroutine != null)
             {
-
+                //stop the Follow cotoutine. 
+                Debug.Log("Stopping the Follow coroutine ");
                 StopCoroutine(FollowCoroutine);
             }
             if(oldState == EnemyState.Idle)
@@ -149,23 +200,36 @@ public class EnemyMovement : MonoBehaviour
                 agent.speed /= IdleMoveSpeedMultiplier;
 
             }
-
-            switch(newstate)
+       
+            // If attack radius is triggerd 
+            //we are staying still to decide what to do next
+            switch (newstate)
             {
+               
                 case EnemyState.Idle:
+                    Debug.Log("new state is " + newstate);
                     FollowCoroutine = StartCoroutine(DoIdleMotion());
                     break;
 
                 case EnemyState.Patrol:
+                    Debug.Log("new state is " + newstate);
                     FollowCoroutine = StartCoroutine(DoPatrolMotion());
                     break;
 
                 case EnemyState.Chase:
+                    Debug.Log("new state is " + newstate);
                     FollowCoroutine = StartCoroutine(FollowTarget());
                         break;
 
                 case EnemyState.WaypointMarch:
+                    Debug.Log("new state is " + newstate);
                     FollowCoroutine = StartCoroutine(DoMarchToHomeBase());
+                    break;
+                case EnemyState.HeadToTower:
+                    FollowCoroutine = StartCoroutine(HeadToTower());
+                    break;
+                case EnemyState.StayStillDecide:
+                    FollowCoroutine = StartCoroutine(StayingStillToDecide());
                     break;
 
             }
@@ -173,6 +237,21 @@ public class EnemyMovement : MonoBehaviour
 
         }
 
+
+    }
+
+    private IEnumerator StayingStillToDecide()
+    {
+        WaitForSeconds wait = new WaitForSeconds(updateRate);
+        while(true)
+        {
+            if(agent.enabled)
+            {
+                agent.isStopped = true;
+
+            }
+
+        }
 
     }
 
@@ -251,16 +330,71 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-
-    private IEnumerator FollowTarget()
+    private IEnumerator HeadToTower()
     {
         WaitForSeconds wait = new WaitForSeconds(updateRate);
+
+        Vector3 targetDirection = player.transform.position - transform.position;
+        float viwableAngle = Vector3.Angle(targetDirection, transform.forward);
+        distanceFromTarget = Vector3.Distance(player.transform.position, transform.position);
 
         while (true)
         {
             if (agent.enabled)
             {
-                agent.SetDestination(player.transform.position);
+                if (inAttackMode)
+                {
+                    //agent.SetDestination(player.transform.position);
+                    agent.isStopped = true;
+                    yield return wait;
+                }
+                if(inAttackMode == false)
+                {
+                    agent.isStopped = false;
+                    if (distanceFromTarget > stoppingDistance)
+
+                    {
+                        agent.SetDestination(player.transform.position);
+
+
+                    }
+
+                }
+            }
+            yield return wait;
+        }
+
+    }
+
+    private IEnumerator FollowTarget()
+    {
+        WaitForSeconds wait = new WaitForSeconds(updateRate);
+
+        Vector3 targetDirection = player.transform.position - transform.position;
+        float viwableAngle = Vector3.Angle(targetDirection, transform.forward);
+        distanceFromTarget = Vector3.Distance(player.transform.position, transform.position);
+
+        while (true)
+        {
+            if (agent.enabled)
+            {
+                if(inAttackMode)
+                {
+                    agent.isStopped = true;
+                    yield return wait;
+                }
+                //Debug.Log("FOLLOWING AND CHASING THIS MOTHERFUCKING PLAYER!!!");
+                //agent.SetDestination(player.transform.position);
+                if (inAttackMode == false)
+                {
+                    agent.isStopped = false;
+                    if (distanceFromTarget > stoppingDistance)
+                    {
+                        agent.SetDestination(player.transform.position + PositionDisplacement);
+
+                    }
+
+                }
             }
             yield return wait;
         }

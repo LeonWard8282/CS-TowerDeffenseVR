@@ -348,10 +348,10 @@ public class EnemigoSpawner : MonoBehaviour
           
 
             enemy.agent.Warp(spawnlocations[UnityEngine.Random.Range(0, spawnlocations.Length)].transform.position);
-            enemy.movement.player = player;
-            enemy.movement.triangulation = triangulation;
+            enemy.enemyMovement.player = player;
+            enemy.enemyMovement.triangulation = triangulation;
             enemy.agent.enabled = true;
-            enemy.movement.Spawn();
+            enemy.enemyMovement.Spawn();
             enemy.OnDie += HandleEnemyDeath;
 
 
@@ -405,10 +405,10 @@ public class EnemigoSpawner : MonoBehaviour
             {
                 enemy.agent.Warp(Hit.position);
                 //Enemy needs to get enabled and start chasing now. 
-                enemy.movement.player = player;
-                enemy.movement.triangulation = triangulation;
+                enemy.enemyMovement.player = player;
+                enemy.enemyMovement.triangulation = triangulation;
                 enemy.agent.enabled = true;
-                enemy.movement.Spawn();
+                enemy.enemyMovement.Spawn();
                 enemy.OnDie += HandleEnemyDeath;
 
                 enemiesAlive++;

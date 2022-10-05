@@ -8,6 +8,8 @@ public enum EnemyState
     Patrol,
     Chase,
     WaypointMarch,
+    HeadToTower,
+    StayStillDecide
     
 
 

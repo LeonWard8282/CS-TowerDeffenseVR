@@ -94,14 +94,14 @@ public class EnemyScriptableObject : ScriptableObject
         enemigo.agent.speed = speed;
         enemigo.agent.stoppingDistance = stoppingDistance;
 
-        enemigo.movement.updateRate = ai_UpdateInterval;
-        enemigo.movement.DefaultState = defaultState;
-        enemigo.movement.IdleMoveSpeedMultiplier = idleMovespeedMultiplier;
-        enemigo.movement.IdleLocationRadius = idleLocationRadius;
-        enemigo.movement.waypoints = new Vector3[waypoints];
-        enemigo.movement.lineOfSightChecker.fieldOfView = FieldOfView;
-        enemigo.movement.lineOfSightChecker.collider.radius = LineOfSightRange;
-        enemigo.movement.lineOfSightChecker.lineOfSightLayer = attackConfiguarions.lineOfSightLayers;
+        enemigo.enemyMovement.updateRate = ai_UpdateInterval;
+        enemigo.enemyMovement.DefaultState = defaultState;
+        enemigo.enemyMovement.IdleMoveSpeedMultiplier = idleMovespeedMultiplier;
+        enemigo.enemyMovement.IdleLocationRadius = idleLocationRadius;
+        enemigo.enemyMovement.waypoints = new Vector3[waypoints];
+        //enemigo.movement.lineOfSightChecker.fieldOfView = FieldOfView;
+        //enemigo.movement.lineOfSightChecker.collider.radius = LineOfSightRange;
+        //enemigo.movement.lineOfSightChecker.lineOfSightLayer = attackConfiguarions.lineOfSightLayers;
 
         //enemigo.movement.waypointMarchingPath = waypointMarchingPath;
 

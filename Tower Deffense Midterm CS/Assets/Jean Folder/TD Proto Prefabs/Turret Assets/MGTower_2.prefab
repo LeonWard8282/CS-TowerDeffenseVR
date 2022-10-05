@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 3267334806988639625}
   - component: {fileID: 3266279425246644061}
   - component: {fileID: 3364631693380840861}
-  - component: {fileID: 3314784766131174563}
-  - component: {fileID: 3315476345899729521}
   m_Layer: 10
   m_Name: MachineGunLvl3Effect
   m_TagString: Untagged
@@ -4738,7 +4736,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4904,63 +4901,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &3314784766131174563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427608948524119695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e11f03a17effc4238ba95c5b616ee02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clips:
-    weightedItems:
-    - clip: {fileID: 8300000, guid: d440c9f7407a04474bf738520785306b, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: d88fd5368c36748d684ff9e8db416da9, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 5bf7c957d8f4a40ff9977d85be58d48f, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 11e15d42e0a474c719970d3b8ddf4b05, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: dc29f7080efef42e4bffce14778bca99, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: c44a398ac1bfe4fa79c75b96bebddd6a, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 4442df31c446a4ff4ac434e95e5de866, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 5a6ca7a364e294886845ab3c268ea63e, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: eed58edbe19094382b8536c1405fed61, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: e893433625bae4c0584daccfde0c2866, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 3b5fc9b92d19541449a6b6ab388a7ffa, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: ebde808a5205d444193394a272542f85, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: b44217f5373cb4a628587e2194eb15a7, type: 3}
-      weight: 1
-    - clip: {fileID: 8300000, guid: 9cfc9c4c568e54e68a4038ecdf7ffac7, type: 3}
-      weight: 1
-  playOnEnabled: 0
---- !u!114 &3315476345899729521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427608948524119695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f1b3950d58247008c0834d7e945fa91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultParticles: {fileID: 3254074111003000805}
-  mobileParticles: {fileID: 3266670102870912473}
 --- !u!1 &3427611542999640401
 GameObject:
   m_ObjectHideFlags: 0
@@ -14513,7 +14453,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a78dd0f6e2aa54870b8ced4051fd71e0, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14626,7 +14565,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad5cc5335413e43df84ae6caa151caf6, type: 2}
+  - {fileID: 2100000, guid: f3547104031b1d64f9514b09d27a7b46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14713,7 +14652,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad5cc5335413e43df84ae6caa151caf6, type: 2}
+  - {fileID: 2100000, guid: f3547104031b1d64f9514b09d27a7b46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24308,7 +24247,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29083,7 +29021,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 92fbbb607856b484295b0810d1baecac, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -33841,7 +33778,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38603,7 +38539,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: b5e0b3982ded947cda17890e729362aa, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43470,7 +43405,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 9eeda62a73aff4818af7e5b2f9126959, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -43530,7 +43464,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3424953981883090047}
-  - component: {fileID: 3314749377601055415}
   m_Layer: 10
   m_Name: MGTower_2
   m_TagString: Untagged
@@ -43555,20 +43488,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3314749377601055415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3428520069138761253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d8e55681884ffb9fb6ed0b6f18f0bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  towerGhostPrefab: {fileID: 114795132175009648, guid: 76f6e1703688e468899389e732f0653a,
-    type: 3}
-  buildEffectPrefab: {fileID: 1395313577031670, guid: c559c1920b5d04e6d83aa4464fba5c68,
-    type: 3}
-  levelData: {fileID: 11400000, guid: 93dd4e6472af64186a96aca626aeb5b7, type: 2}

@@ -11,6 +11,7 @@ public class PowerUps : MonoBehaviour
     public GameObject shieldText;
 
     public PlayerStats playerStats;
+    //public CharacterStats playerStats;
 
     private GameObject shieldPowerUp;
     private GameObject healthPowerUp;
@@ -46,7 +47,7 @@ public class PowerUps : MonoBehaviour
 
         if(other.CompareTag("Enemy)") && shieldActive == false)
         {
-            playerStats.health -= 10;
+            playerStats.currentHealth -= 10;
         }
     }
 
@@ -55,7 +56,7 @@ public class PowerUps : MonoBehaviour
         while (shieldObject.activeInHierarchy)
         {
             yield return new WaitForSeconds(1);
-            playerStats.health++;
+            playerStats.currentHealth++;
         }
     }
 
@@ -74,7 +75,7 @@ public class PowerUps : MonoBehaviour
     IEnumerator HealthPowerUp()
     {
         yield return new WaitForSeconds(0);
-        playerStats.health += 100;
+        playerStats.currentHealth += 100;
         Destroy(healthPowerUp);
     }
 }

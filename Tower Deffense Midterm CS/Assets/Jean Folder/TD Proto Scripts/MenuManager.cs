@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
-    public string levelToLoad = "MainLevel";
+    public string levelToLoad = "Next Level";
+    public string MainMenue_Lobby = "MainMenus";
     public SceneFader sceneFader;
-
-    public void Play()
-    {
-        sceneFader.FadeTo(levelToLoad);
-    }
+    public Wrist_UI_Manager wristUIManager;
+    
 
     public void Quit()
     {
@@ -31,4 +29,29 @@ public class MenuManager : MonoBehaviour
     {
         
     }
+
+    public void ContinueToNextLevel()
+    {
+        sceneFader.FadeTo(levelToLoad);
+
+    }
+
+    public void MainMenu_Lobby()
+    {
+        sceneFader.FadeTo(MainMenue_Lobby);
+
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        wristUIManager.SeHandUIStateTo_GamePlay();
+
+    }
+
+    public void Continue()
+    {
+        wristUIManager.SeHandUIStateTo_GamePlay();
+    }
+
 }

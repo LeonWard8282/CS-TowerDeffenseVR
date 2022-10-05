@@ -101,6 +101,8 @@ MonoBehaviour:
   collider: {fileID: 147784618157198670}
   Damage: 10
   AttackDelay: 0.5
+  enemyMovement: {fileID: 0}
+  enemyLineOfSightCheck: {fileID: 0}
 --- !u!1 &2890730595628686870
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,13 +492,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bc8063c9e95401f9a8a38bc716750d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Method: 2
-  m_Curve:
+  DefaultMoveMethod: 2
+  Curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ParabolaHeight: 8
+  NavMeshLinkTraversalTypes: []
 --- !u!114 &2484679062189263269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +519,7 @@ MonoBehaviour:
   updateRate: 0.1
   animator: {fileID: 0}
   DefaultState: 3
+  _oldToNewState: 0
   IdleLocationRadius: 4
   IdleMoveSpeedMultiplier: 0.5
   waypoints:
@@ -524,6 +529,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   waypointMarchingPath: []
   WaypoinIndex: 0
+  stoppingDistance: 0.5
+  inAttackMode: 0
 --- !u!54 &6033330361382613087
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -554,9 +561,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackRadius: {fileID: 0}
   Animator: {fileID: 0}
-  movement: {fileID: 0}
+  enemyMovement: {fileID: 2484679062189263269}
   agent: {fileID: 0}
+  start_Health: 100
   health: 100
+  healthBar: {fileID: 0}
+  deathEffect: {fileID: 0}
+  moneyGained: 50
 --- !u!1 &5969793850394627473
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,11 +798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fee0f24a77ad53408ac36eb3bc884b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 8030194297368810114}
-  fieldOfView: 90
-  lineOfSightLayer:
-    serializedVersion: 2
-    m_Bits: 66689
+  currentTarget: {fileID: 0}
+  aISensor: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  scanFrequency: 1.5
 --- !u!1 &7509604140455751344
 GameObject:
   m_ObjectHideFlags: 0

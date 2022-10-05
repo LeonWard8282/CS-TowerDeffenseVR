@@ -439,6 +439,8 @@ MonoBehaviour:
   collider: {fileID: 3740445753636281116}
   Damage: 3
   AttackDelay: 0.5
+  enemyMovement: {fileID: 0}
+  enemyLineOfSightCheck: {fileID: 0}
 --- !u!1 &5130446989072816557
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +495,8 @@ GameObject:
   - component: {fileID: 7876669155291221821}
   - component: {fileID: 8525665421785324878}
   - component: {fileID: 1691544137215786751}
+  - component: {fileID: 2113593897063491213}
+  - component: {fileID: 4543351243731476079}
   m_Layer: 17
   m_Name: Hermit Robot Red AI SHOOT
   m_TagString: Enemy
@@ -562,7 +566,8 @@ MonoBehaviour:
   lineOfSightChecker: {fileID: 7691793674318725118}
   updateRate: 0.1
   animator: {fileID: 1683348839624716422}
-  DefaultState: 2
+  DefaultState: 1
+  _oldToNewState: 0
   IdleLocationRadius: 4
   IdleMoveSpeedMultiplier: 0.5
   waypoints:
@@ -572,6 +577,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   waypointMarchingPath: []
   WaypoinIndex: 0
+  stoppingDistance: 0.5
+  inAttackMode: 0
 --- !u!114 &7876669155291221823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,13 +591,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bc8063c9e95401f9a8a38bc716750d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Method: 2
-  m_Curve:
+  DefaultMoveMethod: 2
+  Curve:
     serializedVersion: 2
     m_Curve: []
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  ParabolaHeight: 8
+  NavMeshLinkTraversalTypes: []
 --- !u!114 &7876669155291221822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttackRadius: {fileID: 7300818734918538537}
   Animator: {fileID: 1683348839624716422}
-  movement: {fileID: 7876669155291221952}
+  enemyMovement: {fileID: 7876669155291221952}
   agent: {fileID: 7876669155291221821}
   start_Health: 100
   health: 100
@@ -664,6 +673,46 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.55
   m_Center: {x: 0, y: 0.66, z: 0}
+--- !u!114 &2113593897063491213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401936506567274566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239d82f2971134b4bb9baf384ad602d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 10
+  angle: 30
+  height: 1
+  mesh_Color: {r: 1, g: 0, b: 0, a: 1}
+  scanFrequency: 30
+  layers:
+    serializedVersion: 2
+    m_Bits: 1152
+  occlusionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Objects: []
+--- !u!114 &4543351243731476079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5401936506567274566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fee0f24a77ad53408ac36eb3bc884b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
+  aISensor: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  scanFrequency: 1.5
 --- !u!1 &5500606556211437402
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +786,7 @@ GameObject:
   - component: {fileID: 802360273091646825}
   - component: {fileID: 6114847515851153710}
   - component: {fileID: 7691793674318725118}
+  - component: {fileID: 3627164777167849083}
   m_Layer: 18
   m_Name: Enemy Line Of Sight
   m_TagString: Untagged
@@ -753,8 +803,8 @@ Transform:
   m_GameObject: {fileID: 5749146370757556072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4736757722414344956}
   m_RootOrder: 8
@@ -770,8 +820,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 10
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &7691793674318725118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,11 +834,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fee0f24a77ad53408ac36eb3bc884b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 6114847515851153710}
-  fieldOfView: 90
-  lineOfSightLayer:
-    serializedVersion: 2
-    m_Bits: 1153
+  currentTarget: {fileID: 0}
+  aISensor: {fileID: 0}
+  enemyMovement: {fileID: 0}
+  scanFrequency: 1.5
+--- !u!23 &3627164777167849083
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749146370757556072}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 608a20fa4ce8b9243a47421f80d71ff0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5769524612446764127
 GameObject:
   m_ObjectHideFlags: 0

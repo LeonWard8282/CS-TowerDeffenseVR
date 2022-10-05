@@ -13,6 +13,8 @@ public class Nodo : MonoBehaviour
     public Material startMaterial;
     public Material emptyMaterial;
     public Material highLightedMaterial;
+    // on NODO Deactivated 
+    public Material deactivatedMaterial;
 
     public Vector3 positionOffset;
     
@@ -29,17 +31,22 @@ public class Nodo : MonoBehaviour
 
     BuildManager buildManager;
 
+    XRSimpleInteractable xRSimpleInteractable;
+
     //public InputActionProperty OnBButtonSelect;
     public InputActionReference onBButtonPressed;
 
     // todo: link XR Simple Intractable in order to trigger and activate with selected button of choosing. 
-    private XRSimpleInteractable nodoSimpleInteractable;
+    public XRSimpleInteractable nodoSimpleInteractable;
 
     private void Awake()
     {
         onBButtonPressed.action.started += rightbButtonPressed;
 
     }
+
+
+
     private void OnDestroy()
     {
         onBButtonPressed.action.started += rightbButtonPressed;
@@ -64,7 +71,7 @@ public class Nodo : MonoBehaviour
         startMaterial = rend.material;
 
 
-        XRSimpleInteractable nodoSimpleInteractable = GetComponent<XRSimpleInteractable>();
+         nodoSimpleInteractable = GetComponent<XRSimpleInteractable>();
     }
 
     public Vector3 GetBuildPosition()
@@ -147,7 +154,6 @@ public class Nodo : MonoBehaviour
 
         isUpgraded = true;
 
-        Debug.Log("Turret build!");
 
 
     }
@@ -175,7 +181,6 @@ public class Nodo : MonoBehaviour
         GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 4f);
 
-        Debug.Log("Turret build!");
 
     }
     
@@ -214,6 +219,27 @@ public class Nodo : MonoBehaviour
         GetComponent<Renderer>().material = startMaterial;
         rend.material.color = startColor;
     }
+    
+    //added the two methods to activate and deactive the Nodo Script
 
+    public IEnumerator OnReactorPlaced()
+    {
+        WaitForSeconds Wait = new WaitForSeconds(2);
+        GetComponent<Renderer>().material = startMaterial;
+        nodoSimpleInteractable.enabled = true;
+        this.enabled = true;
+        //gameObject.SetActive(true);
+        yield return Wait; 
+    }
+
+    public IEnumerator OnReactorRemoved()
+    {
+        WaitForSeconds Wait = new WaitForSeconds(2);
+        GetComponent<Renderer>().material = deactivatedMaterial;
+        nodoSimpleInteractable.enabled = false;
+        this.enabled = false;
+        yield return Wait;
+        //gameObject.SetActive(false);
+    }
 
 }

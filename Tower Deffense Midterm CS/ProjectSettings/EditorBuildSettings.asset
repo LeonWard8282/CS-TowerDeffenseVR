@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/AA FINALIZED LEVELS/TD Main Menu.unity
     guid: cf9028526dbe4804f8cbd42e95362593
   - enabled: 1
+    path: Assets/AA FINALIZED LEVELS/Tutorial.unity
+    guid: aac93083893f2d642987a2c4de73d64c
+  - enabled: 1
     path: Assets/AA FINALIZED LEVELS/TD_Level One.unity
     guid: 887881c934117c04fb90caae5e96d1f2
   - enabled: 1

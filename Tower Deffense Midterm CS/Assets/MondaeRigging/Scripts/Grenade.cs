@@ -31,7 +31,7 @@ public class Grenade : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("LeftHand") || other.CompareTag("LeftHand"))
+        if(other.CompareTag("LeftHand") || other.CompareTag("RightHand"))
         {
             alreadyPickedUp=true;
         }
@@ -49,7 +49,7 @@ public class Grenade : MonoBehaviour
 
         foreach(Collider nearbyObject in collidersToDestroy)
         {
-            Enemy_TD enemy = nearbyObject.GetComponent<Enemy_TD>();
+            Enemigo enemy = nearbyObject.GetComponent<Enemigo>();
             if(enemy != null)
             {
                 enemy.TakeDamage(100);

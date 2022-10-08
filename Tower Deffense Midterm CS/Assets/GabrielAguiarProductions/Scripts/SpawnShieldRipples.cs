@@ -25,7 +25,7 @@ public class SpawnShieldRipples : MonoBehaviour
 
             foreach (Collider nearbyObject in collidersToDestroy)
             {
-                Enemy_TD enemy = nearbyObject.GetComponent<Enemy_TD>();
+                Enemigo enemy = nearbyObject.GetComponent<Enemigo>();
                 if (enemy != null)
                 {
                     enemy.TakeDamage(10);

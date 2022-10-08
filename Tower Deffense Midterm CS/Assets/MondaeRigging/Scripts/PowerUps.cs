@@ -66,16 +66,19 @@ public class PowerUps : MonoBehaviour
         shieldObject.SetActive (true);
         shieldText.SetActive(true);
         Destroy(shieldPowerUp);
+        yield return new WaitForSeconds(3);
+        shieldObject.GetComponent<MeshRenderer>().enabled = false;
 
         yield return new WaitForSeconds (15);
         shieldObject.SetActive(false);
         shieldText.SetActive(false);
+        shieldObject.GetComponent<MeshRenderer>().enabled = true;
         shieldActive = false;
     }    
     IEnumerator HealthPowerUp()
     {
         yield return new WaitForSeconds(0);
-        playerStats.currentHealth += 100;
+        playerStats.currentHealth += 50;
         Destroy(healthPowerUp);
     }
 }

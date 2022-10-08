@@ -26,13 +26,15 @@ public class Enemigo : PoolableObject , iDamageable
     private const string Take_Damage = "Take Damage";
     private const string Movement = "Movement";
 
+    public SaveData saveData;
+
     // Connected to Enemy Spawner for counting and keeping track;
     public delegate void DeathEvent (Enemigo enemy);
     public DeathEvent OnDie;
 
     private void Awake()
     {
-        
+        saveData = GameObject.FindGameObjectWithTag("GameController").GetComponent<SaveData>();
         health = start_Health;
         AttackRadius.OnAttack += OnAttack;
     }
@@ -114,6 +116,7 @@ public class Enemigo : PoolableObject , iDamageable
 
             // Link to player stats money 
             PlayerStats.Money += moneyGained;
+            saveData.UpdateSkills(moneyGained / 2);
 
             // setting the game object to false. 
             gameObject.SetActive(false);

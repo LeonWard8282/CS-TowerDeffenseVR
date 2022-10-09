@@ -17,6 +17,10 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
     private float atHalfHealth;
     private float quarterHealth;
 
+    [SerializeField] private GameObject reactorSpawnPoint;
+    [SerializeField] private Transform reactorTransform;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +37,7 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
     // Update is called once per frame
     void Update()
     {
-        
+        CheckHealthStatus();
     }
 
 
@@ -76,6 +80,15 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
             player.lifeLost();
 
             ExplosionEffect.Play();
+            gameObject.SetActive(false);
+            reactorTransform = reactorSpawnPoint.transform;
+            maxHealth = SetMaxHealthFromHealthLevel();
+            currentHealth = maxHealth;
+            meshRenderer.material = OriginalStatus;
+            gameObject.SetActive(true);
+
+            //Moving the player back to the respawn state. 
+            player.PlayerDeath();
 
             // Move Game object to previous position
 

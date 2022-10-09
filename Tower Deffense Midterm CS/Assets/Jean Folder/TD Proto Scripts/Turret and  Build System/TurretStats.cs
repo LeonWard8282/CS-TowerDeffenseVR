@@ -10,9 +10,10 @@ public class TurretStats : CharacterStats, iDamageable
 
     void Start()
     {
+        healthBar = FindObjectOfType<HealthBar>();
+        maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        maxHealth = SetMaxHealthFromHealthLevel();
 
     }
 
@@ -41,6 +42,11 @@ public class TurretStats : CharacterStats, iDamageable
             GameObject death_Effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(death_Effect, 5f);
             gameObject.SetActive(false);
+
+            maxHealth = SetMaxHealthFromHealthLevel();
+            healthBar.SetMaxHealth(maxHealth);
+            currentHealth = maxHealth;
+
             Destroy(gameObject);
 
             //Destroys the death effect

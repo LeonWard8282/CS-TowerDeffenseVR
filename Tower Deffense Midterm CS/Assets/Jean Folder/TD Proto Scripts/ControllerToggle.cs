@@ -14,7 +14,11 @@ public class ControllerToggle : MonoBehaviour
     [SerializeField]private XRNode inputSource;
     [SerializeField]private XRNode buttonSourceInput;
     private PlayerMovement playerMovement;
-    public ActionBasedContinuousTurnProvider ControllerTurning;
+
+    public ActionBasedContinuousTurnProvider RegularActionTurnController;
+    public ActionBasedContinuousTurnProvider SouthPawActionTurnController;
+
+    public AbilityDash abilityDashButton;
 
 
     private void Start()
@@ -22,7 +26,9 @@ public class ControllerToggle : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         inputSource = GetComponent<PlayerMovement>().inputSource;
         buttonSourceInput = GetComponent<PlayerMovement>().inputSource;
-        ControllerTurning = GetComponent<ActionBasedContinuousTurnProvider>();
+        RegularActionTurnController = GetComponent<ActionBasedContinuousTurnProvider>();
+        SouthPawActionTurnController = GetComponent<ActionBasedContinuousTurnProvider>();
+        abilityDashButton = GetComponent<AbilityDash>();
     }
     
     public void RegularControllerInput()
@@ -30,8 +36,8 @@ public class ControllerToggle : MonoBehaviour
         inputSource = XRNode.LeftHand; // left hand moves
         buttonSourceInput = XRNode.RightHand; // Jump Button?
 
-        ControllerTurning.leftHandTurnAction.DisableDirectAction();
-        ControllerTurning.rightHandTurnAction.EnableDirectAction();
+        RegularActionTurnController.leftHandTurnAction.DisableDirectAction();
+        RegularActionTurnController.rightHandTurnAction.EnableDirectAction();
 
         playerMovement.inputSource = inputSource;
         playerMovement.right_HandButtonSource = buttonSourceInput;
@@ -43,8 +49,8 @@ public class ControllerToggle : MonoBehaviour
 
         inputSource = XRNode.RightHand;
         buttonSourceInput = XRNode.LeftHand;
-        ControllerTurning.leftHandTurnAction.EnableDirectAction();
-        ControllerTurning.rightHandTurnAction.DisableDirectAction();
+        RegularActionTurnController.leftHandTurnAction.EnableDirectAction();
+        RegularActionTurnController.rightHandTurnAction.DisableDirectAction();
 
         playerMovement.inputSource = inputSource;
         playerMovement.right_HandButtonSource = buttonSourceInput;

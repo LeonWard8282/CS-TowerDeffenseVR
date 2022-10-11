@@ -7,6 +7,7 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
     [SerializeField]private PlayerStats player;
 
     [Header("Reactor Core Material Change")]
+    public MeshRenderer reactorMesh;
     public Material OriginalStatus;
     public Material MediumStatus;
     public Material CriticalStatus;
@@ -18,7 +19,7 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
     private float quarterHealth;
 
     [SerializeField] private GameObject reactorSpawnPoint;
-    [SerializeField] private Transform reactorTransform;
+    [SerializeField] private Transform reactor;
 
 
     // Start is called before the first frame update
@@ -63,45 +64,38 @@ public class ReactorCoreHealth : CharacterStats, iDamageable
 
     private void CheckHealthStatus()
     {
-        if (currentHealth == atHalfHealth)
+        if (currentHealth <= atHalfHealth)
         {
-            meshRenderer.material = MediumStatus;
+            reactorMesh.material = MediumStatus;
             electricDistargEffect.Play();
         }
-        if (currentHealth == quarterHealth)
+        if (currentHealth <= quarterHealth)
         {
-            meshRenderer.material = CriticalStatus;
+            reactorMesh.material = CriticalStatus;
         }
 
         if (currentHealth <= 0)
         {
-
+            ReactorDeath();
 
             player.lifeLost();
-
-            ExplosionEffect.Play();
-            gameObject.SetActive(false);
-            reactorTransform = reactorSpawnPoint.transform;
-            maxHealth = SetMaxHealthFromHealthLevel();
-            currentHealth = maxHealth;
-            meshRenderer.material = OriginalStatus;
-            gameObject.SetActive(true);
-
-            //Moving the player back to the respawn state. 
             player.PlayerDeath();
 
-            // Move Game object to previous position
-
-            // gameObject.SetActive(false);
-
-            //Destroy(gameObject);
-            // Respawn new pillar or set point
-
-            // restart level
-
-
-            // trigger a penalty?
 
         }
     }
+
+    private void ReactorDeath()
+    {
+        ExplosionEffect.Play();
+        
+        reactor.transform.position = reactorSpawnPoint.transform.position;
+        electricDistargEffect.Stop();
+        ExplosionEffect.Stop();
+        maxHealth = SetMaxHealthFromHealthLevel();
+        currentHealth = maxHealth;
+        reactorMesh.material = OriginalStatus;
+    }
+
+
 }

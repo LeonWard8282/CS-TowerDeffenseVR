@@ -4364,6 +4364,103 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 08ae2008da04f244694203a3d1bc1c69, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b471d26a5eac87b4086c90c7c0b76f4e, type: 3}
+--- !u!1 &734743026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734743030}
+  - component: {fileID: 734743029}
+  - component: {fileID: 734743028}
+  - component: {fileID: 734743027}
+  m_Layer: 0
+  m_Name: Reactor Respawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &734743027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734743026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &734743028
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734743026}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5a4ec1b4690914e4fbb89e9a2fc07e6c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &734743029
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734743026}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &734743030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734743026}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.349, y: 5.35, z: -4.1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &749327249
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,6 +6862,12 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+--- !u!198 &981446511 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 721501653470662400, guid: cca3fcf7ea24cb14091e78819e4285ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341559937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1017726214
 GameObject:
   m_ObjectHideFlags: 0
@@ -7827,7 +7930,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Tutorial Theme Song
-    clip: {fileID: 8300000, guid: 6ce6d7c4d4f6140f68d2c18955f02e8c, type: 3}
+    clip: {fileID: 8300000, guid: f9268a0b42b1edc4eb5a7f4331609b7f, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -7908,6 +8011,30 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1720213620}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: reactor
+      value: 
+      objectReference: {fileID: 1341559947}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: reactorMesh
+      value: 
+      objectReference: {fileID: 1341559945}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: ExplosionEffect
+      value: 
+      objectReference: {fileID: 981446511}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: reactorTransform
+      value: 
+      objectReference: {fileID: 1341559947}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: reactorSpawnPoint
+      value: 
+      objectReference: {fileID: 734743026}
+    - target: {fileID: 1341559948, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
+      propertyPath: electricDistargEffect
+      value: 
+      objectReference: {fileID: 1638084749}
     - target: {fileID: 721432689726201556, guid: cca3fcf7ea24cb14091e78819e4285ac,
         type: 3}
       propertyPath: playOnAwake
@@ -8028,7 +8155,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reactor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 425439282085917311, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cca3fcf7ea24cb14091e78819e4285ac, type: 3}
 --- !u!114 &1341559940 stripped
 MonoBehaviour:
@@ -8042,6 +8170,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b36d89c54072a04d8840b96250a4084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!23 &1341559945 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2369816617574468837, guid: cca3fcf7ea24cb14091e78819e4285ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341559937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1341559947 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3506170459178137482, guid: cca3fcf7ea24cb14091e78819e4285ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341559937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1371979294
 GameObject:
   m_ObjectHideFlags: 0
@@ -8810,6 +8950,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4327144084732578, guid: db58b1eda8133c84983d20108c13888e,
     type: 3}
   m_PrefabInstance: {fileID: 1629527227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1638084749 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 425439282111028991, guid: cca3fcf7ea24cb14091e78819e4285ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 1341559937}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1685181199
 GameObject:
@@ -10012,11 +10158,11 @@ MonoBehaviour:
   NumberOfEnemiesToSpawn: 5
   SpawnDelay: 2
   weightedEnemies:
-  - {fileID: 11400000, guid: 1d9de8163ba99f848bd3d6d48a61bbec, type: 2}
-  - {fileID: 11400000, guid: 84e1be31068b3be48aa7f4ad78cf94f5, type: 2}
-  - {fileID: 11400000, guid: 0dce47e2f0dd48f41b6a36419d899769, type: 2}
-  - {fileID: 11400000, guid: 285b71533acffa14ba5e883fce67839d, type: 2}
-  - {fileID: 11400000, guid: 9fe5e172f2b9cdc409e3ee7b58b91ec7, type: 2}
+  - {fileID: 11400000, guid: 650b843d8d1665e40be80729450ca2c9, type: 2}
+  - {fileID: 11400000, guid: a5c161b0c6cc9ec4e8ca9bbd84add7ac, type: 2}
+  - {fileID: 11400000, guid: 61927d3aea0f6774a9e13bb9a599f226, type: 2}
+  - {fileID: 11400000, guid: 83435937773f72741a3d7e1982268065, type: 2}
+  - {fileID: 11400000, guid: fa0895f11d894c54ca59465d7e16e37f, type: 2}
   continuousSpawning: 0
   scaling: {fileID: 11400000, guid: a0a6f72c1ca890047a1571d8ff74528b, type: 2}
   spawnlocations: []

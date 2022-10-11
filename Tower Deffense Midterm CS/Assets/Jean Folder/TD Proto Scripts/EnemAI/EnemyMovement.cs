@@ -94,7 +94,6 @@ public class EnemyMovement : MonoBehaviour
 
     public void HandleLoseSight(CharacterStats player)
     {
-        Debug.Log("Lost sight of player Default state activate.");
         player = null;
         State = DefaultState;
     }

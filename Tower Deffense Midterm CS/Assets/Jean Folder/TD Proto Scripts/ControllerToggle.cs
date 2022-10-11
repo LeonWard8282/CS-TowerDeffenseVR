@@ -26,6 +26,7 @@ public class ControllerToggle : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         inputSource = GetComponent<PlayerMovement>().inputSource;
         buttonSourceInput = GetComponent<PlayerMovement>().inputSource;
+
         RegularActionTurnController = GetComponent<ActionBasedContinuousTurnProvider>();
         SouthPawActionTurnController = GetComponent<ActionBasedContinuousTurnProvider>();
         abilityDashButton = GetComponent<AbilityDash>();
@@ -39,8 +40,10 @@ public class ControllerToggle : MonoBehaviour
         RegularActionTurnController.leftHandTurnAction.DisableDirectAction();
         RegularActionTurnController.rightHandTurnAction.EnableDirectAction();
 
-        playerMovement.inputSource = inputSource;
-        playerMovement.right_HandButtonSource = buttonSourceInput;
+        //abilityDashButton.rightThumstickPress;
+
+        //playerMovement.inputSource =
+        //playerMovement.right_HandButtonSource =  //InputActionReference.ReferenceEquals(XRIDefaultInputActions.XRIRightHandButtonPressActions());
 
     }
 
